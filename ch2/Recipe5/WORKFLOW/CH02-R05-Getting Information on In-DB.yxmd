@@ -1,0 +1,158 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2022.1">
+  <Nodes>
+    <Node ToolID="1">
+      <GuiSettings Plugin="LockInGui.LockInInput.LockInInput">
+        <Position x="114" y="210" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Connection>SQLITE</Connection>
+          <Query>select DOCUMENTS.*,
+	ARTICLES.DESCRIPTION,
+	CUSTOMERS.FIRST,
+	CUSTOMERS.LAST,
+	CUSTOMERS.EMAIL 
+from DOCUMENTS 
+	inner join ARTICLES on DOCUMENTS.COMPANY_ID = ARTICLES.COMPANY_ID and DOCUMENTS.ARTICLE_ID = ARTICLES.ARTICLE_ID 
+	inner join CUSTOMERS on DOCUMENTS.CUSTOMER_ID = CUSTOMERS.CUSTOMER_ID</Query>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Source=SQLITE
+Query=select DOCUMENTS.*,
+	ARTICL...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="LockInEngine.dll" EngineDllEntryPoint="AlteryxLockInInput" />
+    </Node>
+    <Node ToolID="2">
+      <GuiSettings Plugin="LockInGui.LockInSummarize.LockInSummarize">
+        <Position x="258" y="210" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="CUSTOMER_ID" action="GroupBy" rename="CUSTOMER_ID" />
+            <SummarizeField field="FIRST" action="Min" rename="FIRST" />
+            <SummarizeField field="LAST" action="Min" rename="LAST" />
+            <SummarizeField field="EMAIL" action="Min" rename="EMAIL" />
+            <SummarizeField field="TOTAL" action="Sum" rename="Sum_TOTAL" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="LockInEngine.dll" EngineDllEntryPoint="AlteryxLockInSummarize" />
+    </Node>
+    <Node ToolID="4">
+      <GuiSettings Plugin="LockInGui.LockInDynamicOutput.LockInDynamicOutput">
+        <Position x="390" y="210" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OutputFields>Query
+Connection Name
+Connection Data Source
+In-DB XML
+Record Info XML
+Query Alias List
+Last Query Alias
+Connection Details</OutputFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="LockInEngine.dll" EngineDllEntryPoint="AlteryxLockInDynamicOutput" />
+    </Node>
+    <Node ToolID="5">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="546" y="210" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_29028_6dbf1405c8d44ffebe2e0f82345debc1_\Engine_24736_e78e6e296c124f1f8159ce4ab1d580de_.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <View1>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="2" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="4" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="5" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="False" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>CH02-R05-Getting Information on In-DB</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="e5c7e56f-c43e-4145-aa5b-7120a384ba71" />
+      <Telemetry>
+        <PreviousWorkflowId value="80dfc3fe-8024-4db0-bd2d-5eb0dfdd27e9" />
+        <OriginWorkflowId value="80dfc3fe-8024-4db0-bd2d-5eb0dfdd27e9" />
+      </Telemetry>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>
