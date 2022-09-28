@@ -1,0 +1,129 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2022.1">
+  <Nodes>
+    <Node ToolID="1">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="54" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="21">..\DATA\BikeRides.txt</File>
+          <FormatSpecificOptions>
+            <TrimWhiteSpace>Unset</TrimWhiteSpace>
+            <LineEndStyle>Unset</LineEndStyle>
+            <AllowLongLines>Unset</AllowLongLines>
+            <CodePage>28591</CodePage>
+            <AllowShortLines>Unset</AllowShortLines>
+            <FlatFileXML>
+              <flatfile version="1" external="C:\Exercises\ch1\Recipe6\DATA\GeneratedFlatFile.flat" />
+            </FlatFileXML>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>BikeRides.txt</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="TRIPDURATION" source="File: C:\Exercises\ch1\Recipe6\DATA\BikeRides.txt" type="Int32" />
+            <Field name="STARTTIME" source="File: C:\Exercises\ch1\Recipe6\DATA\BikeRides.txt" type="DateTime" />
+            <Field name="STOPTIME" source="File: C:\Exercises\ch1\Recipe6\DATA\BikeRides.txt" type="DateTime" />
+            <Field name="START_STATION_ID" size="4" source="File: C:\Exercises\ch1\Recipe6\DATA\BikeRides.txt" type="V_String" />
+            <Field name="START_STATION_NAME" size="33" source="File: C:\Exercises\ch1\Recipe6\DATA\BikeRides.txt" type="V_String" />
+            <Field name="START_STATION_LATITUDE" scale="9" size="13" source="File: C:\Exercises\ch1\Recipe6\DATA\BikeRides.txt" type="FixedDecimal" />
+            <Field name="START_STATION_LONGITUDE" scale="9" size="13" source="File: C:\Exercises\ch1\Recipe6\DATA\BikeRides.txt" type="FixedDecimal" />
+            <Field name="STATION_ID" source="File: C:\Exercises\ch1\Recipe6\DATA\BikeRides.txt" type="Int32" />
+            <Field name="END_STATION_NAME" size="33" source="File: C:\Exercises\ch1\Recipe6\DATA\BikeRides.txt" type="V_String" />
+            <Field name="END_STATION_LATITUDE" scale="9" size="13" source="File: C:\Exercises\ch1\Recipe6\DATA\BikeRides.txt" type="FixedDecimal" />
+            <Field name="END_STATION_LONGITUDE" scale="9" size="13" source="File: C:\Exercises\ch1\Recipe6\DATA\BikeRides.txt" type="FixedDecimal" />
+            <Field name="BIKE_ID" size="5" source="File: C:\Exercises\ch1\Recipe6\DATA\BikeRides.txt" type="V_String" />
+            <Field name="MEMBERSHIP_TYPE" size="1" source="File: C:\Exercises\ch1\Recipe6\DATA\BikeRides.txt" type="V_String" />
+            <Field name="USERTYPE" size="10" source="File: C:\Exercises\ch1\Recipe6\DATA\BikeRides.txt" type="V_String" />
+            <Field name="BIRTH_YEAR" size="4" source="File: C:\Exercises\ch1\Recipe6\DATA\BikeRides.txt" type="V_String" />
+            <Field name="GENDER" source="File: C:\Exercises\ch1\Recipe6\DATA\BikeRides.txt" type="Byte" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="2">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="246" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_8332_d393cbf84e0042b89c3abd35f8a042a6_\Engine_11656_70a185492c77447c89d2bc3a81e5a99d_.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <View1>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="2" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="False" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>CH01-R06-Part2-Use the generated Flat file</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="d469af30-1e93-4503-9997-0cb2630ee17f" />
+      <Telemetry>
+        <PreviousWorkflowId value="b3940a75-5f22-4dd0-a2e2-a47a5f5f7f9a" />
+        <OriginWorkflowId value="b3940a75-5f22-4dd0-a2e2-a47a5f5f7f9a" />
+      </Telemetry>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>

@@ -1,0 +1,642 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2022.1">
+  <Nodes>
+    <Node ToolID="3">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="29" y="5" width="265" height="165" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Container 3</Caption>
+          <Style TextColor="#314c4a" FillColor="#ffffff" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="1">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="54" y="54" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">C:\Exercises\ch1\Recipe6\DATA DEFINITION\FileStructure.xlsx|||`Sheet1$`</File>
+              <FormatSpecificOptions>
+                <FirstRowData>False</FirstRowData>
+                <ImportLine>1</ImportLine>
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>FileStructure.xlsx
+Query=`Sheet1$`</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="Name" size="255" source="File: C:\Exercises\ch1\Recipe6\DATA DEFINITION\FileStructure.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="Type" size="255" source="File: C:\Exercises\ch1\Recipe6\DATA DEFINITION\FileStructure.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="Size" source="File: C:\Exercises\ch1\Recipe6\DATA DEFINITION\FileStructure.xlsx|||`Sheet1$`" type="Double" />
+                <Field name="Scale" source="File: C:\Exercises\ch1\Recipe6\DATA DEFINITION\FileStructure.xlsx|||`Sheet1$`" type="Double" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+        <Node ToolID="2">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="210" y="54" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText><![CDATA[
+]]></DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="4">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="138" y="282" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="21">C:\Exercises\ch1\Recipe6\DATA\CityBike.txt</File>
+          <FormatSpecificOptions>
+            <TrimWhiteSpace>Unset</TrimWhiteSpace>
+            <LineEndStyle>Unset</LineEndStyle>
+            <AllowLongLines>Unset</AllowLongLines>
+            <CodePage>28591</CodePage>
+            <AllowShortLines>Unset</AllowShortLines>
+            <FlatFileXML>
+              <flatfile version="1">
+                <file eoltype="crlf" allowShortLines="t" allowLongLines="f" trimWhiteSpace="t" />
+                <fields>
+                  <field name="Field_2" type="V_String" length="33" />
+                  <field name="Field_1" type="V_String" length="33" />
+                  <field name="Field_5" type="V_String" length="33" />
+                  <field name="Field_6" type="V_String" length="33" />
+                  <field name="Field_7" type="V_String" length="33" />
+                  <field name="Field_9" type="V_String" length="33" />
+                  <field name="Field_8" type="V_String" length="33" />
+                  <field name="Field_10" type="V_String" length="33" />
+                  <field name="Field_12" type="V_String" length="33" />
+                  <field name="Field_11" type="V_String" length="33" />
+                  <field name="Field_13" type="V_String" length="33" />
+                  <field name="Field_14" type="V_String" length="33" />
+                  <field name="Field_15" type="V_String" length="33" />
+                  <field name="Field_16" type="V_String" length="33" />
+                  <field name="Field_17" type="V_String" length="33" />
+                  <field name="Field_18" type="V_String" length="33" />
+                </fields>
+              </flatfile>
+            </FlatFileXML>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>CityBike.txt</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Field_2" size="33" source="File: C:\Exercises\ch1\Recipe6\DATA\CityBike.txt" type="V_String" />
+            <Field name="Field_1" size="33" source="File: C:\Exercises\ch1\Recipe6\DATA\CityBike.txt" type="V_String" />
+            <Field name="Field_5" size="33" source="File: C:\Exercises\ch1\Recipe6\DATA\CityBike.txt" type="V_String" />
+            <Field name="Field_6" size="33" source="File: C:\Exercises\ch1\Recipe6\DATA\CityBike.txt" type="V_String" />
+            <Field name="Field_7" size="33" source="File: C:\Exercises\ch1\Recipe6\DATA\CityBike.txt" type="V_String" />
+            <Field name="Field_9" size="33" source="File: C:\Exercises\ch1\Recipe6\DATA\CityBike.txt" type="V_String" />
+            <Field name="Field_8" size="33" source="File: C:\Exercises\ch1\Recipe6\DATA\CityBike.txt" type="V_String" />
+            <Field name="Field_10" size="33" source="File: C:\Exercises\ch1\Recipe6\DATA\CityBike.txt" type="V_String" />
+            <Field name="Field_12" size="33" source="File: C:\Exercises\ch1\Recipe6\DATA\CityBike.txt" type="V_String" />
+            <Field name="Field_11" size="33" source="File: C:\Exercises\ch1\Recipe6\DATA\CityBike.txt" type="V_String" />
+            <Field name="Field_13" size="33" source="File: C:\Exercises\ch1\Recipe6\DATA\CityBike.txt" type="V_String" />
+            <Field name="Field_14" size="33" source="File: C:\Exercises\ch1\Recipe6\DATA\CityBike.txt" type="V_String" />
+            <Field name="Field_15" size="33" source="File: C:\Exercises\ch1\Recipe6\DATA\CityBike.txt" type="V_String" />
+            <Field name="Field_16" size="33" source="File: C:\Exercises\ch1\Recipe6\DATA\CityBike.txt" type="V_String" />
+            <Field name="Field_17" size="33" source="File: C:\Exercises\ch1\Recipe6\DATA\CityBike.txt" type="V_String" />
+            <Field name="Field_18" size="33" source="File: C:\Exercises\ch1\Recipe6\DATA\CityBike.txt" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="5">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="522" y="282" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_1248_caee3a153a47474dbaf3734824d04d89_\Engine_1172_ee169c7e59d74a809bac5985ca7b5731_.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <View1>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="9">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DynamicRename.DynamicRename">
+        <Position x="522" y="138" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <RenameMode>RightInputRows</RenameMode>
+          <Fields orderChanged="False">
+            <Field name="Field_2" />
+            <Field name="Field_3" />
+            <Field name="Field_1" />
+            <Field name="Field_4" />
+            <Field name="Field_5" />
+            <Field name="Field_6" />
+            <Field name="Field_7" />
+            <Field name="Field_9" />
+            <Field name="Field_8" />
+            <Field name="Field_10" />
+            <Field name="Field_12" />
+            <Field name="Field_11" />
+            <Field name="Field_13" />
+            <Field name="Field_14" />
+            <Field name="Field_15" />
+            <Field name="Field_16" />
+            <Field name="Field_17" />
+            <Field name="Field_18" />
+            <Field name="*Unknown" />
+          </Fields>
+          <Expression />
+          <NamesFromRows>
+            <OnError>Warn</OnError>
+            <InputMode>Positional</InputMode>
+            <NewName>Name</NewName>
+          </NamesFromRows>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="TRIPDURATION" size="33" source="File: C:\Exercises\ch1\Recipe6\DATA\CityBike.txt" type="V_String" />
+            <Field name="STARTTIME" size="33" source="File: C:\Exercises\ch1\Recipe6\DATA\CityBike.txt" type="V_String" />
+            <Field name="STOPTIME" size="33" source="File: C:\Exercises\ch1\Recipe6\DATA\CityBike.txt" type="V_String" />
+            <Field name="START_STATION_ID" size="33" source="File: C:\Exercises\ch1\Recipe6\DATA\CityBike.txt" type="V_String" />
+            <Field name="START_STATION_NAME" size="33" source="File: C:\Exercises\ch1\Recipe6\DATA\CityBike.txt" type="V_String" />
+            <Field name="START_STATION_LATITUDE" size="33" source="File: C:\Exercises\ch1\Recipe6\DATA\CityBike.txt" type="V_String" />
+            <Field name="START_STATION_LONGITUDE" size="33" source="File: C:\Exercises\ch1\Recipe6\DATA\CityBike.txt" type="V_String" />
+            <Field name="STATION_ID" size="33" source="File: C:\Exercises\ch1\Recipe6\DATA\CityBike.txt" type="V_String" />
+            <Field name="END_STATION_NAME" size="33" source="File: C:\Exercises\ch1\Recipe6\DATA\CityBike.txt" type="V_String" />
+            <Field name="END_STATION_LATITUDE" size="33" source="File: C:\Exercises\ch1\Recipe6\DATA\CityBike.txt" type="V_String" />
+            <Field name="END_STATION_LONGITUDE" size="33" source="File: C:\Exercises\ch1\Recipe6\DATA\CityBike.txt" type="V_String" />
+            <Field name="BIKE_ID" size="33" source="File: C:\Exercises\ch1\Recipe6\DATA\CityBike.txt" type="V_String" />
+            <Field name="MEMBERSHIP_TYPE" size="33" source="File: C:\Exercises\ch1\Recipe6\DATA\CityBike.txt" type="V_String" />
+            <Field name="USERTYPE" size="33" source="File: C:\Exercises\ch1\Recipe6\DATA\CityBike.txt" type="V_String" />
+            <Field name="BIRTH_YEAR" size="33" source="File: C:\Exercises\ch1\Recipe6\DATA\CityBike.txt" type="V_String" />
+            <Field name="GENDER" size="33" source="File: C:\Exercises\ch1\Recipe6\DATA\CityBike.txt" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDynamicRename" />
+    </Node>
+    <Node ToolID="10">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="618" y="138" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_1248_caee3a153a47474dbaf3734824d04d89_\Engine_1172_132f1eedaad84088ac6f40dec3c19359_.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <View1>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="11">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="354" y="282" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Field_2" selected="True" type="Int32" size="4" />
+            <SelectField field="Field_1" selected="True" size="19" />
+            <SelectField field="Field_5" selected="True" size="19" />
+            <SelectField field="Field_6" selected="True" type="Int16" size="2" />
+            <SelectField field="Field_9" selected="True" type="FixedDecimal" size="13.9" />
+            <SelectField field="Field_8" selected="True" type="FixedDecimal" size="13.9" />
+            <SelectField field="Field_10" selected="True" type="Int16" size="2" />
+            <SelectField field="Field_11" selected="True" type="FixedDecimal" size="13.9" />
+            <SelectField field="Field_13" selected="True" type="FixedDecimal" size="13.9" />
+            <SelectField field="Field_14" selected="True" type="Int64" size="8" />
+            <SelectField field="Field_15" selected="True" size="1" />
+            <SelectField field="Field_16" selected="True" size="10" />
+            <SelectField field="Field_17" selected="True" size="4" />
+            <SelectField field="Field_18" selected="True" type="Byte" size="1" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="13">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+        <Position x="1014" y="186" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <File MaxRecords="" FileFormat="0">C:\Exercises\ch1\Recipe6\DATA\CitiB.csv</File>
+          <Passwords />
+          <FormatSpecificOptions>
+            <LineEndStyle>CRLF</LineEndStyle>
+            <Delimeter>\0</Delimeter>
+            <ForceQuotes>False</ForceQuotes>
+            <HeaderRow>False</HeaderRow>
+            <CodePage>28591</CodePage>
+            <WriteBOM>True</WriteBOM>
+          </FormatSpecificOptions>
+          <MultiFile value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>CitiB.csv</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+    </Node>
+    <Node ToolID="15">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MultiFieldFormula.MultiFieldFormula">
+        <Position x="798" y="186" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FieldType>All</FieldType>
+          <Fields orderChanged="False">
+            <Field name="Field_2" />
+            <Field name="Field_1" />
+            <Field name="Field_5" />
+            <Field name="Field_6" />
+            <Field name="Field_7" />
+            <Field name="Field_9" />
+            <Field name="Field_8" />
+            <Field name="Field_10" />
+            <Field name="Field_12" />
+            <Field name="Field_11" />
+            <Field name="Field_13" />
+            <Field name="Field_14" />
+            <Field name="Field_15" />
+            <Field name="Field_16" />
+            <Field name="Field_17" />
+            <Field name="Field_18" />
+            <Field name="*Unknown" />
+          </Fields>
+          <CopyOutput value="False" />
+          <Expression>PadLeft([_CurrentField_],
+SWITCH([_CurrentFieldName_],0,
+'Field_2',4,
+'Field_1',19,
+'Field_5',19,
+'Field_6',4,
+'Field_7', 33,
+'Field_9', 13,
+'Field_8', 13,
+'Field_10', 4,
+'Field_12', 33,
+'Field_11', 13,
+'Field_13', 13,
+'Field_14', 5,
+'Field_15',1,
+'Field_16',10,
+'Field_17',4,
+'field_18',1)," ")</Expression>
+          <ChangeFieldType value="True" />
+          <OutputFieldType type="V_String" size="124659" scale="0" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>PadLeft([_CurrentField_],
+SWITCH([_CurrentFieldName_],0,
+'Fie...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMultiFieldFormula" />
+    </Node>
+    <Node ToolID="16">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="1086" y="42" width="264" height="252" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>SWITCH([_CurrentFieldName_],"ERROR",
+'Field_2',4,
+'Field_1',19,
+'Field_5',19,
+'Field_6',4,
+'Field_7', 33,
+'Field_9', 13,
+'Field_8', 13,
+'Field_10', 4,
+'Field_12', 33,
+'Field_11', 13,
+'Field_13', 13,
+'Field_14', 5,
+'Field_15',1,
+'Field_16',10,
+'Field_17',4,
+'field_18',1)</Text>
+          <Font name="Arial" size="8.25" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="17">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="930" y="126" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_1248_caee3a153a47474dbaf3734824d04d89_\Engine_1172_bfbe2305b66b4d6394c5343a67a6e48d_.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <View1>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="12">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="473" y="413" width="301" height="181" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Container 12</Caption>
+          <Style TextColor="#314c4a" FillColor="#ffffff" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="True" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="6">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AutoField.AutoField">
+            <Position x="498" y="462" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Fields>
+                <Field field="Field_2" selected="True" />
+                <Field field="Field_3" selected="True" />
+                <Field field="Field_1" selected="True" />
+                <Field field="Field_4" selected="True" />
+                <Field field="Field_5" selected="True" />
+                <Field field="Field_6" selected="True" />
+                <Field field="Field_7" selected="True" />
+                <Field field="Field_9" selected="True" />
+                <Field field="Field_8" selected="True" />
+                <Field field="Field_10" selected="True" />
+                <Field field="Field_12" selected="True" />
+                <Field field="Field_11" selected="True" />
+                <Field field="Field_13" selected="True" />
+                <Field field="Field_14" selected="True" />
+                <Field field="Field_15" selected="True" />
+                <Field field="Field_16" selected="True" />
+                <Field field="Field_17" selected="True" />
+                <Field field="Field_18" selected="True" />
+                <Field field="*Unknown" selected="True" />
+              </Fields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="Field_2" source="File: C:\Exercises\ch1\Recipe6\DATA\CityBike.txt" type="Int16" />
+                <Field name="Field_1" source="File: C:\Exercises\ch1\Recipe6\DATA\CityBike.txt" type="DateTime" />
+                <Field name="Field_5" source="File: C:\Exercises\ch1\Recipe6\DATA\CityBike.txt" type="DateTime" />
+                <Field name="Field_6" source="File: C:\Exercises\ch1\Recipe6\DATA\CityBike.txt" type="Int16" />
+                <Field name="Field_7" size="33" source="File: C:\Exercises\ch1\Recipe6\DATA\CityBike.txt" type="V_String" />
+                <Field name="Field_9" source="File: C:\Exercises\ch1\Recipe6\DATA\CityBike.txt" type="Double" />
+                <Field name="Field_8" source="File: C:\Exercises\ch1\Recipe6\DATA\CityBike.txt" type="Double" />
+                <Field name="Field_10" source="File: C:\Exercises\ch1\Recipe6\DATA\CityBike.txt" type="Int16" />
+                <Field name="Field_12" size="33" source="File: C:\Exercises\ch1\Recipe6\DATA\CityBike.txt" type="V_String" />
+                <Field name="Field_11" source="File: C:\Exercises\ch1\Recipe6\DATA\CityBike.txt" type="Double" />
+                <Field name="Field_13" source="File: C:\Exercises\ch1\Recipe6\DATA\CityBike.txt" type="Double" />
+                <Field name="Field_14" source="File: C:\Exercises\ch1\Recipe6\DATA\CityBike.txt" type="Int16" />
+                <Field name="Field_15" size="1" source="File: C:\Exercises\ch1\Recipe6\DATA\CityBike.txt" type="String" />
+                <Field name="Field_16" size="10" source="File: C:\Exercises\ch1\Recipe6\DATA\CityBike.txt" type="String" />
+                <Field name="Field_17" size="4" source="File: C:\Exercises\ch1\Recipe6\DATA\CityBike.txt" type="String" />
+                <Field name="Field_18" source="File: C:\Exercises\ch1\Recipe6\DATA\CityBike.txt" type="Byte" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAutoField" />
+        </Node>
+        <Node ToolID="7">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.FieldInfo.FieldInfo">
+            <Position x="690" y="510" />
+          </GuiSettings>
+          <Properties>
+            <Configuration />
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFieldInfo" />
+        </Node>
+        <Node ToolID="8">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="594" y="462" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\ProgramData\Alteryx\Engine\Engine_15868_b6910c8a30cd4221913b4199f776fe33_\Engine_1172_68d58812571041f584d295cd8937dc27_.yxdb</TempFile>
+              <TempFileDataProfiling />
+              <Layout>
+                <View1>
+                  <Hints>
+                    <Table />
+                  </Hints>
+                </View1>
+              </Layout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+      </ChildNodes>
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="2" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="9" Connection="Source" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="9" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="6" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="11" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="15" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="9" Connection="Output" />
+      <Destination ToolID="10" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="11" Connection="Output" />
+      <Destination ToolID="5" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="15" Connection="Output" />
+      <Destination ToolID="13" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="15" Connection="Output" />
+      <Destination ToolID="17" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="6" Connection="Output" />
+      <Destination ToolID="7" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="6" Connection="Output" />
+      <Destination ToolID="8" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="False" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>GenerateFlat</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="f46533ec-30fb-43e3-a4c4-14589c224bc1" />
+      <Telemetry>
+        <PreviousWorkflowId value="d24a3d06-82d6-471c-9321-c1b559a96104" />
+        <OriginWorkflowId value="d24a3d06-82d6-471c-9321-c1b559a96104" />
+      </Telemetry>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>

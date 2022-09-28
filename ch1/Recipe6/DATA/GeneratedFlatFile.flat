@@ -1,0 +1,21 @@
+<flatfile version="1">
+  <file eoltype="crlf" allowShortLines="t" allowLongLines="f" trimWhiteSpace="t" />
+  <fields>
+    <field name="TRIPDURATION" type="Int32" length="4" />
+    <field name="STARTTIME" type="DateTime" length="19" />
+    <field name="STOPTIME" type="DateTime" length="19" />
+    <field name="START_STATION_ID" type="V_String" length="4" />
+    <field name="START_STATION_NAME" type="V_String" length="33" />
+    <field name="START_STATION_LATITUDE" type="FixedDecimal" length="13" scale="9" />
+    <field name="START_STATION_LONGITUDE" type="FixedDecimal" length="13" scale="9" />
+    <field name="STATION_ID" type="Int32" length="4" />
+    <field name="END_STATION_NAME" type="V_String" length="33" />
+    <field name="END_STATION_LATITUDE" type="FixedDecimal" length="13" scale="9" />
+    <field name="END_STATION_LONGITUDE" type="FixedDecimal" length="13" scale="9" />
+    <field name="BIKE_ID" type="V_String" length="5" />
+    <field name="MEMBERSHIP_TYPE" type="V_String" length="1" />
+    <field name="USERTYPE" type="V_String" length="10" />
+    <field name="BIRTH_YEAR" type="V_String" length="4" />
+    <field name="GENDER" type="Byte" length="1" />
+  </fields>
+</flatfile>

@@ -1,0 +1,129 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2022.1">
+  <Nodes>
+    <Node ToolID="1">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Directory.Directory">
+        <Position x="54" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Directory>..\DATA</Directory>
+          <FileSpec>*.*</FileSpec>
+          <IncludeSubDirs value="True" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>dir ..\DATA\*.*</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDirectory" />
+    </Node>
+    <Node ToolID="2">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="390" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_30156_37c07f787a854994a6a3bf9dca5f952a_\Engine_11656_24abd81bea254473801d13253a954b05_.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <View1>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="5">
+      <GuiSettings>
+        <Position x="174" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Value name="ControlParams"><![CDATA[Control Parameter (2)=FullPath
+]]></Value>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name>BatchReadWorksheets (4)</Name>
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output4">
+          <RecordInfo>
+            <Field name="DATE" source="File: (Multiple Sources)" type="Date" />
+            <Field name="MONTHLY_SALES" source="File: (Multiple Sources)" type="Double" />
+            <Field name="YTD" source="File: C:\Exercises\ch1\Recipe3\DATA\MonthlySales_2022.xlsx" type="Double" />
+            <Field name="FY_2018" source="File: C:\Exercises\ch1\Recipe3\DATA\PREVIOUS YEARS\2018\MonthlySales_2018.xlsx" type="Double" />
+            <Field name="FY 2019" source="File: C:\Exercises\ch1\Recipe3\DATA\PREVIOUS YEARS\2019\MonthlySales_2019.xlsx" type="Double" />
+            <Field name="FY_2020" source="File: C:\Exercises\ch1\Recipe3\DATA\PREVIOUS YEARS\2020\MonthlySales_2020.xlsx" type="Double" />
+            <Field name="FY 2021" source="File: C:\Exercises\ch1\Recipe3\DATA\PREVIOUS YEARS\2021\MonthlySales_2021.xlsx" type="Double" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings Macro="Macros\BatchReadWorksheets.yxmc" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="5" Connection="Control" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="Output4" />
+      <Destination ToolID="2" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="False" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>CH01-R03-DifferentSchema</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="d908d7b6-83fd-4fbe-9918-b9d2ef06ab30" />
+      <Telemetry>
+        <PreviousWorkflowId value="7cbd13eb-1b94-4a71-bf69-989e93cafa74" />
+        <OriginWorkflowId value="7cbd13eb-1b94-4a71-bf69-989e93cafa74" />
+      </Telemetry>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>
