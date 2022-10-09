@@ -1,1 +1,4 @@
 *.csv filter=lfs diff=lfs merge=lfs -text
+*.cydb filter=lfs diff=lfs merge=lfs -text
+*.cyidx filter=lfs diff=lfs merge=lfs -text
+*.zip filter=lfs diff=lfs merge=lfs -text

@@ -1,0 +1,20 @@
+<YXFT>
+  <fields>
+    <field name="TRIPDURATION" type="Double" size="8" description="" />
+    <field name="STARTTIME" type="DateTime" size="19" description="" />
+    <field name="STOPTIME" type="DateTime" size="19" description="" />
+    <field name="START_STATION_ID" type="Double" size="8" description="" />
+    <field name="START_STATION_NAME" type="V_WString" size="512" description="" />
+    <field name="START_STATION_LATITUDE" type="Double" size="8" description="" />
+    <field name="START_STATION_LONGITUDE" type="Double" size="8" description="" />
+    <field name="END_STATION_ID" type="Double" size="8" description="" />
+    <field name="END_STATION_NAME" type="V_WString" size="512" description="" />
+    <field name="END_STATION_LATITUDE" type="Double" size="8" description="" />
+    <field name="END_STATION_LONGITUDE" type="Double" size="8" description="" />
+    <field name="BIKEID" type="Double" size="8" description="" />
+    <field name="MEMBERSHIP_TYPE" type="V_WString" size="512" description="" />
+    <field name="USERTYPE" type="V_WString" size="512" description="" />
+    <field name="BIRTH_YEAR" type="Double" size="8" description="" />
+    <field name="GENDER" type="Double" size="8" description="" />
+  </fields>
+</YXFT>

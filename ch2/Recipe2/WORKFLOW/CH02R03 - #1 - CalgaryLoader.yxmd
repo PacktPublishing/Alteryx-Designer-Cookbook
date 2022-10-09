@@ -1,0 +1,226 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2022.1">
+  <Nodes>
+    <Node ToolID="107">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="54" y="234" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="57">C:\Exercises\ch2\Recipe2\DATA\CitiBikes_2013.zip|||CitiBikes_2013.csv</File>
+          <FormatSpecificOptions>
+            <HeaderRow>True</HeaderRow>
+            <AllowShareWrite>False</AllowShareWrite>
+            <FileNameEncoding>0</FileNameEncoding>
+            <ImportLine>1</ImportLine>
+            <FieldLen>254</FieldLen>
+            <IgnoreErrors>False</IgnoreErrors>
+            <SingleThreadRead>False</SingleThreadRead>
+            <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+            <Delimeter>|</Delimeter>
+            <QuoteRecordBreak>False</QuoteRecordBreak>
+            <FileFormatInner>0</FileFormatInner>
+            <LargeZipFiles>False</LargeZipFiles>
+            <CodePage>28591</CodePage>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>CitiBikes_2013.zip
+Query=CitiBikes_2013.csv</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="TRIPDURATION" size="254" source="File: " type="V_String" />
+            <Field name="STARTTIME" size="254" source="File: " type="V_String" />
+            <Field name="STOPTIME" size="254" source="File: " type="V_String" />
+            <Field name="START_STATION_ID" size="254" source="File: " type="V_String" />
+            <Field name="START_STATION_NAME" size="254" source="File: " type="V_String" />
+            <Field name="START_STATION_LATITUDE" size="254" source="File: " type="V_String" />
+            <Field name="START_STATION_LONGITUDE" size="254" source="File: " type="V_String" />
+            <Field name="END_STATION_ID" size="254" source="File: " type="V_String" />
+            <Field name="END_STATION_NAME" size="254" source="File: " type="V_String" />
+            <Field name="END_STATION_LATITUDE" size="254" source="File: " type="V_String" />
+            <Field name="END_STATION_LONGITUDE" size="254" source="File: " type="V_String" />
+            <Field name="BIKEID" size="254" source="File: " type="V_String" />
+            <Field name="MEMBERSHIP_TYPE" size="254" source="File: " type="V_String" />
+            <Field name="USERTYPE" size="254" source="File: " type="V_String" />
+            <Field name="BIRTH_YEAR" size="254" source="File: " type="V_String" />
+            <Field name="GENDER" size="254" source="File: " type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="106">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="174" y="234" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="TRIPDURATION" selected="True" type="Double" size="8" />
+            <SelectField field="STARTTIME" selected="True" type="DateTime" size="19" />
+            <SelectField field="STOPTIME" selected="True" type="DateTime" size="19" />
+            <SelectField field="START_STATION_ID" selected="True" type="Double" size="8" />
+            <SelectField field="START_STATION_NAME" selected="True" type="V_WString" size="512" />
+            <SelectField field="START_STATION_LATITUDE" selected="True" type="Double" size="8" />
+            <SelectField field="START_STATION_LONGITUDE" selected="True" type="Double" size="8" />
+            <SelectField field="END_STATION_ID" selected="True" type="Double" size="8" />
+            <SelectField field="END_STATION_NAME" selected="True" type="V_WString" size="512" />
+            <SelectField field="END_STATION_LATITUDE" selected="True" type="Double" size="8" />
+            <SelectField field="END_STATION_LONGITUDE" selected="True" type="Double" size="8" />
+            <SelectField field="BIKEID" selected="True" type="Double" size="8" />
+            <SelectField field="MEMBERSHIP_TYPE" selected="True" type="V_WString" size="512" />
+            <SelectField field="USERTYPE" selected="True" type="V_WString" size="512" />
+            <SelectField field="BIRTH_YEAR" selected="True" type="Double" size="8" />
+            <SelectField field="GENDER" selected="True" type="Double" size="8" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="113">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="401" y="173" width="266" height="146" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Creates the Calgary DB &amp; Indices</Caption>
+          <Style TextColor="#314c4a" FillColor="#ffffff" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="True" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="104">
+          <GuiSettings Plugin="CalgaryLoadersGui.CalgaryLoader.CalgaryLoader">
+            <Position x="426" y="234" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <RootFileName>..\CALGARY\CitiBike.cydb</RootFileName>
+              <UseLicenseKey value="False" />
+              <Fields>
+                <Field field="TRIPDURATION" data="True" index="True" indexType="Auto" />
+                <Field field="STARTTIME" data="True" index="True" indexType="Auto" />
+                <Field field="STOPTIME" data="True" index="True" indexType="Auto" />
+                <Field field="START_STATION_ID" data="True" index="True" indexType="Auto" />
+                <Field field="START_STATION_NAME" data="True" index="True" indexType="Auto" />
+                <Field field="START_STATION_LATITUDE" data="True" index="True" indexType="Auto" />
+                <Field field="START_STATION_LONGITUDE" data="True" index="True" indexType="Auto" />
+                <Field field="END_STATION_ID" data="True" index="True" indexType="Auto" />
+                <Field field="END_STATION_NAME" data="True" index="True" indexType="Auto" />
+                <Field field="END_STATION_LATITUDE" data="True" index="True" indexType="Auto" />
+                <Field field="END_STATION_LONGITUDE" data="True" index="True" indexType="Auto" />
+                <Field field="BIKEID" data="True" index="True" indexType="Auto" />
+                <Field field="MEMBERSHIP_TYPE" data="True" index="True" indexType="Auto" />
+                <Field field="USERTYPE" data="True" index="True" indexType="Auto" />
+                <Field field="BIRTH_YEAR" data="True" index="True" indexType="Auto" />
+                <Field field="GENDER" data="True" index="True" indexType="Auto" />
+              </Fields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>CitiBike.cydb</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="CalgaryLoaders.dll" EngineDllEntryPoint="AlteryxCalgaryLoader" />
+        </Node>
+        <Node ToolID="115">
+          <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+            <Position x="498" y="222" width="144" height="72" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Text>Enable this container to actually save the Calgary DB.</Text>
+              <Font name="Arial" size="9.75" style="0" />
+              <TextColor name="White" />
+              <FillColor r="227" g="82" b="5" />
+              <Shape shape="0" />
+              <Justification Justification="4" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+        </Node>
+      </ChildNodes>
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="107" Connection="Output" />
+      <Destination ToolID="106" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="106" Connection="Output" />
+      <Destination ToolID="104" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="False" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>CH02R03 - CalgaryLoader</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="7923f0db-c808-4b3c-bfae-739f2ff185ec" />
+      <Telemetry>
+        <PreviousWorkflowId value="d8cf81db-c30c-4e5f-a410-c7554903bca7" />
+        <OriginWorkflowId value="238c5aef-0a6c-4ba7-9042-fc68c529f8a3" />
+      </Telemetry>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>
