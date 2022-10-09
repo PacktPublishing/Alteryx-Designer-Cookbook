@@ -1,0 +1,461 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2022.1">
+  <Nodes>
+    <Node ToolID="19">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="378" y="162" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="AGE" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="Range_Age" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Right_Range_Age" selected="False" input="Right_" />
+                <SelectField field="Right_MIN_AGE" selected="False" input="Right_" />
+                <SelectField field="Right_MAX_AGE" selected="False" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Join by Age to determine the CATEGORY.</AnnotationText>
+          <DefaultAnnotationText>Join by Age</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="23">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="474" y="246" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_5888_fdaaadcf83b4194e8d9af0a56a34e04d_\Engine_5888_bdd6247384b4dc4cbb0d9844498a43da~.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <View1>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Ages from Ranges, not present in the Dataset</AnnotationText>
+          <DefaultAnnotationText>Ages from Ranges, not present in the Dataset</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="25">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="534" y="162" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="CATEGORY" action="GroupBy" rename="CATEGORY" />
+            <SummarizeField field="BIKEID" action="Count" rename="Count" />
+            <SummarizeField field="AGE" action="Min" rename="Min_AGE" />
+            <SummarizeField field="AGE" action="Max" rename="Max_AGE" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Gets the number of people per Year CATEGORY, and the Min and Max ages for each CATEGORY contained within our Dataset.</AnnotationText>
+          <DefaultAnnotationText>Gets the number of people per Year CATEGORY, and the Min and Max ages for each CATEGORY contained within our Dataset.</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="34">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="378" y="438" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="BIRTH_YEAR" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="Range_BIRTH" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Right_Range_BIRTH" selected="False" input="Right_" />
+                <SelectField field="Right_MIN_BIRTH" selected="False" input="Right_" />
+                <SelectField field="Right_MAX_BIRTH" selected="False" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Join by Birth Year to determine to which GENERATION the person belongs to.</AnnotationText>
+          <DefaultAnnotationText>Join by Birth Year</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="37">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="474" y="522" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_5888_fdaaadcf83b4194e8d9af0a56a34e04d_\Engine_5888_2a89c62e9a77b844a18183893279676f~.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <View1>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Al birth years without records within the dataset.</AnnotationText>
+          <DefaultAnnotationText>Al birth years without records within the dataset.</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="38">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="534" y="438" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="GENERATION" action="GroupBy" rename="GENERATION" />
+            <SummarizeField field="BIKEID" action="Count" rename="Count" />
+            <SummarizeField field="AGE" action="Min" rename="Min_AGE" />
+            <SummarizeField field="AGE" action="Max" rename="Max_AGE" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Gets the number of people per GENERATION, and the Min and Max ages for each GENERATION contained within our Dataset.</AnnotationText>
+          <DefaultAnnotationText>Gets the number of people per GENERATION, and the Min and Max ages for each GENERATION contained within our Dataset.</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="41">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="80" y="56" width="125" height="135" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Dataset</Caption>
+          <Style TextColor="#314c4a" FillColor="#ffffff" BorderColor="#314c4a" Transparency="25" Margin="10" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="29">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="90" y="90" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <File OutputFileName="" FileFormat="19" SearchSubDirs="False" RecordLimit="">..\DATA\CityBike_extract.yxdb</File>
+              <FormatSpecificOptions />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>CityBike_extract.yxdb</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="TRIPDURATION" source="In-DB:DB=SnowFlake_Demo;" type="Double" />
+                <Field name="STARTTIME" source="Formula: DateTimeAdd([STARTTIME],9,'years')" type="DateTime" />
+                <Field name="STOPTIME" source="Formula: DateTimeAdd([STOPTIME],9,'years')" type="DateTime" />
+                <Field name="START_STATION_ID" source="In-DB:DB=SnowFlake_Demo;" type="Double" />
+                <Field name="START_STATION_NAME" size="512" source="In-DB:DB=SnowFlake_Demo;" type="V_WString" />
+                <Field name="START_STATION_LATITUDE" source="In-DB:DB=SnowFlake_Demo;" type="Double" />
+                <Field name="START_STATION_LONGITUDE" source="In-DB:DB=SnowFlake_Demo;" type="Double" />
+                <Field name="END_STATION_ID" source="In-DB:DB=SnowFlake_Demo;" type="Double" />
+                <Field name="END_STATION_NAME" size="512" source="In-DB:DB=SnowFlake_Demo;" type="V_WString" />
+                <Field name="END_STATION_LATITUDE" source="In-DB:DB=SnowFlake_Demo;" type="Double" />
+                <Field name="END_STATION_LONGITUDE" source="In-DB:DB=SnowFlake_Demo;" type="Double" />
+                <Field name="BIKEID" source="In-DB:DB=SnowFlake_Demo;" type="Double" />
+                <Field name="MEMBERSHIP_TYPE" size="512" source="In-DB:DB=SnowFlake_Demo;" type="V_WString" />
+                <Field name="USERTYPE" size="512" source="In-DB:DB=SnowFlake_Demo;" type="V_WString" />
+                <Field name="BIRTH_YEAR" source="Formula: If (IsNull([BIRTH_YEAR]) OR [BIRTH_YEAR]&lt;1930)&#xA;THEN RandInt(60)+1960&#xA;ELSE [BIRTH_YEAR]&#xA;ENDIF" type="Int16" />
+                <Field name="GENDER" source="In-DB:DB=SnowFlake_Demo;" type="Double" />
+                <Field name="BIRTH_MONTH" source="Formula: RandInt(11)+1" type="Int16" />
+                <Field name="BIRTH_DAY" size="1073741823" source="Formula: IIF([BIRTH_MONTH]=2,&#xA;PadLeft(ToString(RandInt(27)+1),2,&quot;0&quot;),&#xA;PadLeft(ToString(RandInt(29)+1),2,&quot;0&quot;)&#xA;)" type="V_WString" />
+                <Field name="BIRTHDAY_STR" size="1073741823" source="Formula: ToString([BIRTH_YEAR]) + &quot;-&quot; +&#xA;PadLeft(ToString([BIRTH_MONTH]),2,&quot;0&quot;) + &quot;-&quot;+&#xA;[BIRTH_DAY]" type="V_WString" />
+                <Field name="BIRTHDAY" source="DateTime: To yyyy-MM-dd" type="Date" />
+                <Field name="AGE" source="Formula: DateTimeDiff(DateTimeStart(),[BIRTHDAY],'years')" type="Int16" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="40">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="44" y="224" width="179" height="150" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Age Ranges Table</Caption>
+          <Style TextColor="#314c4a" FillColor="#ffffff" BorderColor="#314c4a" Transparency="25" Margin="10" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="30">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="54" y="258" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">..\DATA\Ranges.xlsx|||`CATEGORIES by AGE$`</File>
+              <FormatSpecificOptions>
+                <FirstRowData>False</FirstRowData>
+                <ImportLine>1</ImportLine>
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Ranges.xlsx
+Query=`CATEGORIES by AGE$`</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="CATEGORY" size="255" source="File: C:\Exercises\ch3\Recipe2\DATA\Ranges.xlsx|||`CATEGORIES by AGE$`" type="V_String" />
+                <Field name="MIN" source="File: C:\Exercises\ch3\Recipe2\DATA\Ranges.xlsx|||`CATEGORIES by AGE$`" type="Double" />
+                <Field name="MAX" source="File: C:\Exercises\ch3\Recipe2\DATA\Ranges.xlsx|||`CATEGORIES by AGE$`" type="Double" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+        <Node ToolID="13">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.GenerateRows.GenerateRows">
+            <Position x="150" y="258" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <UpdateField value="False" />
+              <UpdateField_Name />
+              <CreateField_Name>Range_Age</CreateField_Name>
+              <CreateField_Type>Int32</CreateField_Type>
+              <CreateField_Size>4</CreateField_Size>
+              <Expression_Init>[MIN]</Expression_Init>
+              <Expression_Cond>Range_Age &lt;= [MAX]</Expression_Cond>
+              <Expression_Loop>Range_Age + 1</Expression_Loop>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxGenerateRows" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="42">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="44" y="464" width="199" height="150" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Generations Ranges</Caption>
+          <Style TextColor="#314c4a" FillColor="#ffffff" BorderColor="#314c4a" Transparency="25" Margin="10" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="33">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="54" y="498" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">..\DATA\Ranges.xlsx|||`GENERATIONS$`</File>
+              <FormatSpecificOptions>
+                <FirstRowData>False</FirstRowData>
+                <ImportLine>1</ImportLine>
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Ranges.xlsx
+Query=`GENERATIONS$`</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="GENERATION" size="255" source="File: C:\Exercises\ch3\Recipe2\DATA\Ranges.xlsx|||`GENERATIONS$`" type="V_String" />
+                <Field name="MIN" source="File: C:\Exercises\ch3\Recipe2\DATA\Ranges.xlsx|||`GENERATIONS$`" type="Double" />
+                <Field name="MAX" source="File: C:\Exercises\ch3\Recipe2\DATA\Ranges.xlsx|||`GENERATIONS$`" type="Double" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+        <Node ToolID="31">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.GenerateRows.GenerateRows">
+            <Position x="174" y="498" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <UpdateField value="False" />
+              <UpdateField_Name />
+              <CreateField_Name>Range_BIRTH</CreateField_Name>
+              <CreateField_Type>Int16</CreateField_Type>
+              <CreateField_Size>2</CreateField_Size>
+              <Expression_Init>[MIN]</Expression_Init>
+              <Expression_Cond>Range_BIRTH &lt;= [MAX]</Expression_Cond>
+              <Expression_Loop>Range_BIRTH + 1</Expression_Loop>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxGenerateRows" />
+        </Node>
+      </ChildNodes>
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="19" Connection="Right" />
+      <Destination ToolID="23" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="19" Connection="Join" />
+      <Destination ToolID="25" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="34" Connection="Right" />
+      <Destination ToolID="37" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="34" Connection="Join" />
+      <Destination ToolID="38" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="29" Connection="Output" />
+      <Destination ToolID="19" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="13" Connection="Output" />
+      <Destination ToolID="19" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="29" Connection="Output" />
+      <Destination ToolID="34" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="31" Connection="Output" />
+      <Destination ToolID="34" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="30" Connection="Output" />
+      <Destination ToolID="13" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="33" Connection="Output" />
+      <Destination ToolID="31" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <RunWithE2 value="True" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="False" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>CH03-R02-Working with Ranges</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="a95a5db2-e679-4410-9067-610c3cf72c43" />
+      <Telemetry>
+        <PreviousWorkflowId value="36d2c3c8-6d78-4238-8072-7f21e079a6f9" />
+        <OriginWorkflowId value="2f98e045-a9f6-4182-a862-26ae1c807c10" />
+      </Telemetry>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>

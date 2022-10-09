@@ -1,0 +1,306 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2022.1">
+  <Nodes>
+    <Node ToolID="1">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="54" y="211" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File RecordLimit="" SearchSubDirs="False" FileFormat="0" OutputFileName="">..\DATA\CitiBikes_2013.csv</File>
+          <FormatSpecificOptions>
+            <HeaderRow>True</HeaderRow>
+            <IgnoreErrors>False</IgnoreErrors>
+            <AllowShareWrite>False</AllowShareWrite>
+            <ImportLine>1</ImportLine>
+            <FieldLen>254</FieldLen>
+            <SingleThreadRead>False</SingleThreadRead>
+            <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+            <Delimeter>|</Delimeter>
+            <QuoteRecordBreak>False</QuoteRecordBreak>
+            <CodePage>28591</CodePage>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>CitiBikes_2013.csv</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="TRIPDURATION" size="254" source="File: C:\Exercises\ch3\Recipe1\DATA\CitiBikes_2013.csv" type="V_String" />
+            <Field name="STARTTIME" size="254" source="File: C:\Exercises\ch3\Recipe1\DATA\CitiBikes_2013.csv" type="V_String" />
+            <Field name="STOPTIME" size="254" source="File: C:\Exercises\ch3\Recipe1\DATA\CitiBikes_2013.csv" type="V_String" />
+            <Field name="START_STATION_ID" size="254" source="File: C:\Exercises\ch3\Recipe1\DATA\CitiBikes_2013.csv" type="V_String" />
+            <Field name="START_STATION_NAME" size="254" source="File: C:\Exercises\ch3\Recipe1\DATA\CitiBikes_2013.csv" type="V_String" />
+            <Field name="START_STATION_LATITUDE" size="254" source="File: C:\Exercises\ch3\Recipe1\DATA\CitiBikes_2013.csv" type="V_String" />
+            <Field name="START_STATION_LONGITUDE" size="254" source="File: C:\Exercises\ch3\Recipe1\DATA\CitiBikes_2013.csv" type="V_String" />
+            <Field name="END_STATION_ID" size="254" source="File: C:\Exercises\ch3\Recipe1\DATA\CitiBikes_2013.csv" type="V_String" />
+            <Field name="END_STATION_NAME" size="254" source="File: C:\Exercises\ch3\Recipe1\DATA\CitiBikes_2013.csv" type="V_String" />
+            <Field name="END_STATION_LATITUDE" size="254" source="File: C:\Exercises\ch3\Recipe1\DATA\CitiBikes_2013.csv" type="V_String" />
+            <Field name="END_STATION_LONGITUDE" size="254" source="File: C:\Exercises\ch3\Recipe1\DATA\CitiBikes_2013.csv" type="V_String" />
+            <Field name="BIKEID" size="254" source="File: C:\Exercises\ch3\Recipe1\DATA\CitiBikes_2013.csv" type="V_String" />
+            <Field name="MEMBERSHIP_TYPE" size="254" source="File: C:\Exercises\ch3\Recipe1\DATA\CitiBikes_2013.csv" type="V_String" />
+            <Field name="USERTYPE" size="254" source="File: C:\Exercises\ch3\Recipe1\DATA\CitiBikes_2013.csv" type="V_String" />
+            <Field name="BIRTH_YEAR" size="254" source="File: C:\Exercises\ch3\Recipe1\DATA\CitiBikes_2013.csv" type="V_String" />
+            <Field name="GENDER" size="254" source="File: C:\Exercises\ch3\Recipe1\DATA\CitiBikes_2013.csv" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="6">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="197" y="257" width="257" height="174" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Apply saved Field Configuration</Caption>
+          <Style TextColor="#314c4a" FillColor="#ffffff" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="2">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="246" y="306" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="TRIPDURATION" selected="True" type="Int32" size="4" />
+                <SelectField field="STARTTIME" selected="True" type="DateTime" size="19" />
+                <SelectField field="STOPTIME" selected="True" type="DateTime" size="19" />
+                <SelectField field="START_STATION_ID" selected="True" type="Int16" size="2" />
+                <SelectField field="START_STATION_NAME" selected="True" size="46" />
+                <SelectField field="START_STATION_LATITUDE" selected="True" type="Double" size="8" />
+                <SelectField field="START_STATION_LONGITUDE" selected="True" type="Double" size="8" />
+                <SelectField field="END_STATION_ID" selected="True" type="Int16" size="2" />
+                <SelectField field="END_STATION_NAME" selected="True" size="46" />
+                <SelectField field="END_STATION_LATITUDE" selected="True" type="Double" size="8" />
+                <SelectField field="END_STATION_LONGITUDE" selected="True" type="Double" size="8" />
+                <SelectField field="BIKEID" selected="True" type="Int16" size="2" />
+                <SelectField field="MEMBERSHIP_TYPE" selected="True" type="Bool" size="1" />
+                <SelectField field="USERTYPE" selected="True" type="String" size="10" />
+                <SelectField field="BIRTH_YEAR" selected="True" type="Int16" size="2" />
+                <SelectField field="GENDER" selected="True" type="Byte" size="1" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="11">
+          <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+            <Position x="222" y="366" width="204" height="40" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Text>Use this Select tool to Load the Saved Field configurations.</Text>
+              <Font name="Arial" size="8.25" style="0" />
+              <TextColor name="Black" />
+              <FillColor name="White" />
+              <Shape shape="0" />
+              <Justification Justification="3" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="5">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="197" y="28" width="290" height="206" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>AutoField to get the optimal structure</Caption>
+          <Style TextColor="#314c4a" FillColor="#ffffff" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="True" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="3">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AutoField.AutoField">
+            <Position x="222" y="77" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Fields>
+                <Field field="TRIPDURATION" selected="True" />
+                <Field field="STARTTIME" selected="True" />
+                <Field field="STOPTIME" selected="True" />
+                <Field field="START_STATION_ID" selected="True" />
+                <Field field="START_STATION_NAME" selected="True" />
+                <Field field="START_STATION_LATITUDE" selected="True" />
+                <Field field="START_STATION_LONGITUDE" selected="True" />
+                <Field field="END_STATION_ID" selected="True" />
+                <Field field="END_STATION_NAME" selected="True" />
+                <Field field="END_STATION_LATITUDE" selected="True" />
+                <Field field="END_STATION_LONGITUDE" selected="True" />
+                <Field field="BIKEID" selected="True" />
+                <Field field="MEMBERSHIP_TYPE" selected="True" />
+                <Field field="USERTYPE" selected="True" />
+                <Field field="BIRTH_YEAR" selected="True" />
+                <Field field="GENDER" selected="True" />
+                <Field field="*Unknown" selected="False" />
+              </Fields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="TRIPDURATION" source="File: C:\Exercises\AUXILIAR\ch2\CitiBikes_2013.csv" type="Int32" />
+                <Field name="STARTTIME" source="File: C:\Exercises\AUXILIAR\ch2\CitiBikes_2013.csv" type="DateTime" />
+                <Field name="STOPTIME" source="File: C:\Exercises\AUXILIAR\ch2\CitiBikes_2013.csv" type="DateTime" />
+                <Field name="START_STATION_ID" source="File: C:\Exercises\AUXILIAR\ch2\CitiBikes_2013.csv" type="Int16" />
+                <Field name="START_STATION_NAME" size="46" source="File: C:\Exercises\AUXILIAR\ch2\CitiBikes_2013.csv" type="V_String" />
+                <Field name="START_STATION_LATITUDE" source="File: C:\Exercises\AUXILIAR\ch2\CitiBikes_2013.csv" type="Double" />
+                <Field name="START_STATION_LONGITUDE" source="File: C:\Exercises\AUXILIAR\ch2\CitiBikes_2013.csv" type="Double" />
+                <Field name="END_STATION_ID" source="File: C:\Exercises\AUXILIAR\ch2\CitiBikes_2013.csv" type="Int16" />
+                <Field name="END_STATION_NAME" size="46" source="File: C:\Exercises\AUXILIAR\ch2\CitiBikes_2013.csv" type="V_String" />
+                <Field name="END_STATION_LATITUDE" source="File: C:\Exercises\AUXILIAR\ch2\CitiBikes_2013.csv" type="Double" />
+                <Field name="END_STATION_LONGITUDE" source="File: C:\Exercises\AUXILIAR\ch2\CitiBikes_2013.csv" type="Double" />
+                <Field name="BIKEID" source="File: C:\Exercises\AUXILIAR\ch2\CitiBikes_2013.csv" type="Int16" />
+                <Field name="MEMBERSHIP_TYPE" source="File: C:\Exercises\AUXILIAR\ch2\CitiBikes_2013.csv" type="Bool" />
+                <Field name="USERTYPE" size="10" source="File: C:\Exercises\AUXILIAR\ch2\CitiBikes_2013.csv" type="String" />
+                <Field name="BIRTH_YEAR" source="File: C:\Exercises\AUXILIAR\ch2\CitiBikes_2013.csv" type="Int16" />
+                <Field name="GENDER" source="File: C:\Exercises\AUXILIAR\ch2\CitiBikes_2013.csv" type="Byte" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAutoField" />
+        </Node>
+        <Node ToolID="4">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="342" y="78" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="10">
+          <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+            <Position x="222" y="150" width="240" height="60" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Text>Save the Field's Configuration so you can reuse it later (without the overhead of running the Auto field tool again).
+Then, you can disable this container.</Text>
+              <Font name="Arial" size="8.25" style="0" />
+              <TextColor name="Black" />
+              <FillColor name="White" />
+              <Shape shape="0" />
+              <Justification Justification="3" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+        </Node>
+      </ChildNodes>
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="2" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="3" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="Output" />
+      <Destination ToolID="4" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="True" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="False" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>CH03-R01-Saving field config from Select</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="4cd7dbfc-68b0-4ba3-a587-cae5f15b9388" />
+      <Telemetry>
+        <PreviousWorkflowId value="1e84001a-48e2-4836-9786-09a6ba0d5a32" />
+        <OriginWorkflowId value="1e84001a-48e2-4836-9786-09a6ba0d5a32" />
+      </Telemetry>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>

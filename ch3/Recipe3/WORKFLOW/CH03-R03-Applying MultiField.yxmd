@@ -1,0 +1,268 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2022.1">
+  <Nodes>
+    <Node ToolID="1">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="54" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" FileFormat="19" SearchSubDirs="False" RecordLimit="">..\DATA\ARTICLES.yxdb</File>
+          <FormatSpecificOptions />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>ARTICLES.yxdb</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="ARTICLE_ID" size="15" source="CrossTab:Group:Avg:" type="V_String" />
+            <Field name="January" source="CrossTab:Header:MONTH:January:Avg:" type="Double" />
+            <Field name="February" source="CrossTab:Header:MONTH:February:Avg:" type="Double" />
+            <Field name="March" source="CrossTab:Header:MONTH:March:Avg:" type="Double" />
+            <Field name="April" source="CrossTab:Header:MONTH:April:Avg:" type="Double" />
+            <Field name="May" source="CrossTab:Header:MONTH:May:Avg:" type="Double" />
+            <Field name="June" source="CrossTab:Header:MONTH:June:Avg:" type="Double" />
+            <Field name="July" source="CrossTab:Header:MONTH:July:Avg:" type="Double" />
+            <Field name="August" source="CrossTab:Header:MONTH:August:Avg:" type="Double" />
+            <Field name="September" source="CrossTab:Header:MONTH:September:Avg:" type="Double" />
+            <Field name="October" source="CrossTab:Header:MONTH:October:Avg:" type="Double" />
+            <Field name="November" source="CrossTab:Header:MONTH:November:Avg:" type="Double" />
+            <Field name="December" source="CrossTab:Header:MONTH:December:Avg:" type="Double" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="2">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MultiFieldFormula.MultiFieldFormula">
+        <Position x="222" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FieldType>Numeric</FieldType>
+          <Fields orderChanged="False">
+            <Field name="January" />
+            <Field name="February" />
+            <Field name="March" />
+            <Field name="April" />
+            <Field name="May" />
+            <Field name="June" />
+            <Field name="July" />
+            <Field name="August" />
+            <Field name="September" />
+            <Field name="October" />
+            <Field name="November" />
+            <Field name="December" />
+            <Field name="*Unknown" />
+          </Fields>
+          <CopyOutput value="False" />
+          <Expression>IF [_CurrentFieldName_] IN ("January","February","March")
+THEN [_CurrentField_]*1.01
+ELSE [_CurrentField_]*1.05
+ENDIF</Expression>
+          <ChangeFieldType value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>IF [_CurrentFieldName_] IN ("January","February","March")
+THE...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMultiFieldFormula" />
+    </Node>
+    <Node ToolID="3">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="414" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_3456_83447896a2784922ba93e6774229387d_\Engine_4032_868704ce3e0a419fbc75a4560351d6a1_.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <View1>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="4">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MultiFieldFormula.MultiFieldFormula">
+        <Position x="222" y="258" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FieldType>Numeric</FieldType>
+          <Fields orderChanged="False">
+            <Field name="January" />
+            <Field name="February" />
+            <Field name="March" />
+            <Field name="April" />
+            <Field name="May" />
+            <Field name="June" />
+            <Field name="July" />
+            <Field name="August" />
+            <Field name="September" />
+            <Field name="October" />
+            <Field name="November" />
+            <Field name="December" />
+            <Field name="*Unknown" />
+            <Field name="YEARLY_SALES" selected="False" />
+          </Fields>
+          <NewFieldAddOn>_%_Over_Total</NewFieldAddOn>
+          <NewFieldAddOnPos>Suffix</NewFieldAddOnPos>
+          <CopyOutput value="True" />
+          <Expression>([_CurrentField_]/[YEARLY_SALES])*100</Expression>
+          <ChangeFieldType value="True" />
+          <OutputFieldType type="FixedDecimal" size="5" scale="2" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>([_CurrentField_]/[YEARLY_SALES])*100</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMultiFieldFormula" />
+    </Node>
+    <Node ToolID="5">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="78" y="258" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" FileFormat="19" SearchSubDirs="False" RecordLimit="">..\DATA\ARTICLE_Sales.yxdb</File>
+          <FormatSpecificOptions />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>ARTICLE_Sales.yxdb</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="ARTICLE_ID" size="15" source="CrossTab:Group:Sum:" type="V_String" />
+            <Field name="January" source="CrossTab:Header:MONTH:January:Sum:" type="Double" />
+            <Field name="February" source="CrossTab:Header:MONTH:February:Sum:" type="Double" />
+            <Field name="March" source="CrossTab:Header:MONTH:March:Sum:" type="Double" />
+            <Field name="April" source="CrossTab:Header:MONTH:April:Sum:" type="Double" />
+            <Field name="May" source="CrossTab:Header:MONTH:May:Sum:" type="Double" />
+            <Field name="June" source="CrossTab:Header:MONTH:June:Sum:" type="Double" />
+            <Field name="July" source="CrossTab:Header:MONTH:July:Sum:" type="Double" />
+            <Field name="August" source="CrossTab:Header:MONTH:August:Sum:" type="Double" />
+            <Field name="September" source="CrossTab:Header:MONTH:September:Sum:" type="Double" />
+            <Field name="October" source="CrossTab:Header:MONTH:October:Sum:" type="Double" />
+            <Field name="November" source="CrossTab:Header:MONTH:November:Sum:" type="Double" />
+            <Field name="December" source="CrossTab:Header:MONTH:December:Sum:" type="Double" />
+            <Field name="YEARLY_SALES" source="Formula: [January]+[February]+[March]+[April]+[May]+[June]+[July]+[August]+[September]+[October]+[November]+[December]" type="Int32" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="6">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="366" y="258" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_3456_83447896a2784922ba93e6774229387d_\Engine_4032_e487530530114697b5450d01594c7ac3_.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <View1>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="2" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="3" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="6" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="Output" />
+      <Destination ToolID="4" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="False" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>CH03-R03-Applying MultiField</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="44c7423a-dc0f-4e9f-8283-0e7f70e1f096" />
+      <Telemetry>
+        <PreviousWorkflowId value="2c7adad2-b516-4422-b43f-7e6e61724b48" />
+        <OriginWorkflowId value="2c7adad2-b516-4422-b43f-7e6e61724b48" />
+      </Telemetry>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>
