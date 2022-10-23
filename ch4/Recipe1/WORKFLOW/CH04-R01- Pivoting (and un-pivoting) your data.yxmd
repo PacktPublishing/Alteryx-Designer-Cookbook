@@ -1,0 +1,410 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2022.1">
+  <Nodes>
+    <Node ToolID="40">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.RecordID.RecordID">
+        <Position x="138" y="175" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FieldName>RecordID</FieldName>
+          <StartValue>1</StartValue>
+          <FieldType>Int32</FieldType>
+          <FieldSize>6</FieldSize>
+          <Position>0</Position>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxRecordID" />
+    </Node>
+    <Node ToolID="71">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="54" y="175" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">..\DATA\RawData.xlsx|||`RawData$`</File>
+          <FormatSpecificOptions>
+            <FirstRowData>False</FirstRowData>
+            <ImportLine>1</ImportLine>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>RawData.xlsx
+Query=`RawData$`</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Category" size="255" source="File: C:\Exercises\ch4\Recipe1\DATA\RawData.xlsx|||`RawData$`" type="V_String" />
+            <Field name="Year" source="File: C:\Exercises\ch4\Recipe1\DATA\RawData.xlsx|||`RawData$`" type="Double" />
+            <Field name="Month" source="File: C:\Exercises\ch4\Recipe1\DATA\RawData.xlsx|||`RawData$`" type="Double" />
+            <Field name="CASH_SALES" source="File: C:\Exercises\ch4\Recipe1\DATA\RawData.xlsx|||`RawData$`" type="Double" />
+            <Field name="CASH_AMOUNT" source="File: C:\Exercises\ch4\Recipe1\DATA\RawData.xlsx|||`RawData$`" type="Double" />
+            <Field name="CREDIT_SALES" source="File: C:\Exercises\ch4\Recipe1\DATA\RawData.xlsx|||`RawData$`" type="Double" />
+            <Field name="CREDIT_AMOUNT" source="File: C:\Exercises\ch4\Recipe1\DATA\RawData.xlsx|||`RawData$`" type="Double" />
+            <Field name="TOTAL_SALES" source="File: C:\Exercises\ch4\Recipe1\DATA\RawData.xlsx|||`RawData$`" type="Double" />
+            <Field name="TOTAL_AMOUNT" source="File: C:\Exercises\ch4\Recipe1\DATA\RawData.xlsx|||`RawData$`" type="Double" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="80">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="197" y="222" width="457" height="180" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>3 Months Rolling Average</Caption>
+          <Style TextColor="#314c4a" FillColor="#ffffff" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="38">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.MultiRowFormula.MultiRowFormula">
+            <Position x="330" y="271" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <UpdateField value="False" />
+              <UpdateField_Name>HP Category</UpdateField_Name>
+              <CreateField_Name>Rolling_AVG_3</CreateField_Name>
+              <CreateField_Type>Double</CreateField_Type>
+              <CreateField_Size>8</CreateField_Size>
+              <OtherRows>Nearest</OtherRows>
+              <NumRows value="2" />
+              <Expression>Average([Row-2:Value], [Row-1:Value], [Value])</Expression>
+              <GroupByFields>
+                <Field field="Category" />
+                <Field field="Name" />
+              </GroupByFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Average([Row-2:Value], [Row-1:Value], [Value])</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMultiRowFormula" />
+        </Node>
+        <Node ToolID="39">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Transpose.Transpose">
+            <Position x="222" y="271" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <ErrorWarn>Warn</ErrorWarn>
+              <KeyFields>
+                <Field field="RecordID" />
+                <Field field="Category" />
+              </KeyFields>
+              <DataFields>
+                <Field field="RecordID" selected="False" />
+                <Field field="Category" selected="False" />
+                <Field field="Year" selected="False" />
+                <Field field="Month" selected="False" />
+                <Field field="CASH_SALES" selected="True" />
+                <Field field="CASH_AMOUNT" selected="True" />
+                <Field field="CREDIT_SALES" selected="True" />
+                <Field field="CREDIT_AMOUNT" selected="True" />
+                <Field field="TOTAL_SALES" selected="True" />
+                <Field field="TOTAL_AMOUNT" selected="True" />
+                <Field field="*Unknown" selected="False" />
+              </DataFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <AnnotationText><![CDATA[
+]]></AnnotationText>
+              <DefaultAnnotationText>Transpose all data fields to reduce the quantity of row formula operations necessary</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTranspose" />
+        </Node>
+        <Node ToolID="43">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.CrossTab.CrossTab">
+            <Position x="438" y="271" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <GroupFields>
+                <Field field="RecordID" />
+              </GroupFields>
+              <HeaderField field="Name" />
+              <DataField field="Rolling_AVG_3" />
+              <Methods>
+                <Method method="First" />
+              </Methods>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <AnnotationText><![CDATA[ ]]></AnnotationText>
+              <DefaultAnnotationText>Use Crosstab to rearrange back to original form</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="RecordID" source="CrossTab:Group:First:" type="Int32" />
+                <Field description="Formula: Average([Row-2:Value], [Row-1:Value], [Value])" name="CASH_AMOUNT" source="Formula: Average([Row-2:Value], [Row-1:Value], [Value])" type="Double" />
+                <Field description="Formula: Average([Row-2:Value], [Row-1:Value], [Value])" name="CASH_SALES" source="Formula: Average([Row-2:Value], [Row-1:Value], [Value])" type="Double" />
+                <Field description="Formula: Average([Row-2:Value], [Row-1:Value], [Value])" name="CREDIT_AMOUNT" source="Formula: Average([Row-2:Value], [Row-1:Value], [Value])" type="Double" />
+                <Field description="Formula: Average([Row-2:Value], [Row-1:Value], [Value])" name="CREDIT_SALES" source="Formula: Average([Row-2:Value], [Row-1:Value], [Value])" type="Double" />
+                <Field description="Formula: Average([Row-2:Value], [Row-1:Value], [Value])" name="TOTAL_AMOUNT" source="Formula: Average([Row-2:Value], [Row-1:Value], [Value])" type="Double" />
+                <Field description="Formula: Average([Row-2:Value], [Row-1:Value], [Value])" name="TOTAL_SALES" source="Formula: Average([Row-2:Value], [Row-1:Value], [Value])" type="Double" />
+              </RecordInfo>
+              <SortInfo>
+                <Field field="RecordID" order="Asc" />
+              </SortInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxCrossTab" />
+        </Node>
+        <Node ToolID="73">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="570" y="271" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="CASH_AMOUNT" selected="True" rename="RollAvg_3_Months_CASH_AMOUNT" />
+                <SelectField field="CASH_SALES" selected="True" rename="RollAvg_3_Months_CASH_SALES" />
+                <SelectField field="CREDIT_AMOUNT" selected="True" rename="RollAvg_3_Months_CREDIT_AMOUNT" />
+                <SelectField field="CREDIT_SALES" selected="True" rename="RollAvg_3_Months_CREDIT_SALES" />
+                <SelectField field="TOTAL_AMOUNT" selected="True" rename="RollAvg_3_Months_TOTAL_AMOUNT" />
+                <SelectField field="TOTAL_SALES" selected="True" rename="RollAvg_3_Months_TOTAL_SALES" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="76">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="665" y="54" width="323" height="301" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Joins Original data with the Rolling Average</Caption>
+          <Style TextColor="#314c4a" FillColor="#ffffff" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="75">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+            <Position x="690" y="187" />
+          </GuiSettings>
+          <Properties>
+            <Configuration joinByRecordPos="False">
+              <JoinInfo connection="Left">
+                <Field field="RecordID" />
+              </JoinInfo>
+              <JoinInfo connection="Right">
+                <Field field="RecordID" />
+              </JoinInfo>
+              <SelectConfiguration>
+                <Configuration outputConnection="Join">
+                  <OrderChanged value="False" />
+                  <CommaDecimal value="False" />
+                  <SelectFields>
+                    <SelectField field="Right_RecordID" selected="False" rename="Right_RecordID" input="Right_" />
+                    <SelectField field="*Unknown" selected="True" />
+                  </SelectFields>
+                </Configuration>
+              </SelectConfiguration>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+        </Node>
+        <Node ToolID="77">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="786" y="103" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\ProgramData\Alteryx\Engine\Engine_24700_94ceb91691ce434b9768511bf62c270a_\Engine_30708_24a82ee46f4d4fb69357ffcb8f096df8_.yxdb</TempFile>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+        <Node ToolID="78">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="786" y="187" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\ProgramData\Alteryx\Engine\Engine_24700_94ceb91691ce434b9768511bf62c270a_\Engine_30708_996d5f5d6e7540e3a553e4cee9340aec_.yxdb</TempFile>
+              <TempFileDataProfiling />
+              <Layout>
+                <View1>
+                  <Hints>
+                    <Table />
+                  </Hints>
+                </View1>
+              </Layout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+        <Node ToolID="79">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="786" y="271" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\ProgramData\Alteryx\Engine\Engine_24700_94ceb91691ce434b9768511bf62c270a_\Engine_30708_ff8fc88ec0fe4bb9be219bd8344aebaf_.yxdb</TempFile>
+              <TempFileDataProfiling />
+              <Layout>
+                <View1>
+                  <Hints>
+                    <Table />
+                  </Hints>
+                </View1>
+              </Layout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+      </ChildNodes>
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="40" Connection="Output" />
+      <Destination ToolID="39" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="40" Connection="Output" />
+      <Destination ToolID="75" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="73" Connection="Output" />
+      <Destination ToolID="75" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="71" Connection="Output" />
+      <Destination ToolID="40" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="38" Connection="Output" />
+      <Destination ToolID="43" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="39" Connection="Output" />
+      <Destination ToolID="38" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="43" Connection="Output" />
+      <Destination ToolID="73" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="75" Connection="Left" />
+      <Destination ToolID="77" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="75" Connection="Join" />
+      <Destination ToolID="78" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="75" Connection="Right" />
+      <Destination ToolID="79" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="False" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>CH04-R01- Pivoting (and un-pivoting) your data</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="2839925f-8ea5-4ba2-b4f7-8423c2d3757b" />
+      <Telemetry>
+        <PreviousWorkflowId value="632b17a2-bf90-4eb4-9e97-0e165eec512f" />
+        <OriginWorkflowId value="632b17a2-bf90-4eb4-9e97-0e165eec512f" />
+      </Telemetry>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>

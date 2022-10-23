@@ -1,0 +1,708 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2022.1">
+  <Nodes>
+    <Node ToolID="1">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="54" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">..\DATA\RawData.xlsx|||`RawData$`</File>
+          <FormatSpecificOptions>
+            <FirstRowData>False</FirstRowData>
+            <ImportLine>1</ImportLine>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>RawData.xlsx
+Query=`RawData$`</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Category" size="255" source="File: C:\Exercises\ch4\Recipe2\DATA\RawData.xlsx|||`RawData$`" type="V_String" />
+            <Field name="Year" source="File: C:\Exercises\ch4\Recipe2\DATA\RawData.xlsx|||`RawData$`" type="Double" />
+            <Field name="Month" source="File: C:\Exercises\ch4\Recipe2\DATA\RawData.xlsx|||`RawData$`" type="Double" />
+            <Field name="CASH_SALES" source="File: C:\Exercises\ch4\Recipe2\DATA\RawData.xlsx|||`RawData$`" type="Double" />
+            <Field name="CASH_AMOUNT" source="File: C:\Exercises\ch4\Recipe2\DATA\RawData.xlsx|||`RawData$`" type="Double" />
+            <Field name="CREDIT_SALES" source="File: C:\Exercises\ch4\Recipe2\DATA\RawData.xlsx|||`RawData$`" type="Double" />
+            <Field name="CREDIT_AMOUNT" source="File: C:\Exercises\ch4\Recipe2\DATA\RawData.xlsx|||`RawData$`" type="Double" />
+            <Field name="TOTAL_SALES" source="File: C:\Exercises\ch4\Recipe2\DATA\RawData.xlsx|||`RawData$`" type="Double" />
+            <Field name="TOTAL_AMOUNT" source="File: C:\Exercises\ch4\Recipe2\DATA\RawData.xlsx|||`RawData$`" type="Double" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="2">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.CrossTab.CrossTab">
+        <Position x="210" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <GroupFields>
+            <Field field="Year" />
+            <Field field="Month" />
+          </GroupFields>
+          <HeaderField field="Category" />
+          <DataField field="TOTAL_AMOUNT" />
+          <Methods>
+            <Method method="Sum" />
+          </Methods>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Year" source="CrossTab:Group:Sum:" type="Double" />
+            <Field name="Month" source="CrossTab:Group:Sum:" type="Double" />
+            <Field name="7_50" source="CrossTab:Header:Category:7.50:Sum:" type="Double" />
+            <Field name="50___less" source="CrossTab:Header:Category:50 &amp; less:Sum:" type="Double" />
+            <Field name="100" source="CrossTab:Header:Category:100:Sum:" type="Double" />
+            <Field name="150" source="CrossTab:Header:Category:150:Sum:" type="Double" />
+            <Field name="200" source="CrossTab:Header:Category:200:Sum:" type="Double" />
+            <Field name="250" source="CrossTab:Header:Category:250:Sum:" type="Double" />
+            <Field name="300" source="CrossTab:Header:Category:300:Sum:" type="Double" />
+            <Field name="400" source="CrossTab:Header:Category:400:Sum:" type="Double" />
+            <Field name="400___larger" source="CrossTab:Header:Category:400 &amp; larger:Sum:" type="Double" />
+            <Field name="500" source="CrossTab:Header:Category:500:Sum:" type="Double" />
+            <Field name="600" source="CrossTab:Header:Category:600:Sum:" type="Double" />
+            <Field name="750" source="CrossTab:Header:Category:750:Sum:" type="Double" />
+            <Field name="1000" source="CrossTab:Header:Category:1000:Sum:" type="Double" />
+            <Field name="1250" source="CrossTab:Header:Category:1250:Sum:" type="Double" />
+            <Field name="1500" source="CrossTab:Header:Category:1500:Sum:" type="Double" />
+            <Field name="2000" source="CrossTab:Header:Category:2000:Sum:" type="Double" />
+            <Field name="2500" source="CrossTab:Header:Category:2500:Sum:" type="Double" />
+            <Field name="3000" source="CrossTab:Header:Category:3000:Sum:" type="Double" />
+            <Field name="3500" source="CrossTab:Header:Category:3500:Sum:" type="Double" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Year" order="Asc" />
+            <Field field="Month" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxCrossTab" />
+    </Node>
+    <Node ToolID="4">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.FieldInfo.FieldInfo">
+        <Position x="306" y="186" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFieldInfo" />
+    </Node>
+    <Node ToolID="11">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextToColumns.TextToColumns">
+        <Position x="414" y="186" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Field>Source</Field>
+          <ErrorHandling>Last</ErrorHandling>
+          <RootName>Source</RootName>
+          <Delimeters value=":" />
+          <NumFields value="5" />
+          <Flags value="0" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextToColumns" />
+    </Node>
+    <Node ToolID="13">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="510" y="186" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Type" selected="False" />
+            <SelectField field="Size" selected="False" />
+            <SelectField field="Scale" selected="False" />
+            <SelectField field="Source" selected="False" />
+            <SelectField field="Description" selected="False" />
+            <SelectField field="Source1" selected="False" />
+            <SelectField field="Source2" selected="False" />
+            <SelectField field="Source3" selected="False" />
+            <SelectField field="Source4" selected="True" rename="OriginalName" />
+            <SelectField field="Source5" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="14">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DynamicRename.DynamicRename">
+        <Position x="702" y="66" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <RenameMode>RightInputRows</RenameMode>
+          <Fields orderChanged="False">
+            <Field name="Year" />
+            <Field name="Month" />
+            <Field name="7_50" />
+            <Field name="50___less" />
+            <Field name="100" />
+            <Field name="150" />
+            <Field name="200" />
+            <Field name="250" />
+            <Field name="300" />
+            <Field name="400" />
+            <Field name="400___larger" />
+            <Field name="500" />
+            <Field name="600" />
+            <Field name="750" />
+            <Field name="1000" />
+            <Field name="1250" />
+            <Field name="1500" />
+            <Field name="2000" />
+            <Field name="2500" />
+            <Field name="3000" />
+            <Field name="3500" />
+            <Field name="*Unknown" />
+          </Fields>
+          <Expression />
+          <NamesFromRows>
+            <OnError>Warn</OnError>
+            <InputMode>Mapped</InputMode>
+            <OldName>Name</OldName>
+            <NewName>OriginalName</NewName>
+          </NamesFromRows>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Year" source="CrossTab:Group:Sum:" type="Double" />
+            <Field name="Month" source="CrossTab:Group:Sum:" type="Double" />
+            <Field name="7.50" source="CrossTab:Header:Category:7.50:Sum:" type="Double" />
+            <Field name="50 &amp; less" source="CrossTab:Header:Category:50 &amp; less:Sum:" type="Double" />
+            <Field name="100" source="CrossTab:Header:Category:100:Sum:" type="Double" />
+            <Field name="150" source="CrossTab:Header:Category:150:Sum:" type="Double" />
+            <Field name="200" source="CrossTab:Header:Category:200:Sum:" type="Double" />
+            <Field name="250" source="CrossTab:Header:Category:250:Sum:" type="Double" />
+            <Field name="300" source="CrossTab:Header:Category:300:Sum:" type="Double" />
+            <Field name="400" source="CrossTab:Header:Category:400:Sum:" type="Double" />
+            <Field name="400 &amp; larger" source="CrossTab:Header:Category:400 &amp; larger:Sum:" type="Double" />
+            <Field name="500" source="CrossTab:Header:Category:500:Sum:" type="Double" />
+            <Field name="600" source="CrossTab:Header:Category:600:Sum:" type="Double" />
+            <Field name="750" source="CrossTab:Header:Category:750:Sum:" type="Double" />
+            <Field name="1000" source="CrossTab:Header:Category:1000:Sum:" type="Double" />
+            <Field name="1250" source="CrossTab:Header:Category:1250:Sum:" type="Double" />
+            <Field name="1500" source="CrossTab:Header:Category:1500:Sum:" type="Double" />
+            <Field name="2000" source="CrossTab:Header:Category:2000:Sum:" type="Double" />
+            <Field name="2500" source="CrossTab:Header:Category:2500:Sum:" type="Double" />
+            <Field name="3000" source="CrossTab:Header:Category:3000:Sum:" type="Double" />
+            <Field name="3500" source="CrossTab:Header:Category:3500:Sum:" type="Double" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Year" order="Asc" />
+            <Field field="Month" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDynamicRename" />
+    </Node>
+    <Node ToolID="15">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="798" y="66" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_11024_5b21757708eb4938ad8e96c4781f71b5_\Engine_30708_279a4cd4c8594699b438046dcab68dfb_.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <View1>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="16">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="606" y="186" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Operator>IsNotNull</Operator>
+            <Field>OriginalName</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2022-09-02 12:52:21</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>
+              </Operand>
+              <StartDate>2022-09-02 12:52:21</StartDate>
+              <EndDate>2022-09-02 12:52:21</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>!IsNull([OriginalName])</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="25">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="138" y="318" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="IF [Category]=&quot;1250&quot; THEN &quot;12 &amp; 50&quot;&#xA;ELSE [Category]&#xA;ENDIF" field="Category" size="255" type="V_String" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[Category = IF [Category]="1250" THEN "12 & 50"
+ELSE [Category]
+ENDIF
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="26">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.CrossTab.CrossTab">
+        <Position x="414" y="330" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <GroupFields>
+            <Field field="Year" />
+            <Field field="Month" />
+          </GroupFields>
+          <HeaderField field="Category" />
+          <DataField field="TOTAL_AMOUNT" />
+          <Methods>
+            <Method method="Sum" />
+          </Methods>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Year" source="CrossTab:Group:Sum:" type="Double" />
+            <Field name="Month" source="CrossTab:Group:Sum:" type="Double" />
+            <Field name="Descript_12_and_50" source="CrossTab:Header:Category:Descript 12 and 50:Sum:" type="Double" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Year" order="Asc" />
+            <Field field="Month" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxCrossTab" />
+    </Node>
+    <Node ToolID="27">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.FieldInfo.FieldInfo">
+        <Position x="510" y="462" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFieldInfo" />
+    </Node>
+    <Node ToolID="28">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextToColumns.TextToColumns">
+        <Position x="618" y="462" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Field>Source</Field>
+          <ErrorHandling>Last</ErrorHandling>
+          <RootName>Source</RootName>
+          <Delimeters value=":" />
+          <NumFields value="5" />
+          <Flags value="0" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextToColumns" />
+    </Node>
+    <Node ToolID="29">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="714" y="462" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Type" selected="False" />
+            <SelectField field="Size" selected="False" />
+            <SelectField field="Scale" selected="False" />
+            <SelectField field="Source" selected="False" />
+            <SelectField field="Description" selected="False" />
+            <SelectField field="Source1" selected="False" />
+            <SelectField field="Source2" selected="False" />
+            <SelectField field="Source3" selected="False" />
+            <SelectField field="Source4" selected="True" rename="OriginalName" />
+            <SelectField field="Source5" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="30">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DynamicRename.DynamicRename">
+        <Position x="906" y="342" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <RenameMode>RightInputRows</RenameMode>
+          <Fields orderChanged="False">
+            <Field name="Year" />
+            <Field name="Month" />
+            <Field name="7_50" />
+            <Field name="50___less" />
+            <Field name="100" />
+            <Field name="150" />
+            <Field name="200" />
+            <Field name="250" />
+            <Field name="300" />
+            <Field name="400" />
+            <Field name="400___larger" />
+            <Field name="500" />
+            <Field name="600" />
+            <Field name="750" />
+            <Field name="1000" />
+            <Field name="1250" />
+            <Field name="1500" />
+            <Field name="2000" />
+            <Field name="2500" />
+            <Field name="3000" />
+            <Field name="3500" />
+            <Field name="*Unknown" />
+          </Fields>
+          <Expression />
+          <NamesFromRows>
+            <OnError>Warn</OnError>
+            <InputMode>Mapped</InputMode>
+            <OldName>Name</OldName>
+            <NewName>OriginalName</NewName>
+          </NamesFromRows>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Year" source="CrossTab:Group:Sum:" type="Double" />
+            <Field name="Month" source="CrossTab:Group:Sum:" type="Double" />
+            <Field name="Descript 12 and 50" source="CrossTab:Header:Category:Descript 12 and 50:Sum:" type="Double" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Year" order="Asc" />
+            <Field field="Month" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDynamicRename" />
+    </Node>
+    <Node ToolID="31">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="1002" y="342" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_11024_5b21757708eb4938ad8e96c4781f71b5_\Engine_30708_e9f2c753de284207bf499ed9d8801018_.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <View1>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="32">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="810" y="462" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Operator>IsNotNull</Operator>
+            <Field>OriginalName</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2022-09-02 12:52:21</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>
+              </Operand>
+              <StartDate>2022-09-02 12:52:21</StartDate>
+              <EndDate>2022-09-02 12:52:21</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>!IsNull([OriginalName])</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="33">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
+        <Position x="198" y="486" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <NumRows value="1" />
+          <Fields>
+            <Field name="CAT" />
+            <Field name="DESC" />
+          </Fields>
+          <Data>
+            <r>
+              <c>12 &amp; 50</c>
+              <c>Descript 12 and 50</c>
+            </r>
+          </Data>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
+    </Node>
+    <Node ToolID="34">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="282" y="330" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="Category" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="CAT" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Left_Category" selected="False" input="Left_" />
+                <SelectField field="Right_DESC" selected="True" rename="Category" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="2" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="25" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="4" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="14" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="16" Connection="True" />
+      <Destination ToolID="14" Connection="Source" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="11" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="11" Connection="Output" />
+      <Destination ToolID="13" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="13" Connection="Output" />
+      <Destination ToolID="16" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="14" Connection="Output" />
+      <Destination ToolID="15" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="25" Connection="Output" />
+      <Destination ToolID="34" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="33" Connection="Output" />
+      <Destination ToolID="34" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="26" Connection="Output" />
+      <Destination ToolID="27" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="26" Connection="Output" />
+      <Destination ToolID="30" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="32" Connection="True" />
+      <Destination ToolID="30" Connection="Source" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="27" Connection="Output" />
+      <Destination ToolID="28" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="28" Connection="Output" />
+      <Destination ToolID="29" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="29" Connection="Output" />
+      <Destination ToolID="32" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="30" Connection="Output" />
+      <Destination ToolID="31" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="34" Connection="Join" />
+      <Destination ToolID="26" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="False" />
+    <ShowConnectionStatusOnlyWhenRunning value="False" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>CH04-R02-Fixing CrossTabRenames</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="a0f2c2b4-9582-4fbd-ab29-21e77c8e265e" />
+      <Telemetry>
+        <PreviousWorkflowId value="21348765-c511-4f5e-88d5-8dbcd114be7a" />
+        <OriginWorkflowId value="6b3ba44e-dc99-4f08-baa9-c10b6f2a4e74" />
+      </Telemetry>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>
