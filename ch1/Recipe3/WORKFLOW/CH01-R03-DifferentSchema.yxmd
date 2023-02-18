@@ -43,7 +43,7 @@
       </Properties>
       <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
     </Node>
-    <Node ToolID="5">
+    <Node ToolID="6">
       <GuiSettings>
         <Position x="174" y="54" />
       </GuiSettings>
@@ -75,10 +75,10 @@
   <Connections>
     <Connection>
       <Origin ToolID="1" Connection="Output" />
-      <Destination ToolID="5" Connection="Control" />
+      <Destination ToolID="6" Connection="Control" />
     </Connection>
     <Connection>
-      <Origin ToolID="5" Connection="Output4" />
+      <Origin ToolID="6" Connection="Output4" />
       <Destination ToolID="2" Connection="Input" />
     </Connection>
   </Connections>

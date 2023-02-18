@@ -20,12 +20,9 @@
 Query=&lt;List of Sheet Names&gt;</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
-        <Dependencies>
-          <Implicit />
-        </Dependencies>
         <MetaInfo connection="Output">
           <RecordInfo>
-            <Field name="Sheet Names" size="31" source="File: C:\Exercises\ch1\Recipe2\DATA\MonthlySalesbyYear.xlsx|||&lt;List of Sheet Names&gt;" type="V_WString" />
+            <Field name="Sheet Names" size="31" source="File: F:\GitHub\Alteryx-Designer-Cookbook\ch1\Recipe2\DATA\MonthlySalesbyYear.xlsx|||&lt;List of Sheet Names&gt;" type="V_WString" />
           </RecordInfo>
         </MetaInfo>
       </Properties>
@@ -68,7 +65,7 @@ Query=&lt;List of Sheet Names&gt;</DefaultAnnotationText>
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_25720_7a655f8a597848109dedb6adbb9a4c58_\Engine_23212_fa1fd84176e044af852abcc9df7a0a98_.yxdb</TempFile>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_35348_23d1fe81c4df4ca28addbfd4de410885_\Engine_32288_b08816a34a0c4c12a4239360ac54c8c3_.yxdb</TempFile>
           <TempFileDataProfiling />
           <Layout>
             <View1>
@@ -116,7 +113,7 @@ Query=&lt;List of Sheet Names&gt;</DefaultAnnotationText>
     <LayoutType>Horizontal</LayoutType>
     <MetaInfo>
       <NameIsFileName value="True" />
-      <Name>CH1-R2-ReadMultipleSheets</Name>
+      <Name>CH01-R02-ReadMultipleSheets</Name>
       <Description />
       <RootToolName />
       <ToolVersion />

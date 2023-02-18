@@ -1,0 +1,676 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2022.1">
+  <Nodes>
+    <Node ToolID="1">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="66" y="390" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File RecordLimit="" SearchSubDirs="False" FileFormat="0" OutputFileName="">..\DATA\Bibliography.csv</File>
+          <FormatSpecificOptions>
+            <HeaderRow>True</HeaderRow>
+            <IgnoreErrors>False</IgnoreErrors>
+            <AllowShareWrite>False</AllowShareWrite>
+            <ImportLine>1</ImportLine>
+            <FieldLen>50000</FieldLen>
+            <SingleThreadRead>False</SingleThreadRead>
+            <IgnoreQuotes>True</IgnoreQuotes>
+            <Delimeter>\0</Delimeter>
+            <QuoteRecordBreak>False</QuoteRecordBreak>
+            <CodePage>28591</CodePage>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Bibliography.csv</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Reference" size="50000" source="File: C:\Exercises\ch5\Recipe3\DATA\Bibliography.csv" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="16">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="209" y="401" width="169" height="133" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Final Expression</Caption>
+          <Style TextColor="#314c4a" FillColor="#ffffff" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="15">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.RegEx.RegEx">
+            <Position x="234" y="450" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Field>Reference</Field>
+              <RegExExpression value="^(\d+):\s(.+)\,\s\&quot;(.*)\&quot;\sin:\s(.+)\.\s(.*)?:(.*)?\,\s(\d{2,4}),\s\(pp.\s?(\d+)-(\d+)\)\. " />
+              <CaseInsensitve value="True" />
+              <Method>ParseComplex</Method>
+              <Replace expression="">
+                <CopyUnmatched value="True" />
+              </Replace>
+              <ParseSimple>
+                <SplitToRows value="False" />
+                <RootName>Reference</RootName>
+                <NumFields value="3" />
+                <ErrorHandling>Warn</ErrorHandling>
+              </ParseSimple>
+              <ParseComplex>
+                <Field field="RegExOut1" type="V_String" size="50000" />
+                <Field field="RegExOut2" type="V_String" size="50000" />
+                <Field field="RegExOut3" type="V_String" size="50000" />
+                <Field field="RegExOut4" type="V_String" size="50000" />
+                <Field field="RegExOut5" type="V_String" size="50000" />
+                <Field field="RegExOut6" type="V_String" size="50000" />
+                <Field field="RegExOut7" type="V_String" size="50000" />
+                <Field field="RegExOut8" type="V_String" size="50000" />
+                <Field field="RegExOut9" type="V_String" size="50000" />
+              </ParseComplex>
+              <Match>
+                <Field>Reference_Matched</Field>
+                <ErrorUnmatched value="False" />
+              </Match>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxRegEx" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="14">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="209" y="101" width="326" height="229" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Expressions that don't parse all records right</Caption>
+          <Style TextColor="#314c4a" FillColor="#ffffff" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="5">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.RegEx.RegEx">
+            <Position x="234" y="150" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Field>Reference</Field>
+              <RegExExpression value="^(\d+)\:(.+)\&quot;(.*)\&quot;\sin:(.+)\.\s(.*):(.+),\s(\d{2,4}),\s\(pp.\s(\d+)-(\d+)\)" />
+              <CaseInsensitve value="True" />
+              <Method>ParseComplex</Method>
+              <Replace expression="">
+                <CopyUnmatched value="True" />
+              </Replace>
+              <ParseSimple>
+                <SplitToRows value="False" />
+                <RootName>Reference</RootName>
+                <NumFields value="3" />
+                <ErrorHandling>Warn</ErrorHandling>
+              </ParseSimple>
+              <ParseComplex>
+                <Field field="Reference #" type="V_String" size="50000" />
+                <Field field="Authors" type="V_String" size="50000" />
+                <Field field="Chapter Name" type="V_String" size="50000" />
+                <Field field="Book Name" type="V_String" size="50000" />
+                <Field field="City" type="V_String" size="50000" />
+                <Field field="Publisher" type="V_String" size="50000" />
+                <Field field="Year" type="V_String" size="50000" />
+                <Field field="Page From" type="V_String" size="50000" />
+                <Field field="Page To" type="V_String" size="50000" />
+              </ParseComplex>
+              <Match>
+                <Field>Reference_Matched</Field>
+                <ErrorUnmatched value="False" />
+              </Match>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxRegEx" />
+        </Node>
+        <Node ToolID="8">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.RegEx.RegEx">
+            <Position x="270" y="246" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Field>Reference</Field>
+              <RegExExpression value="^(\d+)\:(.+)\&quot;(.*)\&quot;\sin:(.+)\.\s(.*)?:(.*)?,\s(\d{2,4}),\s\(pp.(\d+)\-(\d+)\)." />
+              <CaseInsensitve value="True" />
+              <Method>ParseComplex</Method>
+              <Replace expression="">
+                <CopyUnmatched value="True" />
+              </Replace>
+              <ParseSimple>
+                <SplitToRows value="False" />
+                <RootName>Reference</RootName>
+                <NumFields value="3" />
+                <ErrorHandling>Warn</ErrorHandling>
+              </ParseSimple>
+              <ParseComplex>
+                <Field field="Reference #" type="V_String" size="50000" />
+                <Field field="Authors" type="V_String" size="50000" />
+                <Field field="RegExOut3" type="V_String" size="50000" />
+                <Field field="RegExOut4" type="V_String" size="50000" />
+                <Field field="RegExOut5" type="V_String" size="50000" />
+                <Field field="RegExOut6" type="V_String" size="50000" />
+                <Field field="RegExOut7" type="V_String" size="50000" />
+                <Field field="RegExOut8" type="V_String" size="50000" />
+                <Field field="RegExOut9" type="V_String" size="50000" />
+              </ParseComplex>
+              <Match>
+                <Field>Reference_Matched</Field>
+                <ErrorUnmatched value="False" />
+              </Match>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxRegEx" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="30">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="1049" y="173" width="721" height="468" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Important Note example</Caption>
+          <Style TextColor="#314c4a" FillColor="#ffffff" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="True" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="17">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
+            <Position x="1074" y="222" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <NumRows value="4" />
+              <Fields>
+                <Field name="Date" />
+              </Fields>
+              <Data>
+                <r>
+                  <c>2022-01-29</c>
+                </r>
+                <r>
+                  <c>2022-02-28</c>
+                </r>
+                <r>
+                  <c>2022-02-29</c>
+                </r>
+                <r>
+                  <c>2022-03-12</c>
+                </r>
+              </Data>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
+        </Node>
+        <Node ToolID="18">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.RegEx.RegEx">
+            <Position x="1374" y="222" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Field>Text</Field>
+              <RegExExpression value="(\d{4}\-\d{2}\-\d{2})" />
+              <CaseInsensitve value="True" />
+              <Method>ParseComplex</Method>
+              <Replace expression="">
+                <CopyUnmatched value="True" />
+              </Replace>
+              <ParseSimple>
+                <SplitToRows value="False" />
+                <RootName>Text</RootName>
+                <NumFields value="3" />
+                <ErrorHandling>Warn</ErrorHandling>
+              </ParseSimple>
+              <ParseComplex>
+                <Field field="DateRegEx" type="String" size="10" />
+              </ParseComplex>
+              <Match>
+                <Field>Date_Matched</Field>
+                <ErrorUnmatched value="False" />
+              </Match>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxRegEx" />
+        </Node>
+        <Node ToolID="19">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="1182" y="222" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="&quot;First access was on &quot; + [Date]" field="Text" size="1073741823" type="V_WString" />
+                <FormulaField expression="IF Contains([Date], &quot;02-28&quot;)&#xA;THEN [Text]+&quot;. But was reaccessed on &quot; + [Date]&#xA;ELSE [Text]&#xA;ENDIF" field="Text" size="1073741823" type="V_WString" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Text = "First access was on " + [Date]
+Text = IF Contains([Date], "02-28")
+THEN ...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="20">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.MultiRowFormula.MultiRowFormula">
+            <Position x="1278" y="222" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <UpdateField value="True" />
+              <UpdateField_Name>Text</UpdateField_Name>
+              <CreateField_Name>New Field</CreateField_Name>
+              <CreateField_Type>Int32</CreateField_Type>
+              <CreateField_Size>4</CreateField_Size>
+              <OtherRows>Empty</OtherRows>
+              <NumRows value="1" />
+              <Expression>IF Contains([Date], "02-28")
+THEN "First access was on " +[Date]+". But was reaccessed." 
+ELSE [Text]
+ENDIF</Expression>
+              <GroupByFields />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>IF Contains([Date], "02-28")
+THEN "First access was on " +[Da...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMultiRowFormula" />
+        </Node>
+        <Node ToolID="21">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="1566" y="222" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>
+              </TempFile>
+              <TempFileDataProfiling />
+              <Layout>
+                <View1>
+                  <Hints>
+                    <Table />
+                  </Hints>
+                </View1>
+              </Layout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+        <Node ToolID="22">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="1470" y="222" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Date" selected="False" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="23">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="1566" y="366" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>
+              </TempFile>
+              <TempFileDataProfiling />
+              <Layout>
+                <View1>
+                  <Hints>
+                    <Table />
+                  </Hints>
+                </View1>
+              </Layout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+        <Node ToolID="24">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="1470" y="366" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Date" selected="False" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="25">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
+            <Position x="1278" y="510" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <NumRows value="4" />
+              <Fields>
+                <Field name="Text" />
+              </Fields>
+              <Data>
+                <r>
+                  <c>First access was on 2022-01-29</c>
+                </r>
+                <r>
+                  <c>First access was on 2022-02-28. But was reaccessed.</c>
+                </r>
+                <r>
+                  <c>First access was on 2022-02-29</c>
+                </r>
+                <r>
+                  <c>First access was on 2022-03-12</c>
+                </r>
+              </Data>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
+        </Node>
+        <Node ToolID="26">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.RegEx.RegEx">
+            <Position x="1398" y="510" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Field>Text</Field>
+              <RegExExpression value="(\d{4}\-\d{2}\-\d{2})" />
+              <CaseInsensitve value="True" />
+              <Method>ParseComplex</Method>
+              <Replace expression="">
+                <CopyUnmatched value="True" />
+              </Replace>
+              <ParseSimple>
+                <SplitToRows value="False" />
+                <RootName>Text</RootName>
+                <NumFields value="3" />
+                <ErrorHandling>Warn</ErrorHandling>
+              </ParseSimple>
+              <ParseComplex>
+                <Field field="DateRegEx" type="String" size="10" />
+              </ParseComplex>
+              <Match>
+                <Field>Date_Matched</Field>
+                <ErrorUnmatched value="False" />
+              </Match>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxRegEx" />
+        </Node>
+        <Node ToolID="27">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="1686" y="510" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>
+              </TempFile>
+              <TempFileDataProfiling />
+              <Layout>
+                <View1>
+                  <Hints>
+                    <Table />
+                  </Hints>
+                </View1>
+              </Layout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+        <Node ToolID="28">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="1494" y="510" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="29">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DateTime.DateTime">
+            <Position x="1590" y="510" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <IsFrom value="False" />
+              <InputFieldName>DateRegEx</InputFieldName>
+              <Language>English</Language>
+              <Format>yyyy-MM-dd</Format>
+              <OutputFieldName>DateTime_Out</OutputFieldName>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Convert DateRegEx From:
+yyyy-MM-dd</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDateTime" />
+        </Node>
+      </ChildNodes>
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="15" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="5" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="8" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="17" Connection="Output" />
+      <Destination ToolID="19" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="18" Connection="Output" />
+      <Destination ToolID="22" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="19" Connection="Output" />
+      <Destination ToolID="20" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="20" Connection="Output" />
+      <Destination ToolID="18" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="20" Connection="Output" />
+      <Destination ToolID="24" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="22" Connection="Output" />
+      <Destination ToolID="21" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="24" Connection="Output" />
+      <Destination ToolID="23" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="25" Connection="Output" />
+      <Destination ToolID="26" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="26" Connection="Output" />
+      <Destination ToolID="28" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="28" Connection="Output" />
+      <Destination ToolID="29" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="29" Connection="Output" />
+      <Destination ToolID="27" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="True" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="False" />
+    <ZoomLevel value="-4" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>CH05-R03-Using RegEx</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="c2aa126b-dddf-477d-ad5a-a5bc83af2ea9" />
+      <Telemetry>
+        <PreviousWorkflowId value="606eb9d4-6368-4d73-abb3-f8c524995ba5" />
+        <OriginWorkflowId value="606eb9d4-6368-4d73-abb3-f8c524995ba5" />
+      </Telemetry>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>

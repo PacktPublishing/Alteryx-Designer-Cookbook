@@ -1,0 +1,499 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2022.1">
+  <Nodes>
+    <Node ToolID="14">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.FindReplace.FindReplace">
+        <Position x="679" y="224" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FieldFind>text</FieldFind>
+          <FieldSearch>Look_For</FieldSearch>
+          <ReplaceFoundField>Category</ReplaceFoundField>
+          <FindMode>FindAny</FindMode>
+          <NoCase value="True" />
+          <MatchWholeWord value="False" />
+          <ReplaceMode>Append</ReplaceMode>
+          <ReplaceMultipleFound value="True" />
+          <ReplaceAppendFields>
+            <Field field="Category" />
+          </ReplaceAppendFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Appends classification to keywords</AnnotationText>
+          <DefaultAnnotationText>Appends classification to key words</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFindReplace" />
+    </Node>
+    <Node ToolID="29">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="54" y="55" width="206" height="180" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Claims Data (Free text)</Caption>
+          <Style TextColor="#314c4a" FillColor="#ffffff" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="27">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="79" y="104" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">..\DATA\CustomerServiceTexts.xlsx|||`Sheet1$`</File>
+              <FormatSpecificOptions>
+                <FirstRowData>False</FirstRowData>
+                <ImportLine>1</ImportLine>
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>CustomerServiceTexts.xlsx
+Query=`Sheet1$`</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="author" size="255" source="File: C:\Exercises\ch5\R01\DATA\CustomerServiceTexts.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="posted_on" size="255" source="File: C:\Exercises\ch5\R01\DATA\CustomerServiceTexts.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="rating" size="255" source="File: C:\Exercises\ch5\R01\DATA\CustomerServiceTexts.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="text" size="3568" source="File: C:\Exercises\ch5\R01\DATA\CustomerServiceTexts.xlsx|||`Sheet1$`" type="V_WString" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="32">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="824" y="248" width="463" height="165" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Overall mentions</Caption>
+          <Style TextColor="#314c4a" FillColor="#ffffff" BorderColor="#314c4a" Transparency="25" Margin="10" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="17">
+          <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+            <Position x="1074" y="282" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <SummarizeFields>
+                <SummarizeField field="Concat_Category" action="GroupBy" rename="Concat_Category" />
+                <SummarizeField field="Concat_Category" action="Count" rename="Count" />
+              </SummarizeFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <AnnotationText>Count the concatenated mentions</AnnotationText>
+              <DefaultAnnotationText>Count the concatenated "Buckets"</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+        </Node>
+        <Node ToolID="21">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+            <Position x="1182" y="282" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Mode>Simple</Mode>
+              <Simple>
+                <Operator>IsNotEmpty</Operator>
+                <Field>Concat_Category</Field>
+                <Operands>
+                  <IgnoreTimeInDateTime>False</IgnoreTimeInDateTime>
+                  <DateType>fixed</DateType>
+                  <PeriodDate>2022-09-08 20:01:16</PeriodDate>
+                  <PeriodType>
+                  </PeriodType>
+                  <PeriodCount>0</PeriodCount>
+                  <Operand>
+                  </Operand>
+                  <StartDate>2022-09-08 20:01:16</StartDate>
+                  <EndDate>2022-09-08 20:01:16</EndDate>
+                </Operands>
+              </Simple>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <AnnotationText>Remove the empty category</AnnotationText>
+              <DefaultAnnotationText>!IsEmpty([Concat_Category])</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+        </Node>
+        <Node ToolID="20">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Unique.Unique">
+            <Position x="834" y="294" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <UniqueFields>
+                <Field field="RecordID" />
+                <Field field="Category" />
+              </UniqueFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnique" />
+        </Node>
+        <Node ToolID="16">
+          <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+            <Position x="954" y="282" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <SummarizeFields>
+                <SummarizeField field="RecordID" action="GroupBy" rename="RecordID" />
+                <SummarizeField field="Category" action="Concat" rename="Concat_Category">
+                  <Concat_Start />
+                  <Separator>,</Separator>
+                  <Concat_End />
+                </SummarizeField>
+              </SummarizeFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <AnnotationText>Group by Record ID and concatenate the categories.</AnnotationText>
+              <DefaultAnnotationText>Group by Record ID and concatenate the "Buckets"</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="33">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="270" y="54" width="372" height="166" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Prep data</Caption>
+          <Style TextColor="#314c4a" FillColor="#ffffff" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="9">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.RecordID.RecordID">
+            <Position x="295" y="103" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FieldName>RecordID</FieldName>
+              <StartValue>1</StartValue>
+              <FieldType>Int32</FieldType>
+              <FieldSize>6</FieldSize>
+              <Position>0</Position>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxRecordID" />
+        </Node>
+        <Node ToolID="12">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.TextToColumns.TextToColumns">
+            <Position x="523" y="104" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Field>text</Field>
+              <Delimeters value="\s" />
+              <NumFields value="1" />
+              <Flags value="0" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <AnnotationText>Split to Rows (1 word per row)</AnnotationText>
+              <DefaultAnnotationText>Split to Rows (1 word per row)</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextToColumns" />
+        </Node>
+        <Node ToolID="30">
+          <GuiSettings>
+            <Position x="403" y="104" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Value name="Check Box (135)">True</Value>
+              <Value name="Check Box (136)">True</Value>
+              <Value name="List Box (11)">"text"</Value>
+              <Value name="Check Box (84)">False</Value>
+              <Value name="Check Box (117)">False</Value>
+              <Value name="Check Box (15)">True</Value>
+              <Value name="Check Box (109)">False</Value>
+              <Value name="Check Box (122)">False</Value>
+              <Value name="Check Box (53)">False</Value>
+              <Value name="Check Box (58)">False</Value>
+              <Value name="Check Box (70)">True</Value>
+              <Value name="Check Box (77)">False</Value>
+              <Value name="Drop Down (81)">upper</Value>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <AnnotationText>Remove Punctuation</AnnotationText>
+              <DefaultAnnotationText>Remove Punctuation</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings Macro="Cleanse.yxmc" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="31">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="824" y="92" width="217" height="147" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Categories per Customer</Caption>
+          <Style TextColor="#314c4a" FillColor="#ffffff" BorderColor="#314c4a" Transparency="25" Margin="10" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="24">
+          <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+            <Position x="930" y="126" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <SummarizeFields>
+                <SummarizeField field="RecordID" action="GroupBy" rename="RecordID" />
+                <SummarizeField field="author" action="First" rename="First_author" />
+                <SummarizeField field="Category" action="GroupBy" rename="Category" />
+                <SummarizeField field="Category" action="Count" rename="Count" />
+              </SummarizeFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <AnnotationText>Mentions by Customer</AnnotationText>
+              <DefaultAnnotationText>Mentions by Customer</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+        </Node>
+        <Node ToolID="26">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+            <Position x="834" y="138" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Mode>Simple</Mode>
+              <Simple>
+                <Operator>IsNotNull</Operator>
+                <Field>Category</Field>
+                <Operands>
+                  <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+                  <DateType>fixed</DateType>
+                  <PeriodDate>2022-09-08 20:09:56</PeriodDate>
+                  <PeriodType>
+                  </PeriodType>
+                  <PeriodCount>0</PeriodCount>
+                  <Operand>
+                  </Operand>
+                  <StartDate>2022-09-08 20:09:56</StartDate>
+                  <EndDate>2022-09-08 20:09:56</EndDate>
+                </Operands>
+              </Simple>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>!IsNull([Category])</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="28">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="54" y="259" width="183" height="180" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Custom Dictionary</Caption>
+          <Style TextColor="#314c4a" FillColor="#ffffff" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="8">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="79" y="308" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">..\DATA\SearchDictionary.xlsx|||`Sheet1$`</File>
+              <FormatSpecificOptions>
+                <FirstRowData>False</FirstRowData>
+                <ImportLine>1</ImportLine>
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>SearchDictionary.xlsx
+Query=`Sheet1$`</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="Look_For" size="255" source="File: C:\Exercises\ch5\R01\DATA\SearchDictionary.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="Category" size="255" source="File: C:\Exercises\ch5\R01\DATA\SearchDictionary.xlsx|||`Sheet1$`" type="V_String" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+      </ChildNodes>
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="14" Connection="Output" />
+      <Destination ToolID="26" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="14" Connection="Output" />
+      <Destination ToolID="20" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="27" Connection="Output" />
+      <Destination ToolID="9" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="17" Connection="Output" />
+      <Destination ToolID="21" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="20" Connection="Unique" />
+      <Destination ToolID="16" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="16" Connection="Output" />
+      <Destination ToolID="17" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="9" Connection="Output" />
+      <Destination ToolID="30" Connection="Input2" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="12" Connection="Output" />
+      <Destination ToolID="14" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="8" Connection="Output" />
+      <Destination ToolID="14" Connection="Source" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="30" Connection="Output26" />
+      <Destination ToolID="12" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="26" Connection="True" />
+      <Destination ToolID="24" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="False" />
+    <ShowConnectionStatusOnlyWhenRunning value="False" />
+    <ZoomLevel value="-1" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>CH05-R01-Prepare a free text field for Analysis</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="8158c0ff-d4f4-4eea-9445-5d657a9e9a64" />
+      <Telemetry>
+        <PreviousWorkflowId value="55600916-c306-4955-92bd-a620eff5dd09" />
+        <OriginWorkflowId value="55600916-c306-4955-92bd-a620eff5dd09" />
+      </Telemetry>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>

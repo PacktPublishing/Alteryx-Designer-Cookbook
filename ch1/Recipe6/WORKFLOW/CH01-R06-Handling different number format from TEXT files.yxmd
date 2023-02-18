@@ -8,7 +8,7 @@
       <Properties>
         <Configuration>
           <Passwords />
-          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">C:\Exercises\ch1\Recipe6\DATA DEFINITION\FileStructure.xlsx|||`Sheet1$`</File>
+          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">..\DATA DEFINITION\FileStructure.xlsx|||`Sheet1$`</File>
           <FormatSpecificOptions>
             <FirstRowData>False</FirstRowData>
             <ImportLine>1</ImportLine>
@@ -25,10 +25,10 @@ Query=`Sheet1$`</DefaultAnnotationText>
         </Dependencies>
         <MetaInfo connection="Output">
           <RecordInfo>
-            <Field name="Name" size="255" source="File: C:\Exercises\ch1\Recipe6\DATA DEFINITION\FileStructure.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Type" size="255" source="File: C:\Exercises\ch1\Recipe6\DATA DEFINITION\FileStructure.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Size" source="File: C:\Exercises\ch1\Recipe6\DATA DEFINITION\FileStructure.xlsx|||`Sheet1$`" type="Double" />
-            <Field name="Scale" source="File: C:\Exercises\ch1\Recipe6\DATA DEFINITION\FileStructure.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Name" size="255" source="File: F:\GitHub\Alteryx-Designer-Cookbook\ch1\Recipe6\DATA DEFINITION\FileStructure.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Type" size="255" source="File: F:\GitHub\Alteryx-Designer-Cookbook\ch1\Recipe6\DATA DEFINITION\FileStructure.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Size" source="File: F:\GitHub\Alteryx-Designer-Cookbook\ch1\Recipe6\DATA DEFINITION\FileStructure.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Scale" source="File: F:\GitHub\Alteryx-Designer-Cookbook\ch1\Recipe6\DATA DEFINITION\FileStructure.xlsx|||`Sheet1$`" type="Double" />
           </RecordInfo>
         </MetaInfo>
       </Properties>
@@ -183,7 +183,7 @@ Query=`Sheet1$`</DefaultAnnotationText>
       </GuiSettings>
       <Properties>
         <Configuration>
-          <File MaxRecords="" FileFormat="0">C:\Exercises\ch1\Recipe6\DATA\GeneratedFlatFile.flat</File>
+          <File MaxRecords="" FileFormat="0">..\DATA\GeneratedFlatFile.flat</File>
           <Passwords />
           <FormatSpecificOptions>
             <LineEndStyle>CRLF</LineEndStyle>
@@ -271,9 +271,9 @@ Query=`Sheet1$`</DefaultAnnotationText>
         <Description />
         <File />
       </Example>
-      <WorkflowId value="36b8c0fb-6b8e-4a8e-8787-2383299cdf22" />
+      <WorkflowId value="33a4a1a4-c5a5-460e-bf6c-0d7bc32327da" />
       <Telemetry>
-        <PreviousWorkflowId value="7bafee24-f745-47a9-b9c5-7ae5dabf3afc" />
+        <PreviousWorkflowId value="36b8c0fb-6b8e-4a8e-8787-2383299cdf22" />
         <OriginWorkflowId value="7bafee24-f745-47a9-b9c5-7ae5dabf3afc" />
       </Telemetry>
     </MetaInfo>

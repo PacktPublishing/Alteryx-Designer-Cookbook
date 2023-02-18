@@ -1,81 +1,14 @@
 <?xml version="1.0"?>
 <AlteryxDocument yxmdVer="2022.1">
   <Nodes>
-    <Node ToolID="3">
-      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="29" y="5" width="265" height="165" />
-      </GuiSettings>
-      <Properties>
-        <Configuration>
-          <Caption>Container 3</Caption>
-          <Style TextColor="#314c4a" FillColor="#ffffff" BorderColor="#314c4a" Transparency="25" Margin="25" />
-          <Disabled value="False" />
-          <Folded value="False" />
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name />
-          <DefaultAnnotationText />
-          <Left value="False" />
-        </Annotation>
-      </Properties>
-      <ChildNodes>
-        <Node ToolID="1">
-          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
-            <Position x="54" y="54" />
-          </GuiSettings>
-          <Properties>
-            <Configuration>
-              <Passwords />
-              <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">C:\Exercises\ch1\Recipe6\DATA DEFINITION\FileStructure.xlsx|||`Sheet1$`</File>
-              <FormatSpecificOptions>
-                <FirstRowData>False</FirstRowData>
-                <ImportLine>1</ImportLine>
-              </FormatSpecificOptions>
-            </Configuration>
-            <Annotation DisplayMode="0">
-              <Name />
-              <DefaultAnnotationText>FileStructure.xlsx
-Query=`Sheet1$`</DefaultAnnotationText>
-              <Left value="False" />
-            </Annotation>
-            <MetaInfo connection="Output">
-              <RecordInfo>
-                <Field name="Name" size="255" source="File: C:\Exercises\ch1\Recipe6\DATA DEFINITION\FileStructure.xlsx|||`Sheet1$`" type="V_String" />
-                <Field name="Type" size="255" source="File: C:\Exercises\ch1\Recipe6\DATA DEFINITION\FileStructure.xlsx|||`Sheet1$`" type="V_String" />
-                <Field name="Size" source="File: C:\Exercises\ch1\Recipe6\DATA DEFINITION\FileStructure.xlsx|||`Sheet1$`" type="Double" />
-                <Field name="Scale" source="File: C:\Exercises\ch1\Recipe6\DATA DEFINITION\FileStructure.xlsx|||`Sheet1$`" type="Double" />
-              </RecordInfo>
-            </MetaInfo>
-          </Properties>
-          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
-        </Node>
-        <Node ToolID="2">
-          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-            <Position x="210" y="54" />
-          </GuiSettings>
-          <Properties>
-            <Configuration>
-              <FormulaFields />
-            </Configuration>
-            <Annotation DisplayMode="0">
-              <Name />
-              <DefaultAnnotationText><![CDATA[
-]]></DefaultAnnotationText>
-              <Left value="False" />
-            </Annotation>
-          </Properties>
-          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
-        </Node>
-      </ChildNodes>
-    </Node>
     <Node ToolID="4">
       <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
-        <Position x="138" y="282" />
+        <Position x="163" y="331" />
       </GuiSettings>
       <Properties>
         <Configuration>
           <Passwords />
-          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="21">C:\Exercises\ch1\Recipe6\DATA\CityBike.txt</File>
+          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="21">..\DATA\CityBike.txt</File>
           <FormatSpecificOptions>
             <TrimWhiteSpace>Unset</TrimWhiteSpace>
             <LineEndStyle>Unset</LineEndStyle>
@@ -115,36 +48,16 @@ Query=`Sheet1$`</DefaultAnnotationText>
         <Dependencies>
           <Implicit />
         </Dependencies>
-        <MetaInfo connection="Output">
-          <RecordInfo>
-            <Field name="Field_2" size="33" source="File: C:\Exercises\ch1\Recipe6\DATA\CityBike.txt" type="V_String" />
-            <Field name="Field_1" size="33" source="File: C:\Exercises\ch1\Recipe6\DATA\CityBike.txt" type="V_String" />
-            <Field name="Field_5" size="33" source="File: C:\Exercises\ch1\Recipe6\DATA\CityBike.txt" type="V_String" />
-            <Field name="Field_6" size="33" source="File: C:\Exercises\ch1\Recipe6\DATA\CityBike.txt" type="V_String" />
-            <Field name="Field_7" size="33" source="File: C:\Exercises\ch1\Recipe6\DATA\CityBike.txt" type="V_String" />
-            <Field name="Field_9" size="33" source="File: C:\Exercises\ch1\Recipe6\DATA\CityBike.txt" type="V_String" />
-            <Field name="Field_8" size="33" source="File: C:\Exercises\ch1\Recipe6\DATA\CityBike.txt" type="V_String" />
-            <Field name="Field_10" size="33" source="File: C:\Exercises\ch1\Recipe6\DATA\CityBike.txt" type="V_String" />
-            <Field name="Field_12" size="33" source="File: C:\Exercises\ch1\Recipe6\DATA\CityBike.txt" type="V_String" />
-            <Field name="Field_11" size="33" source="File: C:\Exercises\ch1\Recipe6\DATA\CityBike.txt" type="V_String" />
-            <Field name="Field_13" size="33" source="File: C:\Exercises\ch1\Recipe6\DATA\CityBike.txt" type="V_String" />
-            <Field name="Field_14" size="33" source="File: C:\Exercises\ch1\Recipe6\DATA\CityBike.txt" type="V_String" />
-            <Field name="Field_15" size="33" source="File: C:\Exercises\ch1\Recipe6\DATA\CityBike.txt" type="V_String" />
-            <Field name="Field_16" size="33" source="File: C:\Exercises\ch1\Recipe6\DATA\CityBike.txt" type="V_String" />
-            <Field name="Field_17" size="33" source="File: C:\Exercises\ch1\Recipe6\DATA\CityBike.txt" type="V_String" />
-            <Field name="Field_18" size="33" source="File: C:\Exercises\ch1\Recipe6\DATA\CityBike.txt" type="V_String" />
-          </RecordInfo>
-        </MetaInfo>
       </Properties>
       <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
     </Node>
     <Node ToolID="5">
       <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-        <Position x="522" y="282" />
+        <Position x="547" y="331" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_1248_caee3a153a47474dbaf3734824d04d89_\Engine_1172_ee169c7e59d74a809bac5985ca7b5731_.yxdb</TempFile>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_3292_7897463e4821456098e190427afe9a5e_\Engine_5448_7dffcf6cdf6c4aecb929ee1964b6da93_.yxdb</TempFile>
           <TempFileDataProfiling />
           <Layout>
             <View1>
@@ -164,7 +77,7 @@ Query=`Sheet1$`</DefaultAnnotationText>
     </Node>
     <Node ToolID="9">
       <GuiSettings Plugin="AlteryxBasePluginsGui.DynamicRename.DynamicRename">
-        <Position x="522" y="138" />
+        <Position x="547" y="187" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -227,11 +140,11 @@ Query=`Sheet1$`</DefaultAnnotationText>
     </Node>
     <Node ToolID="10">
       <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-        <Position x="618" y="138" />
+        <Position x="643" y="187" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_1248_caee3a153a47474dbaf3734824d04d89_\Engine_1172_132f1eedaad84088ac6f40dec3c19359_.yxdb</TempFile>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_3292_7897463e4821456098e190427afe9a5e_\Engine_5448_ef13a51dd8ca4323a1f3145cec3e89ba_.yxdb</TempFile>
           <TempFileDataProfiling />
           <Layout>
             <View1>
@@ -251,7 +164,7 @@ Query=`Sheet1$`</DefaultAnnotationText>
     </Node>
     <Node ToolID="11">
       <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-        <Position x="354" y="282" />
+        <Position x="379" y="331" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -285,7 +198,7 @@ Query=`Sheet1$`</DefaultAnnotationText>
     </Node>
     <Node ToolID="13">
       <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
-        <Position x="1014" y="186" />
+        <Position x="1039" y="235" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -306,15 +219,12 @@ Query=`Sheet1$`</DefaultAnnotationText>
           <DefaultAnnotationText>CitiB.csv</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
-        <Dependencies>
-          <Implicit />
-        </Dependencies>
       </Properties>
       <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
     </Node>
     <Node ToolID="15">
       <GuiSettings Plugin="AlteryxBasePluginsGui.MultiFieldFormula.MultiFieldFormula">
-        <Position x="798" y="186" />
+        <Position x="823" y="235" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -372,7 +282,7 @@ SWITCH([_CurrentFieldName_],0,
     </Node>
     <Node ToolID="16">
       <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-        <Position x="1086" y="42" width="264" height="252" />
+        <Position x="1111" y="91" width="264" height="252" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -408,11 +318,11 @@ SWITCH([_CurrentFieldName_],0,
     </Node>
     <Node ToolID="17">
       <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-        <Position x="930" y="126" />
+        <Position x="955" y="175" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_1248_caee3a153a47474dbaf3734824d04d89_\Engine_1172_bfbe2305b66b4d6394c5343a67a6e48d_.yxdb</TempFile>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_3292_7897463e4821456098e190427afe9a5e_\Engine_5448_a5ee512e093848b69aca692c6867021a_.yxdb</TempFile>
           <TempFileDataProfiling />
           <Layout>
             <View1>
@@ -430,9 +340,79 @@ SWITCH([_CurrentFieldName_],0,
       </Properties>
       <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
     </Node>
+    <Node ToolID="3">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="54" y="54" width="265" height="165" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Container 3</Caption>
+          <Style TextColor="#314c4a" FillColor="#ffffff" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="1">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="79" y="103" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">..\DATA DEFINITION\FileStructure.xlsx|||`Sheet1$`</File>
+              <FormatSpecificOptions>
+                <FirstRowData>False</FirstRowData>
+                <ImportLine>1</ImportLine>
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>FileStructure.xlsx
+Query=`Sheet1$`</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <Dependencies>
+              <Implicit />
+            </Dependencies>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="Name" size="255" source="File: F:\GitHub\Alteryx-Designer-Cookbook\ch1\Recipe6\DATA DEFINITION\FileStructure.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="Type" size="255" source="File: F:\GitHub\Alteryx-Designer-Cookbook\ch1\Recipe6\DATA DEFINITION\FileStructure.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="Size" source="File: F:\GitHub\Alteryx-Designer-Cookbook\ch1\Recipe6\DATA DEFINITION\FileStructure.xlsx|||`Sheet1$`" type="Double" />
+                <Field name="Scale" source="File: F:\GitHub\Alteryx-Designer-Cookbook\ch1\Recipe6\DATA DEFINITION\FileStructure.xlsx|||`Sheet1$`" type="Double" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+        <Node ToolID="2">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="235" y="103" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText><![CDATA[
+]]></DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+      </ChildNodes>
+    </Node>
     <Node ToolID="12">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="473" y="413" width="301" height="181" />
+        <Position x="498" y="462" width="301" height="181" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -450,7 +430,7 @@ SWITCH([_CurrentFieldName_],0,
       <ChildNodes>
         <Node ToolID="6">
           <GuiSettings Plugin="AlteryxBasePluginsGui.AutoField.AutoField">
-            <Position x="498" y="462" />
+            <Position x="523" y="511" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -506,7 +486,7 @@ SWITCH([_CurrentFieldName_],0,
         </Node>
         <Node ToolID="7">
           <GuiSettings Plugin="AlteryxBasePluginsGui.FieldInfo.FieldInfo">
-            <Position x="690" y="510" />
+            <Position x="715" y="559" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -520,7 +500,7 @@ SWITCH([_CurrentFieldName_],0,
         </Node>
         <Node ToolID="8">
           <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-            <Position x="594" y="462" />
+            <Position x="619" y="511" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -547,16 +527,12 @@ SWITCH([_CurrentFieldName_],0,
   </Nodes>
   <Connections>
     <Connection>
-      <Origin ToolID="1" Connection="Output" />
-      <Destination ToolID="2" Connection="Input" />
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="9" Connection="Targets" />
     </Connection>
     <Connection>
       <Origin ToolID="1" Connection="Output" />
       <Destination ToolID="9" Connection="Source" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="4" Connection="Output" />
-      <Destination ToolID="9" Connection="Targets" />
     </Connection>
     <Connection>
       <Origin ToolID="4" Connection="Output" />
@@ -585,6 +561,10 @@ SWITCH([_CurrentFieldName_],0,
     <Connection>
       <Origin ToolID="15" Connection="Output" />
       <Destination ToolID="17" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="2" Connection="Input" />
     </Connection>
     <Connection>
       <Origin ToolID="6" Connection="Output" />

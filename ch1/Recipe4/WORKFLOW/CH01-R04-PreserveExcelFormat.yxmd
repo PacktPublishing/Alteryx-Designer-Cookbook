@@ -22,8 +22,8 @@ Query=`MonthlySales$`</DefaultAnnotationText>
         </Annotation>
         <MetaInfo connection="Output">
           <RecordInfo>
-            <Field name="DATE" source="File: C:\Exercises\ch1\Recipe4\DATA\MonthlySales_*.xlsx|||`MonthlySales$`" type="Date" />
-            <Field name="MONTHLY_SALES" source="File: C:\Exercises\ch1\Recipe4\DATA\MonthlySales_*.xlsx|||`MonthlySales$`" type="Double" />
+            <Field name="DATE" source="File: F:\GitHub\Alteryx-Designer-Cookbook\ch1\Recipe4\DATA\MonthlySales_*.xlsx|||`MonthlySales$`" type="Date" />
+            <Field name="MONTHLY_SALES" source="File: F:\GitHub\Alteryx-Designer-Cookbook\ch1\Recipe4\DATA\MonthlySales_*.xlsx|||`MonthlySales$`" type="Double" />
           </RecordInfo>
         </MetaInfo>
       </Properties>
@@ -31,7 +31,7 @@ Query=`MonthlySales$`</DefaultAnnotationText>
     </Node>
     <Node ToolID="19">
       <GuiSettings Plugin="AlteryxBasePluginsGui.BlockUntilDone.BlockUntilDone">
-        <Position x="150" y="165" />
+        <Position x="150" y="162" />
       </GuiSettings>
       <Properties>
         <Configuration />
@@ -380,7 +380,7 @@ Query=MONTHLY_SALES</DefaultAnnotationText>
     </Node>
     <Node ToolID="18">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="293" y="54" width="516" height="225" />
+        <Position x="293" y="40" width="504" height="225" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -398,7 +398,7 @@ Query=MONTHLY_SALES</DefaultAnnotationText>
       <ChildNodes>
         <Node ToolID="13">
           <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-            <Position x="318" y="103" />
+            <Position x="402" y="90" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -416,7 +416,7 @@ Query=MONTHLY_SALES</DefaultAnnotationText>
         </Node>
         <Node ToolID="14">
           <GuiSettings Plugin="AlteryxBasePluginsGui.RunCommand.RunCommand">
-            <Position x="702" y="105" />
+            <Position x="690" y="90" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -456,7 +456,7 @@ Query=MONTHLY_SALES</DefaultAnnotationText>
         </Node>
         <Node ToolID="15">
           <GuiSettings Plugin="AlteryxBasePluginsGui.AutoField.AutoField">
-            <Position x="606" y="105" />
+            <Position x="594" y="90" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -472,33 +472,15 @@ Query=MONTHLY_SALES</DefaultAnnotationText>
             </Annotation>
             <MetaInfo connection="Output">
               <RecordInfo>
-                <Field name="Copy_command" size="122" source="Formula: 'copy &quot;' + [Engine.WorkflowDirectory] +'..\TEMPLATE\ReportingTemplate.xlsx&quot; &quot;' +&#xA;[Engine.WorkflowDirectory]+ '..\OUTPUT\&quot;'" type="String" />
+                <Field name="Copy_command" size="168" source="Formula: 'copy &quot;' + [Engine.WorkflowDirectory] +'..\TEMPLATE\ReportingTemplate.xlsx&quot; &quot;' +&#xA;[Engine.WorkflowDirectory]+ '..\OUTPUT\&quot;'" type="String" />
               </RecordInfo>
             </MetaInfo>
           </Properties>
           <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAutoField" />
         </Node>
-        <Node ToolID="16">
-          <GuiSettings Plugin="AlteryxBasePluginsGui.Sample.Sample">
-            <Position x="414" y="105" />
-          </GuiSettings>
-          <Properties>
-            <Configuration>
-              <Mode>First</Mode>
-              <N>1</N>
-              <GroupFields orderChanged="False" />
-            </Configuration>
-            <Annotation DisplayMode="0">
-              <Name />
-              <DefaultAnnotationText>First 1</DefaultAnnotationText>
-              <Left value="False" />
-            </Annotation>
-          </Properties>
-          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSample" />
-        </Node>
         <Node ToolID="17">
           <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-            <Position x="510" y="105" />
+            <Position x="498" y="90" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -517,6 +499,24 @@ Query=MONTHLY_SALES</DefaultAnnotationText>
           </Properties>
           <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
         </Node>
+        <Node ToolID="30">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Sample.Sample">
+            <Position x="318" y="89" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Mode>First</Mode>
+              <N>1</N>
+              <GroupFields orderChanged="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>First 1</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSample" />
+        </Node>
       </ChildNodes>
     </Node>
   </Nodes>
@@ -526,16 +526,16 @@ Query=MONTHLY_SALES</DefaultAnnotationText>
       <Destination ToolID="19" Connection="Input" />
     </Connection>
     <Connection>
-      <Origin ToolID="19" Connection="Output" />
-      <Destination ToolID="13" Connection="Input" />
-    </Connection>
-    <Connection>
       <Origin ToolID="19" Connection="Output2" />
       <Destination ToolID="12" Connection="Input" />
     </Connection>
     <Connection>
       <Origin ToolID="19" Connection="Output3" />
       <Destination ToolID="4" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="19" Connection="Output" />
+      <Destination ToolID="30" Connection="Input" />
     </Connection>
     <Connection>
       <Origin ToolID="3" Connection="Output" />
@@ -583,19 +583,19 @@ Query=MONTHLY_SALES</DefaultAnnotationText>
     </Connection>
     <Connection>
       <Origin ToolID="13" Connection="Output" />
-      <Destination ToolID="16" Connection="Input" />
+      <Destination ToolID="17" Connection="Input" />
     </Connection>
     <Connection>
       <Origin ToolID="15" Connection="Output" />
       <Destination ToolID="14" Connection="Input" />
     </Connection>
     <Connection>
-      <Origin ToolID="16" Connection="Output" />
-      <Destination ToolID="17" Connection="Input" />
-    </Connection>
-    <Connection>
       <Origin ToolID="17" Connection="Output" />
       <Destination ToolID="15" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="30" Connection="Output" />
+      <Destination ToolID="13" Connection="Input" />
     </Connection>
   </Connections>
   <Properties>

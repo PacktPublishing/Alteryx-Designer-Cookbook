@@ -34,7 +34,7 @@
       <Properties>
         <Configuration>
           <Passwords />
-          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">C:\Excercises\ch1\Recipe2\DATA\MonthlySalesbyYear.xlsx|||`Sales_2018$`</File>
+          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">..\..\DATA\MonthlySalesbyYear.xlsx|||`Sales_2018$`</File>
           <FormatSpecificOptions>
             <FirstRowData>False</FirstRowData>
             <ImportLine>1</ImportLine>
@@ -46,10 +46,13 @@
 Query=`Sales_2018$`</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
         <MetaInfo connection="Output">
           <RecordInfo>
-            <Field name="DATE" source="File: C:\Excercises\ch1\Recipe2\DATA\MonthlySalesbyYear.xlsx|||`Sales_2018$`" type="Date" />
-            <Field name="MONTHLY_SALES" source="File: C:\Excercises\ch1\Recipe2\DATA\MonthlySalesbyYear.xlsx|||`Sales_2018$`" type="Double" />
+            <Field name="DATE" source="File: F:\GitHub\Alteryx-Designer-Cookbook\ch1\Recipe3\DATA\MonthlySalesbyYear.xlsx|||`Sales_2018$`" type="Date" />
+            <Field name="MONTHLY_SALES" source="File: F:\GitHub\Alteryx-Designer-Cookbook\ch1\Recipe3\DATA\MonthlySalesbyYear.xlsx|||`Sales_2018$`" type="Double" />
           </RecordInfo>
         </MetaInfo>
       </Properties>

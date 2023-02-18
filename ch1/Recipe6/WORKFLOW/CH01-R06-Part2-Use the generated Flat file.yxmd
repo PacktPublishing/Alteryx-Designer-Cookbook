@@ -1,63 +1,13 @@
 <?xml version="1.0"?>
 <AlteryxDocument yxmdVer="2022.1">
   <Nodes>
-    <Node ToolID="1">
-      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
-        <Position x="54" y="54" />
-      </GuiSettings>
-      <Properties>
-        <Configuration>
-          <Passwords />
-          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="21">..\DATA\BikeRides.txt</File>
-          <FormatSpecificOptions>
-            <TrimWhiteSpace>Unset</TrimWhiteSpace>
-            <LineEndStyle>Unset</LineEndStyle>
-            <AllowLongLines>Unset</AllowLongLines>
-            <CodePage>28591</CodePage>
-            <AllowShortLines>Unset</AllowShortLines>
-            <FlatFileXML>
-              <flatfile version="1" external="C:\Exercises\ch1\Recipe6\DATA\GeneratedFlatFile.flat" />
-            </FlatFileXML>
-          </FormatSpecificOptions>
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name />
-          <DefaultAnnotationText>BikeRides.txt</DefaultAnnotationText>
-          <Left value="False" />
-        </Annotation>
-        <Dependencies>
-          <Implicit />
-        </Dependencies>
-        <MetaInfo connection="Output">
-          <RecordInfo>
-            <Field name="TRIPDURATION" source="File: C:\Exercises\ch1\Recipe6\DATA\BikeRides.txt" type="Int32" />
-            <Field name="STARTTIME" source="File: C:\Exercises\ch1\Recipe6\DATA\BikeRides.txt" type="DateTime" />
-            <Field name="STOPTIME" source="File: C:\Exercises\ch1\Recipe6\DATA\BikeRides.txt" type="DateTime" />
-            <Field name="START_STATION_ID" size="4" source="File: C:\Exercises\ch1\Recipe6\DATA\BikeRides.txt" type="V_String" />
-            <Field name="START_STATION_NAME" size="33" source="File: C:\Exercises\ch1\Recipe6\DATA\BikeRides.txt" type="V_String" />
-            <Field name="START_STATION_LATITUDE" scale="9" size="13" source="File: C:\Exercises\ch1\Recipe6\DATA\BikeRides.txt" type="FixedDecimal" />
-            <Field name="START_STATION_LONGITUDE" scale="9" size="13" source="File: C:\Exercises\ch1\Recipe6\DATA\BikeRides.txt" type="FixedDecimal" />
-            <Field name="STATION_ID" source="File: C:\Exercises\ch1\Recipe6\DATA\BikeRides.txt" type="Int32" />
-            <Field name="END_STATION_NAME" size="33" source="File: C:\Exercises\ch1\Recipe6\DATA\BikeRides.txt" type="V_String" />
-            <Field name="END_STATION_LATITUDE" scale="9" size="13" source="File: C:\Exercises\ch1\Recipe6\DATA\BikeRides.txt" type="FixedDecimal" />
-            <Field name="END_STATION_LONGITUDE" scale="9" size="13" source="File: C:\Exercises\ch1\Recipe6\DATA\BikeRides.txt" type="FixedDecimal" />
-            <Field name="BIKE_ID" size="5" source="File: C:\Exercises\ch1\Recipe6\DATA\BikeRides.txt" type="V_String" />
-            <Field name="MEMBERSHIP_TYPE" size="1" source="File: C:\Exercises\ch1\Recipe6\DATA\BikeRides.txt" type="V_String" />
-            <Field name="USERTYPE" size="10" source="File: C:\Exercises\ch1\Recipe6\DATA\BikeRides.txt" type="V_String" />
-            <Field name="BIRTH_YEAR" size="4" source="File: C:\Exercises\ch1\Recipe6\DATA\BikeRides.txt" type="V_String" />
-            <Field name="GENDER" source="File: C:\Exercises\ch1\Recipe6\DATA\BikeRides.txt" type="Byte" />
-          </RecordInfo>
-        </MetaInfo>
-      </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
-    </Node>
     <Node ToolID="2">
       <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
         <Position x="246" y="54" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_8332_d393cbf84e0042b89c3abd35f8a042a6_\Engine_11656_70a185492c77447c89d2bc3a81e5a99d_.yxdb</TempFile>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_29000_65ec4ca92ebe4890be79108229e0f497_\Engine_5448_f261873caf4e4fdfa65e48cfafac4cc2_.yxdb</TempFile>
           <TempFileDataProfiling />
           <Layout>
             <View1>
@@ -75,10 +25,60 @@
       </Properties>
       <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
     </Node>
+    <Node ToolID="4">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="102" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="21">..\DATA\BikeRides.txt</File>
+          <FormatSpecificOptions>
+            <TrimWhiteSpace>Unset</TrimWhiteSpace>
+            <LineEndStyle>Unset</LineEndStyle>
+            <AllowLongLines>Unset</AllowLongLines>
+            <CodePage>28591</CodePage>
+            <AllowShortLines>Unset</AllowShortLines>
+            <FlatFileXML>
+              <flatfile version="1" external="..\DATA\GeneratedFlatFile.flat" />
+            </FlatFileXML>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>BikeRides.txt</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="TRIPDURATION" source="File: F:\GitHub\Alteryx-Designer-Cookbook\ch1\Recipe6\DATA\BikeRides.txt" type="Int32" />
+            <Field name="STARTTIME" source="File: F:\GitHub\Alteryx-Designer-Cookbook\ch1\Recipe6\DATA\BikeRides.txt" type="DateTime" />
+            <Field name="STOPTIME" source="File: F:\GitHub\Alteryx-Designer-Cookbook\ch1\Recipe6\DATA\BikeRides.txt" type="DateTime" />
+            <Field name="START_STATION_ID" size="4" source="File: F:\GitHub\Alteryx-Designer-Cookbook\ch1\Recipe6\DATA\BikeRides.txt" type="V_String" />
+            <Field name="START_STATION_NAME" size="33" source="File: F:\GitHub\Alteryx-Designer-Cookbook\ch1\Recipe6\DATA\BikeRides.txt" type="V_String" />
+            <Field name="START_STATION_LATITUDE" scale="9" size="13" source="File: F:\GitHub\Alteryx-Designer-Cookbook\ch1\Recipe6\DATA\BikeRides.txt" type="FixedDecimal" />
+            <Field name="START_STATION_LONGITUDE" scale="9" size="13" source="File: F:\GitHub\Alteryx-Designer-Cookbook\ch1\Recipe6\DATA\BikeRides.txt" type="FixedDecimal" />
+            <Field name="STATION_ID" source="File: F:\GitHub\Alteryx-Designer-Cookbook\ch1\Recipe6\DATA\BikeRides.txt" type="Int32" />
+            <Field name="END_STATION_NAME" size="33" source="File: F:\GitHub\Alteryx-Designer-Cookbook\ch1\Recipe6\DATA\BikeRides.txt" type="V_String" />
+            <Field name="END_STATION_LATITUDE" scale="9" size="13" source="File: F:\GitHub\Alteryx-Designer-Cookbook\ch1\Recipe6\DATA\BikeRides.txt" type="FixedDecimal" />
+            <Field name="END_STATION_LONGITUDE" scale="9" size="13" source="File: F:\GitHub\Alteryx-Designer-Cookbook\ch1\Recipe6\DATA\BikeRides.txt" type="FixedDecimal" />
+            <Field name="BIKE_ID" size="5" source="File: F:\GitHub\Alteryx-Designer-Cookbook\ch1\Recipe6\DATA\BikeRides.txt" type="V_String" />
+            <Field name="MEMBERSHIP_TYPE" size="1" source="File: F:\GitHub\Alteryx-Designer-Cookbook\ch1\Recipe6\DATA\BikeRides.txt" type="V_String" />
+            <Field name="USERTYPE" size="10" source="File: F:\GitHub\Alteryx-Designer-Cookbook\ch1\Recipe6\DATA\BikeRides.txt" type="V_String" />
+            <Field name="BIRTH_YEAR" size="4" source="File: F:\GitHub\Alteryx-Designer-Cookbook\ch1\Recipe6\DATA\BikeRides.txt" type="V_String" />
+            <Field name="GENDER" source="File: F:\GitHub\Alteryx-Designer-Cookbook\ch1\Recipe6\DATA\BikeRides.txt" type="Byte" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
   </Nodes>
   <Connections>
     <Connection>
-      <Origin ToolID="1" Connection="Output" />
+      <Origin ToolID="4" Connection="Output" />
       <Destination ToolID="2" Connection="Input" />
     </Connection>
   </Connections>
