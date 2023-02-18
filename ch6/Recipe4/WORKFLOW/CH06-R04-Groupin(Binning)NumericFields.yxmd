@@ -1,0 +1,227 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2022.1">
+  <Nodes>
+    <Node ToolID="1">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="54" y="199" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" FileFormat="19" SearchSubDirs="False" RecordLimit="">..\DATA\DOCUMENTS.yxdb</File>
+          <FormatSpecificOptions />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>DOCUMENTS.yxdb</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="COMPANY_ID" size="2" source="File: C:\Exercises\ch2\Recipe1\DATA\Chapter2.sqlite|||DOCUMENTS" type="String" />
+            <Field name="PERIOD" source="File: C:\Exercises\ch2\Recipe1\DATA\Chapter2.sqlite|||DOCUMENTS" type="Int16" />
+            <Field name="DATE" source="File: C:\Exercises\ch2\Recipe1\DATA\Chapter2.sqlite|||DOCUMENTS" type="Date" />
+            <Field name="DOCUMENT_NUMBER" source="File: C:\Exercises\ch2\Recipe1\DATA\Chapter2.sqlite|||DOCUMENTS" type="Int32" />
+            <Field name="CLASS" size="3" source="File: C:\Exercises\ch2\Recipe1\DATA\Chapter2.sqlite|||DOCUMENTS" type="String" />
+            <Field name="CATEGORY" size="3" source="File: C:\Exercises\ch2\Recipe1\DATA\Chapter2.sqlite|||DOCUMENTS" type="String" />
+            <Field name="CATEGORY_DESCRIPTION" size="255" source="File: C:\Exercises\AUXILIAR\ch6\Recipe4\Categories.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="WAREHOUSE" source="File: C:\Exercises\ch2\Recipe1\DATA\Chapter2.sqlite|||DOCUMENTS" type="Int16" />
+            <Field name="ARTICLE_ID" size="15" source="File: C:\Exercises\ch2\Recipe1\DATA\Chapter2.sqlite|||DOCUMENTS" type="V_String" />
+            <Field name="ARTICLE_DESCRIPTION" size="35" source="File: C:\Exercises\ch2\Recipe1\DATA\Chapter2.sqlite|||ARTICLES" type="V_String" />
+            <Field name="TOTAL" source="File: C:\Exercises\ch2\Recipe1\DATA\Chapter2.sqlite|||DOCUMENTS" type="Double" />
+            <Field name="QUANTITY" source="File: C:\Exercises\ch2\Recipe1\DATA\Chapter2.sqlite|||DOCUMENTS" type="Double" />
+            <Field name="CUSTOMER_ID" source="File: C:\Exercises\ch2\Recipe1\DATA\Chapter2.sqlite|||DOCUMENTS" type="Int32" />
+            <Field name="FIRST" size="10" source="File: C:\Exercises\ch2\Recipe1\DATA\Chapter2.sqlite|||CUSTOMERS" type="String" />
+            <Field name="LAST" size="10" source="File: C:\Exercises\ch2\Recipe1\DATA\Chapter2.sqlite|||CUSTOMERS" type="String" />
+            <Field name="EMAIL" size="51" source="File: C:\Exercises\ch2\Recipe1\DATA\Chapter2.sqlite|||CUSTOMERS" type="V_String" />
+            <Field name="VISITS" source="(Multiple Sources)" type="Int16" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="15">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="186" y="199" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="CUSTOMER_ID" action="GroupBy" rename="CUSTOMER_ID" />
+            <SummarizeField field="DOCUMENT_NUMBER" action="CountDistinct" rename="DOCUMENT_NUMBER" />
+            <SummarizeField field="TOTAL" action="Sum" rename="TOTAL" />
+            <SummarizeField field="QUANTITY" action="Sum" rename="QUANTITY" />
+            <SummarizeField field="VISITS" action="Avg" rename="VISITS" />
+            <SummarizeField field="FIRST" action="First" rename="FIRST" />
+            <SummarizeField field="LAST" action="First" rename="LAST" />
+            <SummarizeField field="EMAIL" action="First" rename="EMAIL" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="23">
+      <GuiSettings>
+        <Position x="318" y="199" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Value name="List Box (297)">CUSTOMER_ID=False,DOCUMENT_NUMBER=False,TOTAL=True,QUANTITY=True,VISITS=True</Value>
+          <Value name="Radio Button (299)">False</Value>
+          <Value name="Numeric Up Down (298)">10</Value>
+          <Value name="Radio Button (301)">True</Value>
+          <Value name="Numeric Up Down (300)">10</Value>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="CUSTOMER_ID" source="Summarize: GroupBy - CUSTOMER_ID" type="Int32" />
+            <Field name="DOCUMENT_NUMBER" source="Summarize: CountDistinct - DOCUMENT_NUMBER" type="Int64" />
+            <Field name="TOTAL" source="Summarize: Sum - TOTAL" type="Double" />
+            <Field name="QUANTITY" source="Summarize: Sum - QUANTITY" type="Double" />
+            <Field name="VISITS" source="Summarize: Avg - VISITS" type="Double" />
+            <Field name="FIRST" size="10" source="File: C:\Exercises\ch2\Recipe1\DATA\Chapter2.sqlite|||CUSTOMERS" type="String" />
+            <Field name="LAST" size="10" source="File: C:\Exercises\ch2\Recipe1\DATA\Chapter2.sqlite|||CUSTOMERS" type="String" />
+            <Field name="EMAIL" size="51" source="File: C:\Exercises\ch2\Recipe1\DATA\Chapter2.sqlite|||CUSTOMERS" type="V_String" />
+            <Field name="TOTAL_Tile_Num" source="CrossTab:Header:FieldID:1:Sum:" type="Int64" />
+            <Field name="QUANTITY_Tile_Num" source="CrossTab:Header:FieldID:2:Sum:" type="Int64" />
+            <Field name="VISITS_Tile_Num" source="CrossTab:Header:FieldID:3:Sum:" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings Macro="MultiFieldBinning_v2.yxmc" />
+    </Node>
+    <Node ToolID="22">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="161" y="54" width="169" height="133" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>PERIOD Binning</Caption>
+          <Style TextColor="#314c4a" FillColor="#ffffff" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="21">
+          <GuiSettings>
+            <Position x="186" y="103" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Value name="List Box (297)">PERIOD=True,DOCUMENT_NUMBER=False,WAREHOUSE=False,TOTAL=False,QUANTITY=False,CUSTOMER_ID=False,VISITS=False</Value>
+              <Value name="Radio Button (299)">False</Value>
+              <Value name="Numeric Up Down (298)">6</Value>
+              <Value name="Radio Button (301)">True</Value>
+              <Value name="Numeric Up Down (300)">6</Value>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="COMPANY_ID" size="2" source="File: C:\Exercises\ch2\Recipe1\DATA\Chapter2.sqlite|||DOCUMENTS" type="String" />
+                <Field name="PERIOD" source="File: C:\Exercises\ch2\Recipe1\DATA\Chapter2.sqlite|||DOCUMENTS" type="Int16" />
+                <Field name="DATE" source="File: C:\Exercises\ch2\Recipe1\DATA\Chapter2.sqlite|||DOCUMENTS" type="Date" />
+                <Field name="DOCUMENT_NUMBER" source="File: C:\Exercises\ch2\Recipe1\DATA\Chapter2.sqlite|||DOCUMENTS" type="Int32" />
+                <Field name="CLASS" size="3" source="File: C:\Exercises\ch2\Recipe1\DATA\Chapter2.sqlite|||DOCUMENTS" type="String" />
+                <Field name="CATEGORY" size="3" source="File: C:\Exercises\ch2\Recipe1\DATA\Chapter2.sqlite|||DOCUMENTS" type="String" />
+                <Field name="CATEGORY_DESCRIPTION" size="255" source="File: C:\Exercises\AUXILIAR\ch6\Recipe4\Categories.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="WAREHOUSE" source="File: C:\Exercises\ch2\Recipe1\DATA\Chapter2.sqlite|||DOCUMENTS" type="Int16" />
+                <Field name="ARTICLE_ID" size="15" source="File: C:\Exercises\ch2\Recipe1\DATA\Chapter2.sqlite|||DOCUMENTS" type="V_String" />
+                <Field name="ARTICLE_DESCRIPTION" size="35" source="File: C:\Exercises\ch2\Recipe1\DATA\Chapter2.sqlite|||ARTICLES" type="V_String" />
+                <Field name="TOTAL" source="File: C:\Exercises\ch2\Recipe1\DATA\Chapter2.sqlite|||DOCUMENTS" type="Double" />
+                <Field name="QUANTITY" source="File: C:\Exercises\ch2\Recipe1\DATA\Chapter2.sqlite|||DOCUMENTS" type="Double" />
+                <Field name="CUSTOMER_ID" source="File: C:\Exercises\ch2\Recipe1\DATA\Chapter2.sqlite|||DOCUMENTS" type="Int32" />
+                <Field name="FIRST" size="10" source="File: C:\Exercises\ch2\Recipe1\DATA\Chapter2.sqlite|||CUSTOMERS" type="String" />
+                <Field name="LAST" size="10" source="File: C:\Exercises\ch2\Recipe1\DATA\Chapter2.sqlite|||CUSTOMERS" type="String" />
+                <Field name="EMAIL" size="51" source="File: C:\Exercises\ch2\Recipe1\DATA\Chapter2.sqlite|||CUSTOMERS" type="V_String" />
+                <Field name="VISITS" source="(Multiple Sources)" type="Int16" />
+                <Field name="PERIOD_Tile_Num" source="CrossTab:Header:FieldID:1:Sum:" type="Int64" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings Macro="MultiFieldBinning_v2.yxmc" />
+        </Node>
+      </ChildNodes>
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="15" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="21" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="15" Connection="Output" />
+      <Destination ToolID="23" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="1" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>CH06-R04-Groupin(Binning)NumericFields</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="a4a51383-466c-4ee1-b3d6-43a3550fab65" />
+      <Telemetry>
+        <PreviousWorkflowId value="9d4a29f2-33e3-463b-aaad-34d3f42e662e" />
+        <OriginWorkflowId value="9d4a29f2-33e3-463b-aaad-34d3f42e662e" />
+      </Telemetry>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>
