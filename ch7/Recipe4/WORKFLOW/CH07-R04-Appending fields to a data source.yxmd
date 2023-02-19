@@ -1,0 +1,239 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2022.1">
+  <Nodes>
+    <Node ToolID="5">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AppendFields.AppendFields">
+        <Position x="258" y="150" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <CartesianMode>Error</CartesianMode>
+          <SelectConfiguration>
+            <Configuration outputConnection="Output">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAppendFields" />
+    </Node>
+    <Node ToolID="19">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="54" y="90" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">..\DATA\SALES.xlsx|||`Oct-2022$`</File>
+          <FormatSpecificOptions>
+            <FirstRowData>False</FirstRowData>
+            <ImportLine>1</ImportLine>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>SALES.xlsx
+Query=`Oct-2022$`</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="CustomerID" source="File: C:\Exercises\ch7\Recipe4\DATA\SALES.xlsx|||`Oct-2022$`" type="Double" />
+            <Field name="Store Number" source="File: C:\Exercises\ch7\Recipe4\DATA\SALES.xlsx|||`Oct-2022$`" type="Double" />
+            <Field name="Customer Segment" size="255" source="File: C:\Exercises\ch7\Recipe4\DATA\SALES.xlsx|||`Oct-2022$`" type="V_String" />
+            <Field name="First Name" size="255" source="File: C:\Exercises\ch7\Recipe4\DATA\SALES.xlsx|||`Oct-2022$`" type="V_String" />
+            <Field name="Last Name" size="255" source="File: C:\Exercises\ch7\Recipe4\DATA\SALES.xlsx|||`Oct-2022$`" type="V_String" />
+            <Field name="Address" size="255" source="File: C:\Exercises\ch7\Recipe4\DATA\SALES.xlsx|||`Oct-2022$`" type="V_String" />
+            <Field name="City" size="255" source="File: C:\Exercises\ch7\Recipe4\DATA\SALES.xlsx|||`Oct-2022$`" type="V_String" />
+            <Field name="State" size="255" source="File: C:\Exercises\ch7\Recipe4\DATA\SALES.xlsx|||`Oct-2022$`" type="V_String" />
+            <Field name="Zip" source="File: C:\Exercises\ch7\Recipe4\DATA\SALES.xlsx|||`Oct-2022$`" type="Double" />
+            <Field name="Lat" source="File: C:\Exercises\ch7\Recipe4\DATA\SALES.xlsx|||`Oct-2022$`" type="Double" />
+            <Field name="Lon" source="File: C:\Exercises\ch7\Recipe4\DATA\SALES.xlsx|||`Oct-2022$`" type="Double" />
+            <Field name="Transaction" source="File: C:\Exercises\ch7\Recipe4\DATA\SALES.xlsx|||`Oct-2022$`" type="Double" />
+            <Field name="Period" size="255" source="File: C:\Exercises\ch7\Recipe4\DATA\SALES.xlsx|||`Oct-2022$`" type="V_String" />
+            <Field name="Product_Name" size="255" source="File: C:\Exercises\ch7\Recipe4\DATA\SALES.xlsx|||`Oct-2022$`" type="V_WString" />
+            <Field name="Sales" source="File: C:\Exercises\ch7\Recipe4\DATA\SALES.xlsx|||`Oct-2022$`" type="Double" />
+            <Field name="Order_ID" size="255" source="File: C:\Exercises\ch7\Recipe4\DATA\SALES.xlsx|||`Oct-2022$`" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="27">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="162" y="90" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="Store Number" action="GroupBy" rename="Store Number" />
+            <SummarizeField field="Sales" action="Sum" rename="Store_Sales" />
+            <SummarizeField field="Order_ID" action="CountDistinctNonNull" rename="Quantity_Order_ID" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="32">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="162" y="162" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="Store_Sales" action="Sum" rename="Total_Sales" />
+            <SummarizeField field="Quantity_Order_ID" action="Sum" rename="Total_Order_ID" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="34">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="498" y="66" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="Store Number" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="Store Number" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Right_Store Number" selected="False" rename="Right_Store Number" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="39">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="366" y="150" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="[Store_Sales]/[Total_Sales]" field="%_Of_Sales" size="8" type="Double" />
+            <FormulaField expression="[Quantity_Order_ID]/[Total_Order_ID]" field="%_Of_Invoices" size="8" type="Double" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>%_Of_Sales = [Store_Sales]/[Total_Sales]
+%_Of_Invoices = [Quantity_Order_ID]/[To...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="5" Connection="Output" />
+      <Destination ToolID="39" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="19" Connection="Output" />
+      <Destination ToolID="27" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="19" Connection="Output" />
+      <Destination ToolID="34" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="39" Connection="Output" />
+      <Destination ToolID="34" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="27" Connection="Output" />
+      <Destination ToolID="32" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="27" Connection="Output" />
+      <Destination ToolID="5" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="32" Connection="Output" />
+      <Destination ToolID="5" Connection="Source" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="-1" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>CH07-R04-Appending fields to a data source</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="a2ead52b-75b1-43a4-ba0e-463fde49fd46" />
+      <Telemetry>
+        <PreviousWorkflowId value="3a37868c-e73d-4606-8c42-6425db7b3801" />
+        <OriginWorkflowId value="17b4e1aa-3189-4159-9b99-61e305ce4084" />
+      </Telemetry>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>
