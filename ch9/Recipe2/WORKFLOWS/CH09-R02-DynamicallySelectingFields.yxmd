@@ -1,0 +1,342 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2022.1">
+  <Nodes>
+    <Node ToolID="1">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="54" y="102" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">..\DATA\YearlySalesAndQuantities.xlsx|||`Sheet1$`</File>
+          <FormatSpecificOptions>
+            <FirstRowData>False</FirstRowData>
+            <ImportLine>1</ImportLine>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>YearlySalesAndQuantities.xlsx
+Query=`Sheet1$`</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="COMPANY_ID" size="255" source="File: C:\Exercises\ch9\Recipe2\DATA\YearlySalesAndQuantities.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="ARTICLE_ID" size="255" source="File: C:\Exercises\ch9\Recipe2\DATA\YearlySalesAndQuantities.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="DESCRIPTION" size="255" source="File: C:\Exercises\ch9\Recipe2\DATA\YearlySalesAndQuantities.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="2017_Sales" source="File: C:\Exercises\ch9\Recipe2\DATA\YearlySalesAndQuantities.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="2018_Sales" source="File: C:\Exercises\ch9\Recipe2\DATA\YearlySalesAndQuantities.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="2019_Sales" source="File: C:\Exercises\ch9\Recipe2\DATA\YearlySalesAndQuantities.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="2020_Sales" source="File: C:\Exercises\ch9\Recipe2\DATA\YearlySalesAndQuantities.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="2021_Sales" source="File: C:\Exercises\ch9\Recipe2\DATA\YearlySalesAndQuantities.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="2022_Sales" source="File: C:\Exercises\ch9\Recipe2\DATA\YearlySalesAndQuantities.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="2017_Quantity" source="File: C:\Exercises\ch9\Recipe2\DATA\YearlySalesAndQuantities.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="2018_Quantity" source="File: C:\Exercises\ch9\Recipe2\DATA\YearlySalesAndQuantities.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="2019_Quantity" source="File: C:\Exercises\ch9\Recipe2\DATA\YearlySalesAndQuantities.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="2020_Quantity" source="File: C:\Exercises\ch9\Recipe2\DATA\YearlySalesAndQuantities.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="2021_Quantity" source="File: C:\Exercises\ch9\Recipe2\DATA\YearlySalesAndQuantities.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="2022_Quantity" source="File: C:\Exercises\ch9\Recipe2\DATA\YearlySalesAndQuantities.xlsx|||`Sheet1$`" type="Double" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="12">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DynamicSelect.DynamicSelect">
+        <Position x="570" y="306" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>Formula</Mode>
+          <Expression>!IsEmpty([Description])</Expression>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDynamicSelect" />
+    </Node>
+    <Node ToolID="18">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="690" y="162" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="True">
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="23">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="128" y="272" width="391" height="222" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Selects TY and LY and updates field Descriptions</Caption>
+          <Style TextColor="#314c4a" FillColor="#ffffff" BorderColor="#314c4a" Transparency="25" Margin="10" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="16">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DynamicRename.DynamicRename">
+            <Position x="450" y="306" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <RenameMode>RightDescriptionRows</RenameMode>
+              <Fields orderChanged="False">
+                <Field name="COMPANY_ID" />
+                <Field name="ARTICLE_ID" />
+                <Field name="DESCRIPTION" />
+                <Field name="2017_Sales" />
+                <Field name="2018_Sales" />
+                <Field name="2019_Sales" />
+                <Field name="2020_Sales" />
+                <Field name="2021_Sales" />
+                <Field name="2022_Sales" />
+                <Field name="2017_Quantity" />
+                <Field name="2018_Quantity" />
+                <Field name="2019_Quantity" />
+                <Field name="2020_Quantity" />
+                <Field name="2021_Quantity" />
+                <Field name="2022_Quantity" />
+                <Field name="*Unknown" />
+              </Fields>
+              <Expression />
+              <DescFromRows>
+                <OnError>Warn</OnError>
+                <InputMode>Mapped</InputMode>
+                <OldName>Name</OldName>
+                <NewName>Selection</NewName>
+              </DescFromRows>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="COMPANY_ID" size="255" source="File: C:\Exercises\ch9\Recipe2\DATA\YearlySalesAndQuantities.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="ARTICLE_ID" size="255" source="File: C:\Exercises\ch9\Recipe2\DATA\YearlySalesAndQuantities.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="DESCRIPTION" size="255" source="File: C:\Exercises\ch9\Recipe2\DATA\YearlySalesAndQuantities.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="2017_Sales" source="File: C:\Exercises\ch9\Recipe2\DATA\YearlySalesAndQuantities.xlsx|||`Sheet1$`" type="Double" />
+                <Field name="2018_Sales" source="File: C:\Exercises\ch9\Recipe2\DATA\YearlySalesAndQuantities.xlsx|||`Sheet1$`" type="Double" />
+                <Field name="2019_Sales" source="File: C:\Exercises\ch9\Recipe2\DATA\YearlySalesAndQuantities.xlsx|||`Sheet1$`" type="Double" />
+                <Field name="2020_Sales" source="File: C:\Exercises\ch9\Recipe2\DATA\YearlySalesAndQuantities.xlsx|||`Sheet1$`" type="Double" />
+                <Field name="2021_Sales" source="File: C:\Exercises\ch9\Recipe2\DATA\YearlySalesAndQuantities.xlsx|||`Sheet1$`" type="Double" />
+                <Field description="LY" name="2022_Sales" source="File: C:\Exercises\ch9\Recipe2\DATA\YearlySalesAndQuantities.xlsx|||`Sheet1$`" type="Double" />
+                <Field name="2017_Quantity" source="File: C:\Exercises\ch9\Recipe2\DATA\YearlySalesAndQuantities.xlsx|||`Sheet1$`" type="Double" />
+                <Field name="2018_Quantity" source="File: C:\Exercises\ch9\Recipe2\DATA\YearlySalesAndQuantities.xlsx|||`Sheet1$`" type="Double" />
+                <Field name="2019_Quantity" source="File: C:\Exercises\ch9\Recipe2\DATA\YearlySalesAndQuantities.xlsx|||`Sheet1$`" type="Double" />
+                <Field name="2020_Quantity" source="File: C:\Exercises\ch9\Recipe2\DATA\YearlySalesAndQuantities.xlsx|||`Sheet1$`" type="Double" />
+                <Field name="2021_Quantity" source="File: C:\Exercises\ch9\Recipe2\DATA\YearlySalesAndQuantities.xlsx|||`Sheet1$`" type="Double" />
+                <Field description="LY" name="2022_Quantity" source="File: C:\Exercises\ch9\Recipe2\DATA\YearlySalesAndQuantities.xlsx|||`Sheet1$`" type="Double" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDynamicRename" />
+        </Node>
+        <Node ToolID="14">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="330" y="318" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="IF CONTAINS([Name],[TY])&#xA;THEN &quot;TY&quot;&#xA;ELSEIF CONTAINS([Name],ToString(ToNumber([TY])-1))&#xA;THEN &quot;LY&quot;&#xA;ELSE &quot;&quot;&#xA;ENDIF" field="Selection" size="1073741823" type="V_WString" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Selection = IF CONTAINS([Name],[TY])
+THEN "TY"
+ELSEIF CONTAINS([Name],ToString(T...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="15">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="234" y="318" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="DateTimeYear(DateTimeStart())" field="TY" size="1073741823" type="V_WString" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText><![CDATA[TY = DateTimeYear(DateTimeStart())
+]]></DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="9">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.FieldInfo.FieldInfo">
+            <Position x="138" y="318" />
+          </GuiSettings>
+          <Properties>
+            <Configuration />
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFieldInfo" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="13">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="185" y="54" width="126" height="133" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Headers</Caption>
+          <Style TextColor="#314c4a" FillColor="#ffffff" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="10">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DynamicSelect.DynamicSelect">
+            <Position x="210" y="103" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Mode>FieldTypes</Mode>
+              <FieldTypes>String,WString,V_String,V_WString,Date,Time,DateTime</FieldTypes>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDynamicSelect" />
+        </Node>
+      </ChildNodes>
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="10" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="9" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="16" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="14" Connection="Output" />
+      <Destination ToolID="16" Connection="Source" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="12" Connection="Output" />
+      <Destination ToolID="18" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="10" Connection="Output" />
+      <Destination ToolID="18" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="16" Connection="Output" />
+      <Destination ToolID="12" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="15" Connection="Output" />
+      <Destination ToolID="14" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="9" Connection="Output" />
+      <Destination ToolID="15" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="False" />
+    <ZoomLevel value="-2" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>CH09-R02-DynamicallySelectingFields</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="5261d326-579f-4f72-9934-81c5404aba93" />
+      <Telemetry>
+        <PreviousWorkflowId value="fcfddebd-4a90-4f01-97f9-b64b8e82ff91" />
+        <OriginWorkflowId value="fcfddebd-4a90-4f01-97f9-b64b8e82ff91" />
+      </Telemetry>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>

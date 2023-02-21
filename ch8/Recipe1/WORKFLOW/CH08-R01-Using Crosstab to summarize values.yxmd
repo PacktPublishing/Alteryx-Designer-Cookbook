@@ -1,0 +1,194 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2022.1">
+  <Nodes>
+    <Node ToolID="6">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.CrossTab.CrossTab">
+        <Position x="379" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <GroupFields>
+            <Field field="GROUP" />
+          </GroupFields>
+          <HeaderField field="DATE" />
+          <DataField field="AMOUNT" />
+          <Methods>
+            <Method method="Sum" />
+            <Method method="Avg" />
+            <Method method="Count" />
+            <Method method="XRow" />
+            <Method method="XCol" />
+            <Method method="TotCol" />
+            <Method method="TotRow" />
+          </Methods>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="GROUP" source="CrossTab:Group:Sum:Avg:XRow:XCol:Count:TotCol:" type="Double" />
+            <Field name="Sum_2022_10_18" source="CrossTab:Header:DATE:2022-10-18:Sum:" type="Double" />
+            <Field name="Avg_2022_10_18" source="CrossTab:Header:DATE:2022-10-18:Avg:" type="Double" />
+            <Field name="XRow_2022_10_18" source="CrossTab:Header:DATE:2022-10-18:XRow:" type="Double" />
+            <Field name="XCol_2022_10_18" source="CrossTab:Header:DATE:2022-10-18:XCol:" type="Double" />
+            <Field name="Count_2022_10_18" source="CrossTab:Header:DATE:2022-10-18:CountNonNulls:" type="Double" />
+            <Field name="Sum_2022_10_19" source="CrossTab:Header:DATE:2022-10-19:Sum:" type="Double" />
+            <Field name="Avg_2022_10_19" source="CrossTab:Header:DATE:2022-10-19:Avg:" type="Double" />
+            <Field name="XRow_2022_10_19" source="CrossTab:Header:DATE:2022-10-19:XRow:" type="Double" />
+            <Field name="XCol_2022_10_19" source="CrossTab:Header:DATE:2022-10-19:XCol:" type="Double" />
+            <Field name="Count_2022_10_19" source="CrossTab:Header:DATE:2022-10-19:CountNonNulls:" type="Double" />
+            <Field name="Sum_2022_10_20" source="CrossTab:Header:DATE:2022-10-20:Sum:" type="Double" />
+            <Field name="Avg_2022_10_20" source="CrossTab:Header:DATE:2022-10-20:Avg:" type="Double" />
+            <Field name="XRow_2022_10_20" source="CrossTab:Header:DATE:2022-10-20:XRow:" type="Double" />
+            <Field name="XCol_2022_10_20" source="CrossTab:Header:DATE:2022-10-20:XCol:" type="Double" />
+            <Field name="Count_2022_10_20" source="CrossTab:Header:DATE:2022-10-20:CountNonNulls:" type="Double" />
+            <Field name="Sum_2022_10_21" source="CrossTab:Header:DATE:2022-10-21:Sum:" type="Double" />
+            <Field name="Avg_2022_10_21" source="CrossTab:Header:DATE:2022-10-21:Avg:" type="Double" />
+            <Field name="XRow_2022_10_21" source="CrossTab:Header:DATE:2022-10-21:XRow:" type="Double" />
+            <Field name="XCol_2022_10_21" source="CrossTab:Header:DATE:2022-10-21:XCol:" type="Double" />
+            <Field name="Count_2022_10_21" source="CrossTab:Header:DATE:2022-10-21:CountNonNulls:" type="Double" />
+            <Field name="Sum_2022_10_22" source="CrossTab:Header:DATE:2022-10-22:Sum:" type="Double" />
+            <Field name="Avg_2022_10_22" source="CrossTab:Header:DATE:2022-10-22:Avg:" type="Double" />
+            <Field name="XRow_2022_10_22" source="CrossTab:Header:DATE:2022-10-22:XRow:" type="Double" />
+            <Field name="XCol_2022_10_22" source="CrossTab:Header:DATE:2022-10-22:XCol:" type="Double" />
+            <Field name="Count_2022_10_22" source="CrossTab:Header:DATE:2022-10-22:CountNonNulls:" type="Double" />
+            <Field name="Sum_2022_10_23" source="CrossTab:Header:DATE:2022-10-23:Sum:" type="Double" />
+            <Field name="Avg_2022_10_23" source="CrossTab:Header:DATE:2022-10-23:Avg:" type="Double" />
+            <Field name="XRow_2022_10_23" source="CrossTab:Header:DATE:2022-10-23:XRow:" type="Double" />
+            <Field name="XCol_2022_10_23" source="CrossTab:Header:DATE:2022-10-23:XCol:" type="Double" />
+            <Field name="Count_2022_10_23" source="CrossTab:Header:DATE:2022-10-23:CountNonNulls:" type="Double" />
+            <Field name="Sum_2022_10_24" source="CrossTab:Header:DATE:2022-10-24:Sum:" type="Double" />
+            <Field name="Avg_2022_10_24" source="CrossTab:Header:DATE:2022-10-24:Avg:" type="Double" />
+            <Field name="XRow_2022_10_24" source="CrossTab:Header:DATE:2022-10-24:XRow:" type="Double" />
+            <Field name="XCol_2022_10_24" source="CrossTab:Header:DATE:2022-10-24:XCol:" type="Double" />
+            <Field name="Count_2022_10_24" source="CrossTab:Header:DATE:2022-10-24:CountNonNulls:" type="Double" />
+            <Field name="Sum_2022_10_25" source="CrossTab:Header:DATE:2022-10-25:Sum:" type="Double" />
+            <Field name="Avg_2022_10_25" source="CrossTab:Header:DATE:2022-10-25:Avg:" type="Double" />
+            <Field name="XRow_2022_10_25" source="CrossTab:Header:DATE:2022-10-25:XRow:" type="Double" />
+            <Field name="XCol_2022_10_25" source="CrossTab:Header:DATE:2022-10-25:XCol:" type="Double" />
+            <Field name="Count_2022_10_25" source="CrossTab:Header:DATE:2022-10-25:CountNonNulls:" type="Double" />
+            <Field name="Sum_2022_10_26" source="CrossTab:Header:DATE:2022-10-26:Sum:" type="Double" />
+            <Field name="Avg_2022_10_26" source="CrossTab:Header:DATE:2022-10-26:Avg:" type="Double" />
+            <Field name="XRow_2022_10_26" source="CrossTab:Header:DATE:2022-10-26:XRow:" type="Double" />
+            <Field name="XCol_2022_10_26" source="CrossTab:Header:DATE:2022-10-26:XCol:" type="Double" />
+            <Field name="Count_2022_10_26" source="CrossTab:Header:DATE:2022-10-26:CountNonNulls:" type="Double" />
+            <Field name="Total" source="CrossTab:Total:" type="Double" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="GROUP" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxCrossTab" />
+    </Node>
+    <Node ToolID="7">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="571" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_28588_43c7058d29844df0ac93fceb3aa940a5_\Engine_35900_b0045fd952934b26b14ef1f6a6c71766_.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <View1>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="33">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="247" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" FileFormat="19" SearchSubDirs="False" RecordLimit="">..\DATA\CCStatements.yxdb</File>
+          <FormatSpecificOptions />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>CCStatements.yxdb</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="STATEMENT#" size="254" source="File: FileName" type="V_WString" />
+            <Field name="GROUP" source="File: C:\Users\_AG_\Dropbox\zzorder history\MONIBYTES\tarjets y driver id.xlsx|||`637987735622133578$`" type="Double" />
+            <Field name="CC#" size="16" source="Formula: PadLeft(RIGHT([Número de tarjeta],4),16,&quot;*&quot;)" type="V_WString" />
+            <Field name="DATE" source="DateTime: To MM/dd/yyyy" type="Date" />
+            <Field name="REFERENCE#" size="255" source="File: C:\Users\_AG_\Dropbox\zzorder history\MONIBYTES\LAFISE\638019016707657919.txt" type="V_WString" />
+            <Field name="AMOUNT" source="File: C:\Users\_AG_\Dropbox\zzorder history\MONIBYTES\LAFISE\638019016707657919.txt" type="Double" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="6" Connection="Output" />
+      <Destination ToolID="7" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="33" Connection="Output" />
+      <Destination ToolID="6" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="True" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="False" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>CH08-R01-Using Crosstab to summarize values</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="ca07121b-bfd1-407e-bbfd-403cc3a07321" />
+      <Telemetry>
+        <PreviousWorkflowId value="7ef2a104-8fa4-40b8-a610-4bf7c5b12b4d" />
+        <OriginWorkflowId value="18153b61-9453-4675-845b-736cca3172fe" />
+      </Telemetry>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>

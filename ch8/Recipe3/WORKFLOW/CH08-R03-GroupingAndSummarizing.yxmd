@@ -1,0 +1,220 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2022.1">
+  <Nodes>
+    <Node ToolID="1">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="138" y="258" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" FileFormat="19" SearchSubDirs="False" RecordLimit="">..\DATA\FlightDelays.yxdb</File>
+          <FormatSpecificOptions />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>FlightDelays.yxdb</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="FLIGHT#" size="1073741823" source="Formula: &quot;AIR-&quot;+TosTring([RecordID])+ToString([DayofMonth])+TosTring([DayOfWeek])" type="V_WString" />
+            <Field name="Carrier" size="254" source="File: C:\DATASETS\Flights\flights.csv" type="V_String" />
+            <Field name="OriginAirportID" size="254" source="File: C:\DATASETS\Flights\flights.csv" type="V_String" />
+            <Field name="Delay" source="File: C:\DATASETS\Flights\flights.csv" type="Double" />
+            <Field name="city" size="254" source="File: C:\DATASETS\Flights\airports.csv" type="V_String" />
+            <Field name="state" size="254" source="File: C:\DATASETS\Flights\airports.csv" type="V_String" />
+            <Field name="name" size="254" source="File: C:\DATASETS\Flights\airports.csv" type="V_String" />
+            <Field name="DestAirportID" size="254" source="File: C:\DATASETS\Flights\flights.csv" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="2">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Tile.Tile">
+        <Position x="258" y="258" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Method>UniqueValue</Method>
+          <UniqueValue>
+            <UniqueFields>
+              <Field field="FLIGHT#" />
+            </UniqueFields>
+            <DontSort value="False" />
+          </UniqueValue>
+          <GroupFields orderChanged="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTile" />
+    </Node>
+    <Node ToolID="3">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MultiRowFormula.MultiRowFormula">
+        <Position x="378" y="258" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UpdateField value="False" />
+          <UpdateField_Name>FLIGHT#</UpdateField_Name>
+          <CreateField_Name>LEG_COMPLETE</CreateField_Name>
+          <CreateField_Type>V_WString</CreateField_Type>
+          <CreateField_Size>100</CreateField_Size>
+          <OtherRows>Empty</OtherRows>
+          <NumRows value="1" />
+          <Expression>[city]+"-"+[Row+1:city]</Expression>
+          <GroupByFields>
+            <Field field="FLIGHT#" />
+          </GroupByFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[city]+"-"+[Row+1:city]</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMultiRowFormula" />
+    </Node>
+    <Node ToolID="4">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.CrossTab.CrossTab">
+        <Position x="498" y="258" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <GroupFields />
+          <HeaderField field="LEG_COMPLETE" />
+          <DataField field="Delay" />
+          <Methods>
+            <Method method="Sum" />
+          </Methods>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Honolulu_" source="CrossTab:Header:LEG_COMPLETE:Honolulu-:Sum:" type="Double" />
+            <Field name="Honolulu_Kahului" source="CrossTab:Header:LEG_COMPLETE:Honolulu-Kahului:Sum:" type="Double" />
+            <Field name="Honolulu_Las_Vegas" source="CrossTab:Header:LEG_COMPLETE:Honolulu-Las Vegas:Sum:" type="Double" />
+            <Field name="Honolulu_Los_Angeles" source="CrossTab:Header:LEG_COMPLETE:Honolulu-Los Angeles:Sum:" type="Double" />
+            <Field name="Honolulu_New_York" source="CrossTab:Header:LEG_COMPLETE:Honolulu-New York:Sum:" type="Double" />
+            <Field name="Honolulu_Oakland" source="CrossTab:Header:LEG_COMPLETE:Honolulu-Oakland:Sum:" type="Double" />
+            <Field name="Honolulu_Phoenix" source="CrossTab:Header:LEG_COMPLETE:Honolulu-Phoenix:Sum:" type="Double" />
+            <Field name="Honolulu_Portland" source="CrossTab:Header:LEG_COMPLETE:Honolulu-Portland:Sum:" type="Double" />
+            <Field name="Honolulu_Sacramento" source="CrossTab:Header:LEG_COMPLETE:Honolulu-Sacramento:Sum:" type="Double" />
+            <Field name="Honolulu_San_Diego" source="CrossTab:Header:LEG_COMPLETE:Honolulu-San Diego:Sum:" type="Double" />
+            <Field name="Honolulu_San_Francisco" source="CrossTab:Header:LEG_COMPLETE:Honolulu-San Francisco:Sum:" type="Double" />
+            <Field name="Honolulu_San_Jose" source="CrossTab:Header:LEG_COMPLETE:Honolulu-San Jose:Sum:" type="Double" />
+            <Field name="Honolulu_Seattle" source="CrossTab:Header:LEG_COMPLETE:Honolulu-Seattle:Sum:" type="Double" />
+            <Field name="Kahului_" source="CrossTab:Header:LEG_COMPLETE:Kahului-:Sum:" type="Double" />
+            <Field name="Kahului_Honolulu" source="CrossTab:Header:LEG_COMPLETE:Kahului-Honolulu:Sum:" type="Double" />
+            <Field name="Kahului_Los_Angeles" source="CrossTab:Header:LEG_COMPLETE:Kahului-Los Angeles:Sum:" type="Double" />
+            <Field name="Kahului_Oakland" source="CrossTab:Header:LEG_COMPLETE:Kahului-Oakland:Sum:" type="Double" />
+            <Field name="Kahului_Sacramento" source="CrossTab:Header:LEG_COMPLETE:Kahului-Sacramento:Sum:" type="Double" />
+            <Field name="Kahului_San_Jose" source="CrossTab:Header:LEG_COMPLETE:Kahului-San Jose:Sum:" type="Double" />
+            <Field name="Kahului_Seattle" source="CrossTab:Header:LEG_COMPLETE:Kahului-Seattle:Sum:" type="Double" />
+            <Field name="Las_Vegas_" source="CrossTab:Header:LEG_COMPLETE:Las Vegas-:Sum:" type="Double" />
+            <Field name="Las_Vegas_Honolulu" source="CrossTab:Header:LEG_COMPLETE:Las Vegas-Honolulu:Sum:" type="Double" />
+            <Field name="Los_Angeles_" source="CrossTab:Header:LEG_COMPLETE:Los Angeles-:Sum:" type="Double" />
+            <Field name="Los_Angeles_Honolulu" source="CrossTab:Header:LEG_COMPLETE:Los Angeles-Honolulu:Sum:" type="Double" />
+            <Field name="Los_Angeles_Kahului" source="CrossTab:Header:LEG_COMPLETE:Los Angeles-Kahului:Sum:" type="Double" />
+            <Field name="New_York_" source="CrossTab:Header:LEG_COMPLETE:New York-:Sum:" type="Double" />
+            <Field name="New_York_Honolulu" source="CrossTab:Header:LEG_COMPLETE:New York-Honolulu:Sum:" type="Double" />
+            <Field name="Oakland_" source="CrossTab:Header:LEG_COMPLETE:Oakland-:Sum:" type="Double" />
+            <Field name="Oakland_Honolulu" source="CrossTab:Header:LEG_COMPLETE:Oakland-Honolulu:Sum:" type="Double" />
+            <Field name="Oakland_Kahului" source="CrossTab:Header:LEG_COMPLETE:Oakland-Kahului:Sum:" type="Double" />
+            <Field name="Phoenix_" source="CrossTab:Header:LEG_COMPLETE:Phoenix-:Sum:" type="Double" />
+            <Field name="Phoenix_Honolulu" source="CrossTab:Header:LEG_COMPLETE:Phoenix-Honolulu:Sum:" type="Double" />
+            <Field name="Portland_" source="CrossTab:Header:LEG_COMPLETE:Portland-:Sum:" type="Double" />
+            <Field name="Portland_Honolulu" source="CrossTab:Header:LEG_COMPLETE:Portland-Honolulu:Sum:" type="Double" />
+            <Field name="Sacramento_" source="CrossTab:Header:LEG_COMPLETE:Sacramento-:Sum:" type="Double" />
+            <Field name="Sacramento_Honolulu" source="CrossTab:Header:LEG_COMPLETE:Sacramento-Honolulu:Sum:" type="Double" />
+            <Field name="San_Diego_" source="CrossTab:Header:LEG_COMPLETE:San Diego-:Sum:" type="Double" />
+            <Field name="San_Diego_Honolulu" source="CrossTab:Header:LEG_COMPLETE:San Diego-Honolulu:Sum:" type="Double" />
+            <Field name="San_Diego_Kahului" source="CrossTab:Header:LEG_COMPLETE:San Diego-Kahului:Sum:" type="Double" />
+            <Field name="San_Francisco_" source="CrossTab:Header:LEG_COMPLETE:San Francisco-:Sum:" type="Double" />
+            <Field name="San_Francisco_Honolulu" source="CrossTab:Header:LEG_COMPLETE:San Francisco-Honolulu:Sum:" type="Double" />
+            <Field name="San_Francisco_Kahului" source="CrossTab:Header:LEG_COMPLETE:San Francisco-Kahului:Sum:" type="Double" />
+            <Field name="San_Jose_" source="CrossTab:Header:LEG_COMPLETE:San Jose-:Sum:" type="Double" />
+            <Field name="San_Jose_Honolulu" source="CrossTab:Header:LEG_COMPLETE:San Jose-Honolulu:Sum:" type="Double" />
+            <Field name="San_Jose_Kahului" source="CrossTab:Header:LEG_COMPLETE:San Jose-Kahului:Sum:" type="Double" />
+            <Field name="Seattle_" source="CrossTab:Header:LEG_COMPLETE:Seattle-:Sum:" type="Double" />
+            <Field name="Seattle_Honolulu" source="CrossTab:Header:LEG_COMPLETE:Seattle-Honolulu:Sum:" type="Double" />
+            <Field name="Seattle_Kahului" source="CrossTab:Header:LEG_COMPLETE:Seattle-Kahului:Sum:" type="Double" />
+          </RecordInfo>
+          <SortInfo>
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxCrossTab" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="2" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="3" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="Output" />
+      <Destination ToolID="4" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="False" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>CH08-R03-GroupingAndSummarizing</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="b7cd1f1f-d0e5-4340-b20d-f8fc105f9351" />
+      <Telemetry>
+        <PreviousWorkflowId value="34e351d4-4e53-4d3c-9b2f-29d9b9b77b20" />
+        <OriginWorkflowId value="7fb340da-357f-43c5-a123-f86882611712" />
+      </Telemetry>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>

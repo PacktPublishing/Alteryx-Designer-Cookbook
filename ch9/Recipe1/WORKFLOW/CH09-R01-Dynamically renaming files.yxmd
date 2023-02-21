@@ -1,0 +1,448 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2022.1">
+  <Nodes>
+    <Node ToolID="11">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DynamicRename.DynamicRename">
+        <Position x="376" y="411" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <RenameMode>RightInputRows</RenameMode>
+          <Fields orderChanged="False">
+            <Field name="1" />
+            <Field name="2" />
+            <Field name="Avery 49" />
+            <Field name="5.9" />
+            <Field name="88525" />
+            <Field name="*Unknown" />
+          </Fields>
+          <Expression />
+          <NamesFromRows>
+            <OnError>Warn</OnError>
+            <InputMode>Positional</InputMode>
+            <NewName>Field_Name</NewName>
+          </NamesFromRows>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Transaction#" size="254" source="File: C:\Exercises\ch9\Recipe1\DATA\PoS_data.csv" type="V_String" />
+            <Field name="CustomerID" size="254" source="File: C:\Exercises\ch9\Recipe1\DATA\PoS_data.csv" type="V_String" />
+            <Field name="ProductName" size="254" source="File: C:\Exercises\ch9\Recipe1\DATA\PoS_data.csv" type="V_String" />
+            <Field name="Sales" size="254" source="File: C:\Exercises\ch9\Recipe1\DATA\PoS_data.csv" type="V_String" />
+            <Field name="OrderID" size="254" source="File: C:\Exercises\ch9\Recipe1\DATA\PoS_data.csv" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDynamicRename" />
+    </Node>
+    <Node ToolID="20">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DynamicRename.DynamicRename">
+        <Position x="388" y="171" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <RenameMode>RightInputMetadata</RenameMode>
+          <Fields orderChanged="False">
+            <Field name="Field_1" />
+            <Field name="Field_2" />
+            <Field name="Field_3" />
+            <Field name="Field_4" />
+            <Field name="Field_5" />
+            <Field name="Field_6" />
+            <Field name="Field_7" />
+            <Field name="Field_8" />
+            <Field name="Field_9" />
+            <Field name="Field_10" />
+            <Field name="Field_11" />
+            <Field name="Field_12" />
+            <Field name="*Unknown" />
+          </Fields>
+          <Expression />
+          <NamesFromMetadata>
+            <OnError>Warn</OnError>
+            <ChangeFields>False</ChangeFields>
+          </NamesFromMetadata>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="CustomerID" size="254" source="File: C:\Exercises\ch9\Recipe1\DATA\Customers_by_City\*.csv" type="V_String" />
+            <Field name="Store Number" size="254" source="File: C:\Exercises\ch9\Recipe1\DATA\Customers_by_City\*.csv" type="V_String" />
+            <Field name="Customer Segment" size="254" source="File: C:\Exercises\ch9\Recipe1\DATA\Customers_by_City\*.csv" type="V_String" />
+            <Field name="Responder" size="254" source="File: C:\Exercises\ch9\Recipe1\DATA\Customers_by_City\*.csv" type="V_String" />
+            <Field name="First Name" size="254" source="File: C:\Exercises\ch9\Recipe1\DATA\Customers_by_City\*.csv" type="V_String" />
+            <Field name="Last Name" size="254" source="File: C:\Exercises\ch9\Recipe1\DATA\Customers_by_City\*.csv" type="V_String" />
+            <Field name="Address" size="254" source="File: C:\Exercises\ch9\Recipe1\DATA\Customers_by_City\*.csv" type="V_String" />
+            <Field name="City" size="254" source="File: C:\Exercises\ch9\Recipe1\DATA\Customers_by_City\*.csv" type="V_String" />
+            <Field name="State" size="254" source="File: C:\Exercises\ch9\Recipe1\DATA\Customers_by_City\*.csv" type="V_String" />
+            <Field name="Zip" size="254" source="File: C:\Exercises\ch9\Recipe1\DATA\Customers_by_City\*.csv" type="V_String" />
+            <Field name="Lat" size="254" source="File: C:\Exercises\ch9\Recipe1\DATA\Customers_by_City\*.csv" type="V_String" />
+            <Field name="Lon" size="254" source="File: C:\Exercises\ch9\Recipe1\DATA\Customers_by_City\*.csv" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDynamicRename" />
+    </Node>
+    <Node ToolID="27">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="543" y="242" width="261" height="133" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Join Customers and Transactions</Caption>
+          <Style TextColor="#314c4a" FillColor="#ffffff" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="12">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+            <Position x="568" y="291" />
+          </GuiSettings>
+          <Properties>
+            <Configuration joinByRecordPos="False">
+              <JoinInfo connection="Left">
+                <Field field="CustomerID" />
+              </JoinInfo>
+              <JoinInfo connection="Right">
+                <Field field="CustomerID" />
+              </JoinInfo>
+              <SelectConfiguration>
+                <Configuration outputConnection="Join">
+                  <OrderChanged value="False" />
+                  <CommaDecimal value="False" />
+                  <SelectFields>
+                    <SelectField field="Right_CustomerID" selected="True" rename="Right_CustomerID" input="Right_" />
+                    <SelectField field="*Unknown" selected="True" />
+                  </SelectFields>
+                </Configuration>
+              </SelectConfiguration>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="23">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="78" y="54" width="162" height="294" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Customer data</Caption>
+          <Style TextColor="#314c4a" FillColor="#ffffff" BorderColor="#314c4a" Transparency="25" Margin="10" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="18">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="88" y="88" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <File RecordLimit="" SearchSubDirs="False" FileFormat="0" OutputFileName="">..\DATA\Customers_by_City\*.csv</File>
+              <FormatSpecificOptions>
+                <HeaderRow>False</HeaderRow>
+                <IgnoreErrors>False</IgnoreErrors>
+                <AllowShareWrite>False</AllowShareWrite>
+                <ImportLine>1</ImportLine>
+                <FieldLen>254</FieldLen>
+                <SingleThreadRead>False</SingleThreadRead>
+                <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+                <Delimeter>,</Delimeter>
+                <QuoteRecordBreak>False</QuoteRecordBreak>
+                <CodePage>28591</CodePage>
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>*.csv</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="Field_1" size="254" source="File: C:\Exercises\ch9\Recipe1\DATA\Customers_by_City\*.csv" type="V_String" />
+                <Field name="Field_2" size="254" source="File: C:\Exercises\ch9\Recipe1\DATA\Customers_by_City\*.csv" type="V_String" />
+                <Field name="Field_3" size="254" source="File: C:\Exercises\ch9\Recipe1\DATA\Customers_by_City\*.csv" type="V_String" />
+                <Field name="Field_4" size="254" source="File: C:\Exercises\ch9\Recipe1\DATA\Customers_by_City\*.csv" type="V_String" />
+                <Field name="Field_5" size="254" source="File: C:\Exercises\ch9\Recipe1\DATA\Customers_by_City\*.csv" type="V_String" />
+                <Field name="Field_6" size="254" source="File: C:\Exercises\ch9\Recipe1\DATA\Customers_by_City\*.csv" type="V_String" />
+                <Field name="Field_7" size="254" source="File: C:\Exercises\ch9\Recipe1\DATA\Customers_by_City\*.csv" type="V_String" />
+                <Field name="Field_8" size="254" source="File: C:\Exercises\ch9\Recipe1\DATA\Customers_by_City\*.csv" type="V_String" />
+                <Field name="Field_9" size="254" source="File: C:\Exercises\ch9\Recipe1\DATA\Customers_by_City\*.csv" type="V_String" />
+                <Field name="Field_10" size="254" source="File: C:\Exercises\ch9\Recipe1\DATA\Customers_by_City\*.csv" type="V_String" />
+                <Field name="Field_11" size="254" source="File: C:\Exercises\ch9\Recipe1\DATA\Customers_by_City\*.csv" type="V_String" />
+                <Field name="Field_12" size="254" source="File: C:\Exercises\ch9\Recipe1\DATA\Customers_by_City\*.csv" type="V_String" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+        <Node ToolID="17">
+          <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+            <Position x="101" y="173" width="126" height="165" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Caption>Headers</Caption>
+              <Style TextColor="#314c4a" FillColor="#ffffff" BorderColor="#314c4a" Transparency="25" Margin="10" />
+              <Disabled value="False" />
+              <Folded value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <ChildNodes>
+            <Node ToolID="4">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+                <Position x="111" y="207" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <Passwords />
+                  <File OutputFileName="" RecordLimit="-1" SearchSubDirs="False" FileFormat="25">..\DATA\CUSTOMERS_2021.xlsx|||`CUSTOMERS$`</File>
+                  <FormatSpecificOptions>
+                    <FirstRowData>False</FirstRowData>
+                    <ImportLine>5</ImportLine>
+                  </FormatSpecificOptions>
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText>CUSTOMERS_2021.xlsx
+Query=`CUSTOMERS$`</DefaultAnnotationText>
+                  <Left value="False" />
+                </Annotation>
+                <MetaInfo connection="Output">
+                  <RecordInfo>
+                    <Field name="CustomerID" size="255" source="File: C:\Exercises\ch9\Recipe1\DATA\CUSTOMERS_2021.xlsx|||`CUSTOMERS$`" type="V_String" />
+                    <Field name="Store Number" size="255" source="File: C:\Exercises\ch9\Recipe1\DATA\CUSTOMERS_2021.xlsx|||`CUSTOMERS$`" type="V_String" />
+                    <Field name="Customer Segment" size="255" source="File: C:\Exercises\ch9\Recipe1\DATA\CUSTOMERS_2021.xlsx|||`CUSTOMERS$`" type="V_String" />
+                    <Field name="Responder" size="255" source="File: C:\Exercises\ch9\Recipe1\DATA\CUSTOMERS_2021.xlsx|||`CUSTOMERS$`" type="V_String" />
+                    <Field name="First Name" size="255" source="File: C:\Exercises\ch9\Recipe1\DATA\CUSTOMERS_2021.xlsx|||`CUSTOMERS$`" type="V_String" />
+                    <Field name="Last Name" size="255" source="File: C:\Exercises\ch9\Recipe1\DATA\CUSTOMERS_2021.xlsx|||`CUSTOMERS$`" type="V_String" />
+                    <Field name="Address" size="255" source="File: C:\Exercises\ch9\Recipe1\DATA\CUSTOMERS_2021.xlsx|||`CUSTOMERS$`" type="V_String" />
+                    <Field name="City" size="255" source="File: C:\Exercises\ch9\Recipe1\DATA\CUSTOMERS_2021.xlsx|||`CUSTOMERS$`" type="V_String" />
+                    <Field name="State" size="255" source="File: C:\Exercises\ch9\Recipe1\DATA\CUSTOMERS_2021.xlsx|||`CUSTOMERS$`" type="V_String" />
+                    <Field name="Zip" size="255" source="File: C:\Exercises\ch9\Recipe1\DATA\CUSTOMERS_2021.xlsx|||`CUSTOMERS$`" type="V_String" />
+                    <Field name="Lat" size="255" source="File: C:\Exercises\ch9\Recipe1\DATA\CUSTOMERS_2021.xlsx|||`CUSTOMERS$`" type="V_String" />
+                    <Field name="Lon" size="255" source="File: C:\Exercises\ch9\Recipe1\DATA\CUSTOMERS_2021.xlsx|||`CUSTOMERS$`" type="V_String" />
+                  </RecordInfo>
+                </MetaInfo>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+            </Node>
+          </ChildNodes>
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="25">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="54" y="377" width="237" height="295" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Transactional Data</Caption>
+          <Style TextColor="#314c4a" FillColor="#ffffff" BorderColor="#314c4a" Transparency="25" Margin="10" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="9">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="64" y="411" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <File RecordLimit="" SearchSubDirs="False" FileFormat="0" OutputFileName="">..\DATA\PoS_data.csv</File>
+              <FormatSpecificOptions>
+                <HeaderRow>False</HeaderRow>
+                <IgnoreErrors>False</IgnoreErrors>
+                <AllowShareWrite>False</AllowShareWrite>
+                <ImportLine>1</ImportLine>
+                <FieldLen>254</FieldLen>
+                <SingleThreadRead>False</SingleThreadRead>
+                <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+                <Delimeter>,</Delimeter>
+                <QuoteRecordBreak>False</QuoteRecordBreak>
+                <CodePage>28591</CodePage>
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>PoS_data.csv</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <Dependencies>
+              <Implicit />
+            </Dependencies>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="Field_1" size="254" source="File: C:\Exercises\ch9\Recipe1\DATA\PoS_data.csv" type="V_String" />
+                <Field name="Field_2" size="254" source="File: C:\Exercises\ch9\Recipe1\DATA\PoS_data.csv" type="V_String" />
+                <Field name="Field_3" size="254" source="File: C:\Exercises\ch9\Recipe1\DATA\PoS_data.csv" type="V_String" />
+                <Field name="Field_4" size="254" source="File: C:\Exercises\ch9\Recipe1\DATA\PoS_data.csv" type="V_String" />
+                <Field name="Field_5" size="254" source="File: C:\Exercises\ch9\Recipe1\DATA\PoS_data.csv" type="V_String" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+        <Node ToolID="26">
+          <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+            <Position x="78" y="497" width="203" height="165" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Caption>Transactional Headers</Caption>
+              <Style TextColor="#314c4a" FillColor="#ffffff" BorderColor="#314c4a" Transparency="25" Margin="10" />
+              <Disabled value="False" />
+              <Folded value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <ChildNodes>
+            <Node ToolID="10">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+                <Position x="88" y="531" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <Passwords />
+                  <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">..\DATA_DICTIONARY\PoSDataDictionary.xlsx|||`PoS data dictionary$`</File>
+                  <FormatSpecificOptions>
+                    <FirstRowData>False</FirstRowData>
+                    <ImportLine>1</ImportLine>
+                  </FormatSpecificOptions>
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText>PoSDataDictionary.xlsx
+Query=`PoS data dictionary$`</DefaultAnnotationText>
+                  <Left value="False" />
+                </Annotation>
+                <MetaInfo connection="Output">
+                  <RecordInfo>
+                    <Field name="Field_Name" size="255" source="File: C:\Exercises\ch9\Recipe1\DATA_DICTIONARY\PoSDataDictionary.xlsx|||`PoS data dictionary$`" type="V_String" />
+                  </RecordInfo>
+                </MetaInfo>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+            </Node>
+          </ChildNodes>
+        </Node>
+      </ChildNodes>
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="11" Connection="Output" />
+      <Destination ToolID="12" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="20" Connection="Output" />
+      <Destination ToolID="12" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="18" Connection="Output" />
+      <Destination ToolID="20" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="20" Connection="Source" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="9" Connection="Output" />
+      <Destination ToolID="11" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="10" Connection="Output" />
+      <Destination ToolID="11" Connection="Source" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="-1" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>CH09-R01-Dynamically renaming files</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="5cc3377e-40ed-406a-b977-e62ef408dfb5" />
+      <Telemetry>
+        <PreviousWorkflowId value="e2b04b80-462e-4e56-a5e2-03787eb345c5" />
+        <OriginWorkflowId value="e2b04b80-462e-4e56-a5e2-03787eb345c5" />
+      </Telemetry>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>

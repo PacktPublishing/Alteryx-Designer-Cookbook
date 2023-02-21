@@ -1,0 +1,541 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2022.1">
+  <Nodes>
+    <Node ToolID="16">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DynamicReplace.DynamicReplace">
+        <Position x="510" y="127" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Field_FieldName>FIELD</Field_FieldName>
+          <Field_OutputValue>VALUE</Field_OutputValue>
+          <Field_Expression>EXPRESSION</Field_Expression>
+          <ValueIsExpression value="False" />
+          <Unmatched_Behavior>Warn</Unmatched_Behavior>
+          <FieldTypeMode>Autofield</FieldTypeMode>
+          <OutputFieldType type="Double" size="8" scale="1" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Responder_ID" size="255" source="File: C:\Exercises\ch9\Recipe3\DATA\SurveyData_*.xlsx|||`Survey1$`" type="V_String" />
+            <Field name="Start time" source="File: C:\Exercises\ch9\Recipe3\DATA\SurveyData_*.xlsx|||`Survey1$`" type="DateTime" />
+            <Field name="Completion time" source="File: C:\Exercises\ch9\Recipe3\DATA\SurveyData_*.xlsx|||`Survey1$`" type="DateTime" />
+            <Field name="Q1" size="255" source="File: C:\Exercises\ch9\Recipe3\DATA\SurveyData_*.xlsx|||`Survey1$`" type="V_String" />
+            <Field name="Q2" source="File: C:\Exercises\ch9\Recipe3\DATA\SurveyData_*.xlsx|||`Survey1$`" type="Double" />
+            <Field name="Q3" size="255" source="File: C:\Exercises\ch9\Recipe3\DATA\SurveyData_*.xlsx|||`Survey1$`" type="V_String" />
+            <Field name="Q4" source="File: C:\Exercises\ch9\Recipe3\DATA\SurveyData_*.xlsx|||`Survey1$`" type="Double" />
+            <Field name="Q5" size="255" source="File: C:\Exercises\ch9\Recipe3\DATA\SurveyData_*.xlsx|||`Survey1$`" type="V_String" />
+            <Field name="FileName" size="254" source="File: FileName" type="V_WString" />
+            <Field name="Q2_SCORE" size="8" source="DynamicReplace:" type="String" />
+            <Field name="Q4_SCORE" size="8" source="DynamicReplace:" type="String" />
+            <Field name="Q1_EN" size="3" source="DynamicReplace:" type="String" />
+            <Field name="Q3_EN" size="3" source="DynamicReplace:" type="String" />
+            <Field name="Q5_EN" size="3" source="DynamicReplace:" type="String" />
+            <Field name="Q1_ES" size="2" source="DynamicReplace:" type="String" />
+            <Field name="Q3_ES" size="2" source="DynamicReplace:" type="String" />
+            <Field name="Q5_ES" size="2" source="DynamicReplace:" type="String" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="Counts">
+          <RecordInfo>
+            <Field name="FieldName" size="8" source="DynamicReplace:" type="String" />
+            <Field name="OutputValue" size="8" source="DynamicReplace:" type="String" />
+            <Field name="Count" source="DynamicReplace: Count" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDynamicReplace" />
+    </Node>
+    <Node ToolID="17">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="198" y="115" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="ToString([Q2])" field="Q2_SCORE" size="1073741823" type="V_WString" />
+            <FormulaField expression="ToString([Q4])" field="Q4_SCORE" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[Q2_SCORE = ToString([Q2])
+Q4_SCORE = ToString([Q4])
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="21">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="54" y="115" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="FileName" RecordLimit="" SearchSubDirs="False" FileFormat="25">..\DATA\SurveyData_*.xlsx|||`Survey1$`</File>
+          <FormatSpecificOptions>
+            <FirstRowData>False</FirstRowData>
+            <ImportLine>1</ImportLine>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>SurveyData_*.xlsx
+Query=`Survey1$`</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Responder_ID" size="255" source="File: C:\Exercises\ch9\Recipe3\DATA\SurveyData_*.xlsx|||`Survey1$`" type="V_String" />
+            <Field name="Start time" source="File: C:\Exercises\ch9\Recipe3\DATA\SurveyData_*.xlsx|||`Survey1$`" type="DateTime" />
+            <Field name="Completion time" source="File: C:\Exercises\ch9\Recipe3\DATA\SurveyData_*.xlsx|||`Survey1$`" type="DateTime" />
+            <Field name="Q1" size="255" source="File: C:\Exercises\ch9\Recipe3\DATA\SurveyData_*.xlsx|||`Survey1$`" type="V_String" />
+            <Field name="Q2" source="File: C:\Exercises\ch9\Recipe3\DATA\SurveyData_*.xlsx|||`Survey1$`" type="Double" />
+            <Field name="Q3" size="255" source="File: C:\Exercises\ch9\Recipe3\DATA\SurveyData_*.xlsx|||`Survey1$`" type="V_String" />
+            <Field name="Q4" source="File: C:\Exercises\ch9\Recipe3\DATA\SurveyData_*.xlsx|||`Survey1$`" type="Double" />
+            <Field name="Q5" size="255" source="File: C:\Exercises\ch9\Recipe3\DATA\SurveyData_*.xlsx|||`Survey1$`" type="V_String" />
+            <Field name="FileName" size="254" source="File: FileName" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="28">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="414" y="246" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">..\DICTIONARY\Dictionaries.xlsx|||`RULES$`</File>
+          <FormatSpecificOptions>
+            <FirstRowData>False</FirstRowData>
+            <ImportLine>1</ImportLine>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Dictionaries.xlsx
+Query=`RULES$`</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="FIELD" size="255" source="File: C:\Exercises\ch9\Recipe3\DICTIONARY\Dictionaries.xlsx|||`RULES$`" type="V_String" />
+            <Field name="EXPRESSION" size="255" source="File: C:\Exercises\ch9\Recipe3\DICTIONARY\Dictionaries.xlsx|||`RULES$`" type="V_String" />
+            <Field name="VALUE" size="255" source="File: C:\Exercises\ch9\Recipe3\DICTIONARY\Dictionaries.xlsx|||`RULES$`" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="33">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="714" y="211" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="FileName" RecordLimit="" SearchSubDirs="False" FileFormat="25">..\DICTIONARY\Dictionaries.xlsx|||`QUESTIONS$`</File>
+          <FormatSpecificOptions>
+            <FirstRowData>False</FirstRowData>
+            <ImportLine>1</ImportLine>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Dictionaries.xlsx
+Query=`QUESTIONS$`</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Code" size="255" source="File: C:\Exercises\ch9\Recipe3\DICTIONARY\Dictionaries.xlsx|||`QUESTIONS$`" type="V_String" />
+            <Field name="Question" size="255" source="File: C:\Exercises\ch9\Recipe3\DICTIONARY\Dictionaries.xlsx|||`QUESTIONS$`" type="V_String" />
+            <Field name="Question_Spanish" size="255" source="File: C:\Exercises\ch9\Recipe3\DICTIONARY\Dictionaries.xlsx|||`QUESTIONS$`" type="V_String" />
+            <Field name="FileName" size="254" source="File: FileName" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="34">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DynamicRename.DynamicRename">
+        <Position x="834" y="127" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <RenameMode>RightInputRows</RenameMode>
+          <Fields orderChanged="False">
+            <Field name="Responder_ID" />
+            <Field name="Start time" />
+            <Field name="Completion time" />
+            <Field name="Q1" />
+            <Field name="Q2" />
+            <Field name="Q3" />
+            <Field name="Q4" />
+            <Field name="Q5" />
+            <Field name="FileName" />
+            <Field name="Q2_SCORE" />
+            <Field name="Q4_SCORE" />
+            <Field name="Q1_EN" />
+            <Field name="Q3_EN" />
+            <Field name="Q5_EN" />
+            <Field name="Q1_ES" />
+            <Field name="Q3_ES" />
+            <Field name="Q5_ES" />
+            <Field name="*Unknown" />
+          </Fields>
+          <Expression />
+          <NamesFromRows>
+            <OnError>Warn</OnError>
+            <InputMode>Mapped</InputMode>
+            <OldName>Code</OldName>
+            <NewName>Question</NewName>
+          </NamesFromRows>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Responder_ID" size="255" source="File: C:\Exercises\ch9\Recipe3\DATA\SurveyData_*.xlsx|||`Survey1$`" type="V_String" />
+            <Field name="Start time" source="File: C:\Exercises\ch9\Recipe3\DATA\SurveyData_*.xlsx|||`Survey1$`" type="DateTime" />
+            <Field name="Completion time" source="File: C:\Exercises\ch9\Recipe3\DATA\SurveyData_*.xlsx|||`Survey1$`" type="DateTime" />
+            <Field name="Are you a current customer?" size="255" source="File: C:\Exercises\ch9\Recipe3\DATA\SurveyData_*.xlsx|||`Survey1$`" type="V_String" />
+            <Field name="I'm satisfied with the service" source="File: C:\Exercises\ch9\Recipe3\DATA\SurveyData_*.xlsx|||`Survey1$`" type="Double" />
+            <Field name="Have you contacted Customer Service in the last 3 months?" size="255" source="File: C:\Exercises\ch9\Recipe3\DATA\SurveyData_*.xlsx|||`Survey1$`" type="V_String" />
+            <Field name="My Customer Service experience was great" source="File: C:\Exercises\ch9\Recipe3\DATA\SurveyData_*.xlsx|||`Survey1$`" type="Double" />
+            <Field name="Will you recommned our service to others?" size="255" source="File: C:\Exercises\ch9\Recipe3\DATA\SurveyData_*.xlsx|||`Survey1$`" type="V_String" />
+            <Field name="FileName" size="254" source="File: FileName" type="V_WString" />
+            <Field name="I'm satisfied with the service2" size="8" source="DynamicReplace:" type="String" />
+            <Field name="My Customer Service experience was great2" size="8" source="DynamicReplace:" type="String" />
+            <Field name="Are you a current customer?2" size="3" source="DynamicReplace:" type="String" />
+            <Field name="Have you contacted Customer Service in the last 3 months?2" size="3" source="DynamicReplace:" type="String" />
+            <Field name="Will you recommned our service to others?2" size="3" source="DynamicReplace:" type="String" />
+            <Field name="Es Ud. Un cliente actual?" size="2" source="DynamicReplace:" type="String" />
+            <Field name="Contactó al Centro de atención a clientes en los últimos 3 meses?" size="2" source="DynamicReplace:" type="String" />
+            <Field name="Recomendaría nuestro servicios a otros?" size="2" source="DynamicReplace:" type="String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDynamicRename" />
+    </Node>
+    <Node ToolID="35">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+        <Position x="954" y="127" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <File FileFormat="64" MaxRecords="">..\TABLEAU\SURVEY_1.hyper</File>
+          <Passwords />
+          <FormatSpecificOptions>
+            <OutputOption>Overwrite</OutputOption>
+          </FormatSpecificOptions>
+          <MultiFile value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>SURVEY_1.hyper</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+    </Node>
+    <Node ToolID="41">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="306" y="115" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="[Q1]" field="Q1_EN" size="1073741823" type="V_WString" />
+            <FormulaField expression="[Q3]" field="Q3_EN" size="1073741823" type="V_WString" />
+            <FormulaField expression="[Q5]" field="Q5_EN" size="1073741823" type="V_WString" />
+            <FormulaField expression="[Q1]" field="Q1_ES" size="1073741823" type="V_WString" />
+            <FormulaField expression="[Q3]" field="Q3_ES" size="1073741823" type="V_WString" />
+            <FormulaField expression="[Q5]" field="Q5_ES" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[Q1_EN = [Q1]
+Q3_EN = [Q3]
+Q5_EN = [Q5]
+Q1_ES = [Q1]
+Q3_ES = [Q3]
+Q5_ES = [Q5]
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="20">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="1421" y="54" width="481" height="228" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Create The Data</Caption>
+          <Style TextColor="#314c4a" FillColor="#ffffff" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="True" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="1">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="1446" y="151" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">C:\Exercises\AUXILIAR\ch9\Recipe 2\Encuesta - Drill CMP 30MAR.xlsx|||`Form1$`</File>
+              <FormatSpecificOptions>
+                <FirstRowData>False</FirstRowData>
+                <ImportLine>1</ImportLine>
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Encuesta - Drill CMP 30MAR.xlsx
+Query=`Form1$`</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="ID" source="File: C:\Exercises\AUXILIAR\ch9\Recipe 2\Encuesta - Drill CMP 30MAR.xlsx|||`Form1$`" type="Double" />
+                <Field name="Start time" source="File: C:\Exercises\AUXILIAR\ch9\Recipe 2\Encuesta - Drill CMP 30MAR.xlsx|||`Form1$`" type="DateTime" />
+                <Field name="Completion time" source="File: C:\Exercises\AUXILIAR\ch9\Recipe 2\Encuesta - Drill CMP 30MAR.xlsx|||`Form1$`" type="DateTime" />
+                <Field name="Email" size="255" source="File: C:\Exercises\AUXILIAR\ch9\Recipe 2\Encuesta - Drill CMP 30MAR.xlsx|||`Form1$`" type="V_String" />
+                <Field name="Name" size="255" source="File: C:\Exercises\AUXILIAR\ch9\Recipe 2\Encuesta - Drill CMP 30MAR.xlsx|||`Form1$`" type="V_String" />
+                <Field name="Did you have the opportunity to practice your role within the CMP through the scenario presented?" size="255" source="File: C:\Exercises\AUXILIAR\ch9\Recipe 2\Encuesta - Drill CMP 30MAR.xlsx|||`Form1$`" type="V_String" />
+                <Field name="How effective do you think the plan is in fostering effective decision-making during a crisis?" source="File: C:\Exercises\AUXILIAR\ch9\Recipe 2\Encuesta - Drill CMP 30MAR.xlsx|||`Form1$`" type="Double" />
+                <Field name="How effective do you think the plan is in assessing the impact and fostering effective decision making during a crisis?" source="File: C:\Exercises\AUXILIAR\ch9\Recipe 2\Encuesta - Drill CMP 30MAR.xlsx|||`Form1$`" type="Double" />
+                <Field name="Do you consider that critical issues were addressed according to the priority established in the CMP?" size="255" source="File: C:\Exercises\AUXILIAR\ch9\Recipe 2\Encuesta - Drill CMP 30MAR.xlsx|||`Form1$`" type="V_String" />
+                <Field name="Do you consider that the times in which decisions were made are appropriate?" size="255" source="File: C:\Exercises\AUXILIAR\ch9\Recipe 2\Encuesta - Drill CMP 30MAR.xlsx|||`Form1$`" type="V_String" />
+                <Field name="Comentarios generales:" size="737" source="File: C:\Exercises\AUXILIAR\ch9\Recipe 2\Encuesta - Drill CMP 30MAR.xlsx|||`Form1$`" type="V_String" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+        <Node ToolID="3">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="1602" y="151" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="UuidCreate()" field="Responder_ID" size="1073741823" type="V_WString" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText><![CDATA[Responder_ID = UuidCreate()
+]]></DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="4">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="1722" y="151" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="True" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="ID" selected="False" />
+                <SelectField field="Responder_ID" selected="True" />
+                <SelectField field="Start time" selected="True" />
+                <SelectField field="Completion time" selected="True" />
+                <SelectField field="Email" selected="False" />
+                <SelectField field="Name" selected="False" />
+                <SelectField field="Comentarios generales:" selected="False" rename="NOTES" />
+                <SelectField field="Did you have the opportunity to practice your role within the CMP through the scenario presented?" selected="True" rename="Q1" />
+                <SelectField field="How effective do you think the plan is in fostering effective decision-making during a crisis?" selected="True" rename="Q2" />
+                <SelectField field="How effective do you think the plan is in assessing the impact and fostering effective decision making during a crisis?" selected="True" rename="Q3" />
+                <SelectField field="Do you consider that critical issues were addressed according to the priority established in the CMP?" selected="True" rename="Q4" />
+                <SelectField field="Do you consider that the times in which decisions were made are appropriate?" selected="True" rename="Q5" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="8">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+            <Position x="1530" y="151" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Mode>Simple</Mode>
+              <Simple>
+                <Operator>IsNotNull</Operator>
+                <Field>ID</Field>
+                <Operands>
+                  <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+                  <DateType>fixed</DateType>
+                  <PeriodDate>2022-11-27 18:56:06</PeriodDate>
+                  <PeriodType>
+                  </PeriodType>
+                  <PeriodCount>0</PeriodCount>
+                  <Operand>
+                  </Operand>
+                  <StartDate>2022-11-27 18:56:06</StartDate>
+                  <EndDate>2022-11-27 18:56:06</EndDate>
+                </Operands>
+              </Simple>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>!IsNull([ID])</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+        </Node>
+        <Node ToolID="19">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="1818" y="103" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\ProgramData\Alteryx\Engine\Engine_15084_1590e6fce53e49ffb70ce68b15528efb_\Engine_30376_c40c7f9107264a9f8c5666956bf7dce2_.yxdb</TempFile>
+              <TempFileDataProfiling />
+              <Layout>
+                <View1>
+                  <Hints>
+                    <Table />
+                  </Hints>
+                </View1>
+              </Layout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+      </ChildNodes>
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="16" Connection="Output" />
+      <Destination ToolID="34" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="33" Connection="Output" />
+      <Destination ToolID="34" Connection="Source" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="17" Connection="Output" />
+      <Destination ToolID="41" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="21" Connection="Output" />
+      <Destination ToolID="17" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="28" Connection="Output" />
+      <Destination ToolID="16" Connection="Expressions" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="41" Connection="Output" />
+      <Destination ToolID="16" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="34" Connection="Output" />
+      <Destination ToolID="35" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="8" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="Output" />
+      <Destination ToolID="4" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="19" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="8" Connection="True" />
+      <Destination ToolID="3" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="False" />
+    <ShowConnectionStatusOnlyWhenRunning value="False" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>CH09-R03-Dynamically Replacing values</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="1851207b-71d1-49a0-81ac-a6a6247fc6ba" />
+      <Telemetry>
+        <PreviousWorkflowId value="da8fd193-fd63-4d7a-a124-efd6682de78b" />
+        <OriginWorkflowId value="da8fd193-fd63-4d7a-a124-efd6682de78b" />
+      </Telemetry>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>

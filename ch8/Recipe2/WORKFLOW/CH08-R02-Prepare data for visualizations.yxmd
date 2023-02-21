@@ -1,0 +1,635 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2022.1">
+  <Nodes>
+    <Node ToolID="3">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Transpose.Transpose">
+        <Position x="198" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <ErrorWarn>Warn</ErrorWarn>
+          <KeyFields>
+            <Field field="Product" />
+            <Field field="Category" />
+            <Field field="Suggested Age Range" />
+            <Field field="Average Monthly Sales" />
+          </KeyFields>
+          <DataFields>
+            <Field field="Product" selected="False" />
+            <Field field="Category" selected="False" />
+            <Field field="Suggested Age Range" selected="False" />
+            <Field field="Average Monthly Sales" selected="False" />
+            <Field field="January" selected="True" />
+            <Field field="February" selected="True" />
+            <Field field="March" selected="True" />
+            <Field field="April" selected="True" />
+            <Field field="May" selected="True" />
+            <Field field="June" selected="True" />
+            <Field field="July" selected="True" />
+            <Field field="August" selected="True" />
+            <Field field="September" selected="True" />
+            <Field field="October" selected="True" />
+            <Field field="November" selected="True" />
+            <Field field="December" selected="True" />
+            <Field field="*Unknown" selected="True" />
+          </DataFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTranspose" />
+    </Node>
+    <Node ToolID="4">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="318" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Name" selected="True" rename="Month" />
+            <SelectField field="Value" selected="True" rename="Sales" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="10">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="54" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" FileFormat="19" SearchSubDirs="False" RecordLimit="">..\DATA\Viz.yxdb</File>
+          <FormatSpecificOptions />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Viz.yxdb</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Product" size="31" source="TextInput:" type="V_String" />
+            <Field name="Category" size="13" source="TextInput:" type="String" />
+            <Field name="Suggested Age Range" size="8" source="TextInput:" type="String" />
+            <Field name="Average Monthly Sales" source="TextInput:" type="Double" />
+            <Field name="January" source="TextInput:" type="Int32" />
+            <Field name="February" source="TextInput:" type="Int32" />
+            <Field name="March" source="TextInput:" type="Int32" />
+            <Field name="April" source="TextInput:" type="Int32" />
+            <Field name="May" source="TextInput:" type="Int32" />
+            <Field name="June" source="TextInput:" type="Int32" />
+            <Field name="July" source="TextInput:" type="Int32" />
+            <Field name="August" source="TextInput:" type="Int32" />
+            <Field name="September" source="TextInput:" type="Int32" />
+            <Field name="October" source="TextInput:" type="Int32" />
+            <Field name="November" source="TextInput:" type="Int32" />
+            <Field name="December" source="TextInput:" type="Int32" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="11">
+      <GuiSettings Plugin="PlotlyCharting">
+        <Position x="210" y="162" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <ChartingFields>
+            <Traces json:Array="true" xmlns:json="http://james.newtonking.com/projects/json">
+              <type>bar</type>
+              <mode>markers</mode>
+              <name>Sales</name>
+              <orientation>v</orientation>
+              <xsrc>Product</xsrc>
+              <ysrc>January</ysrc>
+              <transforms json:Array="true">
+                <type>groupby</type>
+                <groupssrc>Product</groupssrc>
+                <groups>Graphing Calculators</groups>
+                <groups>Office Supplies</groups>
+                <groups>Encyclopedias</groups>
+                <groups>Building Blocks</groups>
+                <groups>Books about Dinosaurs</groups>
+                <groups>Viggo Mortenson DVDs</groups>
+                <groups>Clothing</groups>
+                <groups>Frisbee and Frisbee Accessories</groups>
+                <groups>Legumes</groups>
+                <groups>Microscopes</groups>
+                <enabled>false</enabled>
+              </transforms>
+            </Traces>
+            <Layout>
+              <title>
+                <text>
+                </text>
+              </title>
+              <font>
+                <family>sans-serif</family>
+              </font>
+              <autosize>false</autosize>
+              <width>700</width>
+              <height>849</height>
+              <showlegend>true</showlegend>
+              <hovermode>closest</hovermode>
+              <xaxis>
+                <range>-0.5</range>
+                <range>9.5</range>
+                <autorange>true</autorange>
+                <title>
+                  <text>Product</text>
+                </title>
+                <type>category</type>
+              </xaxis>
+              <yaxis>
+                <range>0</range>
+                <range>203860</range>
+                <autorange>true</autorange>
+                <title>
+                  <text>January</text>
+                </title>
+                <type>linear</type>
+              </yaxis>
+            </Layout>
+          </ChartingFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="PortfolioPluginsEngine.dll" EngineDllEntryPoint="ComposerInteractiveCharting" />
+    </Node>
+    <Node ToolID="12">
+      <GuiSettings Plugin="PlotlyCharting">
+        <Position x="438" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <ChartingFields>
+            <Traces json:Array="true" xmlns:json="http://james.newtonking.com/projects/json">
+              <type>bar</type>
+              <textposition>None</textposition>
+              <name>Sales</name>
+              <xsrc>Product</xsrc>
+              <orientation>v</orientation>
+              <ysrc>Sales</ysrc>
+              <transforms json:Array="true">
+                <type>groupby</type>
+                <groupssrc>Month</groupssrc>
+                <styles>
+                  <target>January</target>
+                  <value>
+                    <marker>
+                      <line>
+                        <width>0</width>
+                      </line>
+                      <color>#4c78a8</color>
+                    </marker>
+                    <textposition>inside</textposition>
+                    <textfont>
+                      <size>9</size>
+                    </textfont>
+                    <hoverinfo>x+y+text+name</hoverinfo>
+                  </value>
+                </styles>
+                <styles>
+                  <target>February</target>
+                  <value>
+                    <marker>
+                      <line>
+                        <width>0</width>
+                      </line>
+                      <color>#f58518</color>
+                    </marker>
+                    <traceIndex>0</traceIndex>
+                    <textposition>inside</textposition>
+                    <textfont>
+                      <size>9</size>
+                    </textfont>
+                    <hoverinfo>x+y+text+name</hoverinfo>
+                  </value>
+                </styles>
+                <styles>
+                  <target>March</target>
+                  <value>
+                    <marker>
+                      <line>
+                        <width>0</width>
+                      </line>
+                      <color>#e45756</color>
+                    </marker>
+                    <traceIndex>0</traceIndex>
+                    <textposition>inside</textposition>
+                    <textfont>
+                      <size>9</size>
+                    </textfont>
+                    <hoverinfo>x+y+text+name</hoverinfo>
+                  </value>
+                </styles>
+                <styles>
+                  <target>April</target>
+                  <value>
+                    <marker>
+                      <line>
+                        <width>0</width>
+                      </line>
+                      <color>#72b7b2</color>
+                    </marker>
+                    <traceIndex>0</traceIndex>
+                    <textposition>inside</textposition>
+                    <textfont>
+                      <size>9</size>
+                    </textfont>
+                    <hoverinfo>x+y+text+name</hoverinfo>
+                  </value>
+                </styles>
+                <styles>
+                  <target>May</target>
+                  <value>
+                    <marker>
+                      <line>
+                        <width>0</width>
+                      </line>
+                      <color>#54a24b</color>
+                    </marker>
+                    <traceIndex>0</traceIndex>
+                    <textposition>inside</textposition>
+                    <textfont>
+                      <size>9</size>
+                    </textfont>
+                    <hoverinfo>x+y+text+name</hoverinfo>
+                  </value>
+                </styles>
+                <styles>
+                  <target>June</target>
+                  <value>
+                    <marker>
+                      <line>
+                        <width>0</width>
+                      </line>
+                      <color>#eeca3b</color>
+                    </marker>
+                    <traceIndex>0</traceIndex>
+                    <textposition>inside</textposition>
+                    <textfont>
+                      <size>9</size>
+                    </textfont>
+                    <hoverinfo>x+y+text+name</hoverinfo>
+                  </value>
+                </styles>
+                <styles>
+                  <target>July</target>
+                  <value>
+                    <marker>
+                      <line>
+                        <width>0</width>
+                      </line>
+                      <color>#b279a2</color>
+                    </marker>
+                    <traceIndex>0</traceIndex>
+                    <textposition>inside</textposition>
+                    <textfont>
+                      <size>9</size>
+                    </textfont>
+                    <hoverinfo>x+y+text+name</hoverinfo>
+                  </value>
+                </styles>
+                <styles>
+                  <target>August</target>
+                  <value>
+                    <marker>
+                      <line>
+                        <width>0</width>
+                      </line>
+                      <color>#ff9da6</color>
+                    </marker>
+                    <traceIndex>0</traceIndex>
+                    <textposition>inside</textposition>
+                    <textfont>
+                      <size>9</size>
+                    </textfont>
+                    <hoverinfo>x+y+text+name</hoverinfo>
+                  </value>
+                </styles>
+                <styles>
+                  <target>September</target>
+                  <value>
+                    <marker>
+                      <line>
+                        <width>0</width>
+                      </line>
+                      <color>#9d755d</color>
+                    </marker>
+                    <traceIndex>0</traceIndex>
+                    <textposition>inside</textposition>
+                    <textfont>
+                      <size>9</size>
+                    </textfont>
+                    <hoverinfo>x+y+text+name</hoverinfo>
+                  </value>
+                </styles>
+                <styles>
+                  <target>October</target>
+                  <value>
+                    <marker>
+                      <line>
+                        <width>0</width>
+                      </line>
+                      <color>#bab0ac</color>
+                    </marker>
+                    <traceIndex>0</traceIndex>
+                    <textposition>inside</textposition>
+                    <textfont>
+                      <size>9</size>
+                    </textfont>
+                    <hoverinfo>x+y+text+name</hoverinfo>
+                  </value>
+                </styles>
+                <styles>
+                  <target>November</target>
+                  <value>
+                    <marker>
+                      <line>
+                        <width>0</width>
+                      </line>
+                      <color>#4c78a8</color>
+                    </marker>
+                    <traceIndex>0</traceIndex>
+                    <textposition>inside</textposition>
+                    <textfont>
+                      <size>9</size>
+                    </textfont>
+                    <hoverinfo>x+y+text+name</hoverinfo>
+                  </value>
+                </styles>
+                <styles>
+                  <target>December</target>
+                  <value>
+                    <marker>
+                      <line>
+                        <width>0</width>
+                      </line>
+                      <color>#f58518</color>
+                    </marker>
+                    <traceIndex>0</traceIndex>
+                    <textposition>inside</textposition>
+                    <textfont>
+                      <size>9</size>
+                    </textfont>
+                    <hoverinfo>x+y+text+name</hoverinfo>
+                  </value>
+                </styles>
+                <groups>January</groups>
+                <groups>February</groups>
+                <groups>March</groups>
+                <groups>April</groups>
+                <groups>May</groups>
+                <groups>June</groups>
+                <groups>July</groups>
+                <groups>August</groups>
+                <groups>September</groups>
+                <groups>October</groups>
+                <groups>November</groups>
+                <groups>December</groups>
+                <groups>January</groups>
+                <groups>February</groups>
+                <groups>March</groups>
+                <groups>April</groups>
+                <groups>May</groups>
+                <groups>June</groups>
+                <groups>July</groups>
+                <groups>August</groups>
+                <groups>September</groups>
+                <groups>October</groups>
+                <groups>November</groups>
+                <groups>December</groups>
+                <groups>January</groups>
+                <groups>February</groups>
+                <groups>March</groups>
+                <groups>April</groups>
+                <groups>May</groups>
+                <groups>June</groups>
+                <groups>July</groups>
+                <groups>August</groups>
+                <groups>September</groups>
+                <groups>October</groups>
+                <groups>November</groups>
+                <groups>December</groups>
+                <groups>January</groups>
+                <groups>February</groups>
+                <groups>March</groups>
+                <groups>April</groups>
+                <groups>May</groups>
+                <groups>June</groups>
+                <groups>July</groups>
+                <groups>August</groups>
+                <groups>September</groups>
+                <groups>October</groups>
+                <groups>November</groups>
+                <groups>December</groups>
+                <groups>January</groups>
+                <groups>February</groups>
+                <groups>March</groups>
+                <groups>April</groups>
+                <groups>May</groups>
+                <groups>June</groups>
+                <groups>July</groups>
+                <groups>August</groups>
+                <groups>September</groups>
+                <groups>October</groups>
+                <groups>November</groups>
+                <groups>December</groups>
+                <groups>January</groups>
+                <groups>February</groups>
+                <groups>March</groups>
+                <groups>April</groups>
+                <groups>May</groups>
+                <groups>June</groups>
+                <groups>July</groups>
+                <groups>August</groups>
+                <groups>September</groups>
+                <groups>October</groups>
+                <groups>November</groups>
+                <groups>December</groups>
+                <groups>January</groups>
+                <groups>February</groups>
+                <groups>March</groups>
+                <groups>April</groups>
+                <groups>May</groups>
+                <groups>June</groups>
+                <groups>July</groups>
+                <groups>August</groups>
+                <groups>September</groups>
+                <groups>October</groups>
+                <groups>November</groups>
+                <groups>December</groups>
+                <groups>January</groups>
+                <groups>February</groups>
+                <groups>March</groups>
+                <groups>April</groups>
+                <groups>May</groups>
+                <groups>June</groups>
+                <groups>July</groups>
+                <groups>August</groups>
+                <groups>September</groups>
+                <groups>October</groups>
+                <groups>November</groups>
+                <groups>December</groups>
+                <groups>January</groups>
+                <groups>February</groups>
+                <groups>March</groups>
+                <groups>April</groups>
+                <groups>May</groups>
+                <groups>June</groups>
+                <groups>July</groups>
+                <groups>August</groups>
+                <groups>September</groups>
+                <groups>October</groups>
+                <groups>November</groups>
+                <groups>December</groups>
+                <groups>January</groups>
+                <groups>February</groups>
+                <groups>March</groups>
+                <groups>April</groups>
+                <groups>May</groups>
+                <groups>June</groups>
+                <groups>July</groups>
+                <groups>August</groups>
+                <groups>September</groups>
+                <groups>October</groups>
+                <groups>November</groups>
+                <groups>December</groups>
+              </transforms>
+              <textsrc>Sales</textsrc>
+              <autocolorscale>false</autocolorscale>
+            </Traces>
+            <Layout>
+              <title>
+                <text>&lt;b&gt;Monthly Sales by Product&lt;/b&gt; - Stacked</text>
+              </title>
+              <font>
+                <family>sans-serif</family>
+                <size>12</size>
+              </font>
+              <autosize>false</autosize>
+              <width>1000</width>
+              <height>849</height>
+              <xaxis>
+                <range>-0.5</range>
+                <range>9.5</range>
+                <autorange>true</autorange>
+                <title>
+                  <text>Product</text>
+                </title>
+                <type>category</type>
+              </xaxis>
+              <yaxis>
+                <range>0</range>
+                <range>1531105.2631578948</range>
+                <autorange>true</autorange>
+                <title>
+                  <text>Sales</text>
+                </title>
+                <type>linear</type>
+              </yaxis>
+              <barmode>stack</barmode>
+              <margin>
+                <pad>4</pad>
+                <t>100</t>
+                <b>80</b>
+                <l>80</l>
+                <r>80</r>
+              </margin>
+              <hovermode>false</hovermode>
+              <barnorm>0</barnorm>
+              <showlegend>true</showlegend>
+            </Layout>
+          </ChartingFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="PortfolioPluginsEngine.dll" EngineDllEntryPoint="ComposerInteractiveCharting" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="3" Connection="Output" />
+      <Destination ToolID="4" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="12" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="10" Connection="Output" />
+      <Destination ToolID="3" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="10" Connection="Output" />
+      <Destination ToolID="11" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="False" />
+    <ShowConnectionStatusOnlyWhenRunning value="False" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>CH08-R02-Prepare data for visualizations</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="89cd89be-cbe7-4f48-a8e1-f637255f48f4" />
+      <Telemetry>
+        <PreviousWorkflowId value="ae58ad24-d1fb-4ab3-b0dc-3e403ba2b8bf" />
+        <OriginWorkflowId value="ae58ad24-d1fb-4ab3-b0dc-3e403ba2b8bf" />
+      </Telemetry>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>
