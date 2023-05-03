@@ -1,0 +1,269 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2022.1">
+  <Nodes>
+    <Node ToolID="4">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="54" y="163" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" FileFormat="19" SearchSubDirs="False" RecordLimit="">..\DATA\DOCUMENTS.yxdb</File>
+          <FormatSpecificOptions />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>DOCUMENTS.yxdb</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="COMPANY_ID" size="2" source="File: C:\Exercises\ch7\Recipe1\DATA\Chapter2.sqlite|||DOCUMENTS" type="String" />
+            <Field name="DOC_TYPE" size="2" source="File: C:\Exercises\ch7\Recipe1\DATA\Chapter2.sqlite|||DOCUMENTS" type="String" />
+            <Field name="DOCUMENT_NUMBER" source="File: C:\Exercises\ch7\Recipe1\DATA\Chapter2.sqlite|||DOCUMENTS" type="Int32" />
+            <Field name="CUSTOMER_ID" size="11" source="File: C:\Exercises\ch7\Recipe1\DATA\Chapter2.sqlite|||DOCUMENTS" type="String" />
+            <Field name="ARTICLE_ID" size="15" source="File: C:\Exercises\ch7\Recipe1\DATA\Chapter2.sqlite|||DOCUMENTS" type="V_String" />
+            <Field name="TOTAL" source="File: C:\Exercises\ch7\Recipe1\DATA\Chapter2.sqlite|||DOCUMENTS" type="Double" />
+            <Field name="QUANTITY" source="File: C:\Exercises\ch7\Recipe1\DATA\Chapter2.sqlite|||DOCUMENTS" type="Double" />
+            <Field name="DATE" source="File: C:\Exercises\ch7\Recipe1\DATA\Chapter2.sqlite|||DOCUMENTS" type="Date" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="5">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="54" y="319" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" FileFormat="19" SearchSubDirs="False" RecordLimit="">..\DATA\CUSTOMERS.yxdb</File>
+          <FormatSpecificOptions />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>CUSTOMERS.yxdb</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="CUSTOMER_ID" size="11" source="File: C:\Exercises\ch7\Recipe1\DATA\Chapter2.sqlite|||CUSTOMERS" type="String" />
+            <Field name="FIRST" size="10" source="File: C:\Exercises\ch7\Recipe1\DATA\Chapter2.sqlite|||CUSTOMERS" type="String" />
+            <Field name="LAST" size="10" source="File: C:\Exercises\ch7\Recipe1\DATA\Chapter2.sqlite|||CUSTOMERS" type="String" />
+            <Field name="EMAIL" size="51" source="File: C:\Exercises\ch7\Recipe1\DATA\Chapter2.sqlite|||CUSTOMERS" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="14">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="246" y="247" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="CUSTOMER_ID" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="CUSTOMER_ID" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Right_CUSTOMER_ID" selected="False" rename="Right_CUSTOMER_ID" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Join (1st Join)</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="26">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Message.Message">
+        <Position x="138" y="163" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <When>Filter</When>
+          <Filter>Mod([_RecordNumber_],10000)=0</Filter>
+          <Type>Message</Type>
+          <Priority>Normal</Priority>
+          <Transient>True</Transient>
+          <MessageExpression>ToString([_RecordNumber_],0,1) + " Record Processed From DOCUMENTS."</MessageExpression>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMessage" />
+    </Node>
+    <Node ToolID="27">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+        <Position x="390" y="319" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <File MaxRecords="" FileFormat="25">..\DATA\Debug.xlsx|||CUSTOMERS with no documents</File>
+          <Passwords />
+          <FormatSpecificOptions>
+            <PreserveFormat>False</PreserveFormat>
+            <SkipFieldNames>False</SkipFieldNames>
+            <OutputOption>Overwrite</OutputOption>
+          </FormatSpecificOptions>
+          <MultiFile value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Debug.xlsx
+Query=CUSTOMERS with no documents</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+    </Node>
+    <Node ToolID="28">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="390" y="247" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_27364_b94bfe4778d641fe98ce31b3aa65d729_\Engine_25364_6b16ef034a324f5fbf412911978963f1_.yxdb</TempFile>
+          <Layout>
+            <View1>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="29">
+      <GuiSettings>
+        <Position x="342" y="463" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings Macro="CountRecords.yxmc" />
+    </Node>
+    <Node ToolID="30">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Message.Message">
+        <Position x="438" y="463" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <When>All</When>
+          <Filter>[Count]&gt;0</Filter>
+          <Type>FileOutputV2</Type>
+          <Priority>High</Priority>
+          <Transient>False</Transient>
+          <MessageExpression>[Engine.WorkflowDirectory] + "..\DEBUG\DEBUG.xlsx|************************Open CUSTOMERS without documents|Debug"</MessageExpression>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMessage" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="26" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="Output" />
+      <Destination ToolID="14" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="26" Connection="Output" />
+      <Destination ToolID="14" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="14" Connection="Right" />
+      <Destination ToolID="27" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="14" Connection="Join" />
+      <Destination ToolID="28" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="14" Connection="Right" />
+      <Destination ToolID="29" Connection="Input8" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="29" Connection="Output9" />
+      <Destination ToolID="30" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="False" />
+    <ShowConnectionStatusOnlyWhenRunning value="False" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>Excel Test</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="a0931b7f-dcb9-44e1-88eb-64d7f1707c26" />
+      <Telemetry>
+        <PreviousWorkflowId value="df8e823d-67a3-4982-9aa2-6fe229d55b54" />
+        <OriginWorkflowId value="df8e823d-67a3-4982-9aa2-6fe229d55b54" />
+      </Telemetry>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>

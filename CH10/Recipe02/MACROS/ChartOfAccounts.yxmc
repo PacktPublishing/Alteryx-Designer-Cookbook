@@ -1,0 +1,496 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2022.1">
+  <Nodes>
+    <Node ToolID="1">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="150" y="354" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">\\AGP71\AYXServerRepo\DATA\ChartOfAccounts.xlsx|||`Master$`</File>
+          <FormatSpecificOptions>
+            <FirstRowData>False</FirstRowData>
+            <ImportLine>1</ImportLine>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>ChartOfAccounts.xlsx
+Query=`Master$`</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Account Name" size="255" source="File: \\AGP71\AYXServerRepo\DATA\ChartOfAccounts.xlsx|||`Master$`" type="V_String" />
+            <Field name="Code" source="File: \\AGP71\AYXServerRepo\DATA\ChartOfAccounts.xlsx|||`Master$`" type="Double" />
+            <Field name="Financial Statement" size="255" source="File: \\AGP71\AYXServerRepo\DATA\ChartOfAccounts.xlsx|||`Master$`" type="V_String" />
+            <Field name="Group" size="255" source="File: \\AGP71\AYXServerRepo\DATA\ChartOfAccounts.xlsx|||`Master$`" type="V_String" />
+            <Field name="Sub-Group" size="255" source="File: \\AGP71\AYXServerRepo\DATA\ChartOfAccounts.xlsx|||`Master$`" type="V_String" />
+            <Field name="Normally" size="255" source="File: \\AGP71\AYXServerRepo\DATA\ChartOfAccounts.xlsx|||`Master$`" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="8">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Questions.Tab.Tab">
+        <Position x="0" y="0" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="16">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="822" y="354" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>[Group] IN ('Expense')</Expression>
+          <Mode>Custom</Mode>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[Group] IN ('Expense')</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="Account Name" size="255" source="File: \\AGP71\AYXServerRepo\DATA\ChartOfAccounts.xlsx|||`Master$`" type="V_String" />
+            <Field name="Code" source="File: \\AGP71\AYXServerRepo\DATA\ChartOfAccounts.xlsx|||`Master$`" type="Double" />
+            <Field name="Financial Statement" size="255" source="File: \\AGP71\AYXServerRepo\DATA\ChartOfAccounts.xlsx|||`Master$`" type="V_String" />
+            <Field name="Group" size="255" source="File: \\AGP71\AYXServerRepo\DATA\ChartOfAccounts.xlsx|||`Master$`" type="V_String" />
+            <Field name="Sub-Group" size="255" source="File: \\AGP71\AYXServerRepo\DATA\ChartOfAccounts.xlsx|||`Master$`" type="V_String" />
+            <Field name="Normally" size="255" source="File: \\AGP71\AYXServerRepo\DATA\ChartOfAccounts.xlsx|||`Master$`" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="Account Name" size="255" source="File: \\AGP71\AYXServerRepo\DATA\ChartOfAccounts.xlsx|||`Master$`" type="V_String" />
+            <Field name="Code" source="File: \\AGP71\AYXServerRepo\DATA\ChartOfAccounts.xlsx|||`Master$`" type="Double" />
+            <Field name="Financial Statement" size="255" source="File: \\AGP71\AYXServerRepo\DATA\ChartOfAccounts.xlsx|||`Master$`" type="V_String" />
+            <Field name="Group" size="255" source="File: \\AGP71\AYXServerRepo\DATA\ChartOfAccounts.xlsx|||`Master$`" type="V_String" />
+            <Field name="Sub-Group" size="255" source="File: \\AGP71\AYXServerRepo\DATA\ChartOfAccounts.xlsx|||`Master$`" type="V_String" />
+            <Field name="Normally" size="255" source="File: \\AGP71\AYXServerRepo\DATA\ChartOfAccounts.xlsx|||`Master$`" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="17">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
+        <Position x="966" y="342" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Name>Selected Accounts</Name>
+          <Abbrev>A</Abbrev>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>A Output</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroOutput" />
+    </Node>
+    <Node ToolID="18">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="257" y="136" width="529" height="180" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Prepare the data for the List Box</Caption>
+          <Style TextColor="#314c4a" FillColor="#ffffff" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="3">
+          <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+            <Position x="282" y="185" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <SummarizeFields>
+                <SummarizeField field="Group" action="GroupBy" rename="Group" />
+              </SummarizeFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="Group" size="255" source="Summarize: GroupBy - Group" type="V_String" />
+              </RecordInfo>
+              <SortInfo>
+                <Field field="Group" order="Asc" />
+              </SortInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+        </Node>
+        <Node ToolID="4">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.RecordID.RecordID">
+            <Position x="390" y="186" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FieldName>RecordID</FieldName>
+              <StartValue>1</StartValue>
+              <FieldType>Int32</FieldType>
+              <FieldSize>6</FieldSize>
+              <Position>0</Position>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="RecordID" source="RecordID: Starting Value=1" type="Int32" />
+                <Field name="Group" size="255" source="Summarize: GroupBy - Group" type="V_String" />
+              </RecordInfo>
+              <SortInfo>
+                <Field field="Group" order="Asc" />
+              </SortInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxRecordID" />
+        </Node>
+        <Node ToolID="5">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.CrossTab.CrossTab">
+            <Position x="582" y="186" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <GroupFields />
+              <HeaderField field="Group" />
+              <DataField field="RecordID" />
+              <Methods>
+                <Method method="Sum" />
+              </Methods>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="Cost__Replace__of__Replace__sales" source="CrossTab:Header:Group:Cost__Replace__of__Replace__sales:Sum:" type="Int64" />
+                <Field name="Current__Replace__assets" source="CrossTab:Header:Group:Current__Replace__assets:Sum:" type="Int64" />
+                <Field name="Current__Replace__liabilities" source="CrossTab:Header:Group:Current__Replace__liabilities:Sum:" type="Int64" />
+                <Field name="Equity" source="CrossTab:Header:Group:Equity:Sum:" type="Int64" />
+                <Field name="Expense" source="CrossTab:Header:Group:Expense:Sum:" type="Int64" />
+                <Field name="Income" source="CrossTab:Header:Group:Income:Sum:" type="Int64" />
+                <Field name="Long_term__Replace__liabilities" source="CrossTab:Header:Group:Long-term__Replace__liabilities:Sum:" type="Int64" />
+                <Field name="Long__Replace__term__Replace__assets" source="CrossTab:Header:Group:Long__Replace__term__Replace__assets:Sum:" type="Int64" />
+              </RecordInfo>
+              <SortInfo>
+              </SortInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxCrossTab" />
+        </Node>
+        <Node ToolID="6">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="486" y="186" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="Replace([Group], &quot; &quot;,&quot;__Replace__&quot;)" field="Group" size="255" type="V_String" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText><![CDATA[Group = Replace([Group], " ","__Replace__")
+]]></DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="RecordID" source="RecordID: Starting Value=1" type="Int32" />
+                <Field name="Group" size="255" source="Formula: Replace([Group], &quot; &quot;,&quot;__Replace__&quot;)" type="V_String" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="7">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DynamicRename.DynamicRename">
+            <Position x="702" y="198" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <RenameMode>Formula</RenameMode>
+              <Fields orderChanged="False">
+                <Field name="Cost__Replace__of__Replace__sales" />
+                <Field name="Current__Replace__assets" />
+                <Field name="Current__Replace__liabilities" />
+                <Field name="Equity" />
+                <Field name="Expense" />
+                <Field name="Income" />
+                <Field name="Long_term__Replace__liabilities" />
+                <Field name="Long__Replace__term__Replace__assets" />
+                <Field name="*Unknown" />
+              </Fields>
+              <Expression>Replace([_CurrentField_],"__Replace__"," ")</Expression>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="Cost of sales" source="CrossTab:Header:Group:Cost__Replace__of__Replace__sales:Sum:" type="Int64" />
+                <Field name="Current assets" source="CrossTab:Header:Group:Current__Replace__assets:Sum:" type="Int64" />
+                <Field name="Current liabilities" source="CrossTab:Header:Group:Current__Replace__liabilities:Sum:" type="Int64" />
+                <Field name="Equity" source="CrossTab:Header:Group:Equity:Sum:" type="Int64" />
+                <Field name="Expense" source="CrossTab:Header:Group:Expense:Sum:" type="Int64" />
+                <Field name="Income" source="CrossTab:Header:Group:Income:Sum:" type="Int64" />
+                <Field name="Long_term liabilities" source="CrossTab:Header:Group:Long-term__Replace__liabilities:Sum:" type="Int64" />
+                <Field name="Long term assets" source="CrossTab:Header:Group:Long__Replace__term__Replace__assets:Sum:" type="Int64" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDynamicRename" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="9">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Questions.DropDownListBox.ListBox">
+        <Position x="822" y="114" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>List Box (10)</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="10">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
+        <Position x="834" y="222" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Update Value</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="15">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="1208" y="416" width="175" height="48" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Interface Control</Caption>
+          <Style TextColor="#314c4a" FillColor="#c7c7c7" BorderColor="#314c4a" Transparency="25" Margin="10" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="3" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="16" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="10" Connection="Action" />
+      <Destination ToolID="16" Connection="Action" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="16" Connection="True" />
+      <Destination ToolID="17" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="Output" />
+      <Destination ToolID="4" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="6" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="Output" />
+      <Destination ToolID="7" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="6" Connection="Output" />
+      <Destination ToolID="5" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="7" Connection="Output" />
+      <Destination ToolID="9" Connection="Question Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="9" Connection="Question" />
+      <Destination ToolID="10" Connection="Question" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="False" />
+    <ShowConnectionStatusOnlyWhenRunning value="False" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <Constants>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>List Box (9)</Name>
+        <Value />
+        <IsNumeric value="False" />
+      </Constant>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>Macro Output (17)</Name>
+        <Value />
+        <IsNumeric value="False" />
+      </Constant>
+    </Constants>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>ChartOfAccounts</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="e27fa1b7-4a6b-48ff-b8f6-e4e578084898" />
+      <Telemetry>
+        <PreviousWorkflowId value="8a884512-0850-4112-a978-e7a4b5d6ebac" />
+        <OriginWorkflowId value="8a884512-0850-4112-a978-e7a4b5d6ebac" />
+      </Telemetry>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+    <RuntimeProperties>
+      <Actions>
+        <NoCondition>
+          <Type>NoCondition</Type>
+          <Description>(Always Run)</Description>
+          <True>
+            <Action>
+              <Type>UpdateValue</Type>
+              <Description />
+              <ToolId value="10" />
+              <Mode>Simple</Mode>
+              <Variable />
+              <Replace value="True" />
+              <ReplaceText>'Expense'</ReplaceText>
+              <Destination>16/Expression</Destination>
+            </Action>
+          </True>
+        </NoCondition>
+      </Actions>
+      <Questions>
+        <Question>
+          <Type>Tab</Type>
+          <Description>Questions</Description>
+          <Name>Tab (8)</Name>
+          <ToolId value="8" />
+          <Questions>
+            <Question>
+              <Type>ListBox</Type>
+              <Description>Select Account Groups to Retrieve</Description>
+              <Name>List Box (9)</Name>
+              <ToolId value="9" />
+              <Multiple value="True" />
+              <Multiple_Custom value="True" />
+              <Multiple_Start>"</Multiple_Start>
+              <Multiple_Separator>","</Multiple_Separator>
+              <Multiple_End>"</Multiple_End>
+              <Multiple_Default value="False" />
+              <Mode>Field</Mode>
+              <Field_ToolId value="0" />
+              <Field_ConnectionName />
+              <Field_Connection />
+              <Field_IsOutput value="True" />
+              <Field_IncludeNone value="False" />
+              <Field_FilterTypes>Bool,Byte,Int16,Int32,Int64,FixedDecimal,Float,Double,String,WString,V_String,V_WString,Date,Time,DateTime,Blob,SpatialObj</Field_FilterTypes>
+            </Question>
+            <Question>
+              <Type>MacroOutput</Type>
+              <Description>Macro Output (17)</Description>
+              <Name>Macro Output (17)</Name>
+              <ToolId value="17" />
+            </Question>
+          </Questions>
+        </Question>
+      </Questions>
+      <ModuleType>Macro</ModuleType>
+      <MacroCustomHelp value="False" />
+      <MacroDynamicOutputFields value="False" />
+      <MacroImageStd value="39" />
+      <MacroInputs />
+      <MacroOutputs />
+      <Wiz_CustomHelp value="False" />
+      <Wiz_CustomGraphic value="False" />
+      <Wiz_ShowOutput value="True" />
+      <Wiz_OpenOutputTools>
+        <Tool ToolId="17" Selected="True" />
+      </Wiz_OpenOutputTools>
+      <Wiz_OutputMessage />
+      <Wiz_NoOutputFilesMessage />
+      <Wiz_ChainRunWizard />
+    </RuntimeProperties>
+  </Properties>
+</AlteryxDocument>
