@@ -1,0 +1,280 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2022.1">
+  <Nodes>
+    <Node ToolID="18">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="522" y="102" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="url" selected="False" />
+            <SelectField field="DownloadData" selected="False" />
+            <SelectField field="DownloadHeaders" selected="False" />
+            <SelectField field="FullStudiesResponse" selected="False" />
+            <SelectField field="APIVrs_OuterXML" selected="False" />
+            <SelectField field="DataVrs_OuterXML" selected="False" />
+            <SelectField field="Expression_OuterXML" selected="False" />
+            <SelectField field="NStudiesAvail_OuterXML" selected="False" />
+            <SelectField field="NStudiesFound_OuterXML" selected="False" />
+            <SelectField field="MinRank_OuterXML" selected="False" />
+            <SelectField field="MaxRank_OuterXML" selected="False" />
+            <SelectField field="NStudiesReturned_OuterXML" selected="False" />
+            <SelectField field="FullStudyList" selected="False" />
+            <SelectField field="FullStudiesResponse_OuterXML" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="1">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
+        <Position x="125" y="102" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <NumRows value="1" />
+          <Fields>
+            <Field name="url" />
+          </Fields>
+          <Data>
+            <r>
+              <c>https://clinicaltrials.gov/api/query/full_studies?expr=heart+attack&amp;fields=NCTId,Condition,BriefTitle&amp;fmt=xml</c>
+            </r>
+          </Data>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
+    </Node>
+    <Node ToolID="4">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.XMLParse.XMLParse">
+        <Position x="426" y="102" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <XMLField>DownloadData</XMLField>
+          <XMLElement />
+          <ChildValues value="True" />
+          <OuterXML value="True" />
+          <ParseRoot value="True" />
+          <IgnoreErrors value="False" />
+          <IncludeInOutput value="True" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Because we are parsing the whole XML content, the Root element is the document root.</AnnotationText>
+          <DefaultAnnotationText>Because we are parsing the whole XML content, the Root element is the document root.</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="url" size="109" source="TextInput:" type="String" />
+            <Field name="DownloadData" size="1073741823" source="Download" type="V_WString" />
+            <Field name="DownloadHeaders" size="2147483647" source="Download" type="V_String" />
+            <Field name="FullStudiesResponse" size="28" type="V_String" />
+            <Field name="APIVrs" size="7" type="V_String" />
+            <Field name="APIVrs_OuterXML" size="24" type="V_String" />
+            <Field name="DataVrs" size="23" type="V_String" />
+            <Field name="DataVrs_OuterXML" size="42" type="V_String" />
+            <Field name="Expression" size="12" type="V_String" />
+            <Field name="Expression_OuterXML" size="37" type="V_String" />
+            <Field name="NStudiesAvail" size="6" type="V_String" />
+            <Field name="NStudiesAvail_OuterXML" size="37" type="V_String" />
+            <Field name="NStudiesFound" size="4" type="V_String" />
+            <Field name="NStudiesFound_OuterXML" size="35" type="V_String" />
+            <Field name="MinRank" size="1" type="V_String" />
+            <Field name="MinRank_OuterXML" size="20" type="V_String" />
+            <Field name="MaxRank" size="1" type="V_String" />
+            <Field name="MaxRank_OuterXML" size="20" type="V_String" />
+            <Field name="NStudiesReturned" size="1" type="V_String" />
+            <Field name="NStudiesReturned_OuterXML" size="38" type="V_String" />
+            <Field name="FullStudyList" size="8" type="V_String" />
+            <Field name="FullStudyList_OuterXML" size="52194" type="V_String" />
+            <Field name="FullStudiesResponse_OuterXML" size="52518" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxXMLParse" />
+    </Node>
+    <Node ToolID="10">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.XMLParse.XMLParse">
+        <Position x="654" y="102" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <XMLField>FullStudyList_OuterXML</XMLField>
+          <XMLElement>Field</XMLElement>
+          <ChildValues value="False" />
+          <OuterXML value="False" />
+          <ParseRoot value="False" />
+          <IgnoreErrors value="False" />
+          <IncludeInOutput value="True" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="APIVrs" size="7" type="V_String" />
+            <Field name="DataVrs" size="23" type="V_String" />
+            <Field name="Expression" size="12" type="V_String" />
+            <Field name="NStudiesAvail" size="6" type="V_String" />
+            <Field name="NStudiesFound" size="4" type="V_String" />
+            <Field name="MinRank" size="1" type="V_String" />
+            <Field name="MaxRank" size="1" type="V_String" />
+            <Field name="NStudiesReturned" size="1" type="V_String" />
+            <Field name="FullStudyList_OuterXML" size="52194" type="V_String" />
+            <Field name="Field" size="899" type="V_String" />
+            <Field name="Name" size="39" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxXMLParse" />
+    </Node>
+    <Node ToolID="11">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="750" y="102" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_23260_53604196fafe496991c9d890d80fc002_\Engine_24844_4ce2f574abec4b45bc2ecef87691ac5e_.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <View1>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="16">
+      <GuiSettings Plugin="AlteryxConnectorGui.Download.Download">
+        <Position x="294" y="102" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <URLField>url</URLField>
+          <OutputMode>String</OutputMode>
+          <CodePage>65001</CodePage>
+          <EncodeURLs value="True" />
+          <Headers>
+            <NameValues />
+            <Fields orderChanged="False">
+              <Field name="url" selected="False" />
+              <Field name="*Unknown" selected="False" />
+            </Fields>
+          </Headers>
+          <Payload>
+            <HTTPAction>GET</HTTPAction>
+            <QueryStringBodyMode>Compose</QueryStringBodyMode>
+            <ComposeNameValues />
+            <ComposeFields orderChanged="False">
+              <Field name="url" selected="False" />
+              <Field name="*Unknown" selected="False" />
+            </ComposeFields>
+          </Payload>
+          <numConnections>2</numConnections>
+          <Timeout>600</Timeout>
+          <EnableRPM value="False" />
+          <Password />
+          <UserName />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxConnectorEngine.dll" EngineDllEntryPoint="AlteryxDownload" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="18" Connection="Output" />
+      <Destination ToolID="10" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="16" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="18" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="10" Connection="Output" />
+      <Destination ToolID="11" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="16" Connection="Output" />
+      <Destination ToolID="4" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="False" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name><![CDATA[CH11-R01 - Download and parse XML ]]></Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="912bb2ec-9317-4c9a-aa6b-7be1c26be514" />
+      <Telemetry>
+        <PreviousWorkflowId value="de7d4548-2f6c-4caa-90e0-a68f1b26b0c4" />
+        <OriginWorkflowId value="de7d4548-2f6c-4caa-90e0-a68f1b26b0c4" />
+      </Telemetry>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>

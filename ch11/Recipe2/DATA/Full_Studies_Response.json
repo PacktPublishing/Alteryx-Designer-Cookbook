@@ -1,0 +1,988 @@
+﻿{
+  "FullStudiesResponse":{
+    "APIVrs":"1.01.05",
+    "DataVrs":"2023:06:04 23:39:00.598",
+    "Expression":"heart+attack",
+    "NStudiesAvail":454492,
+    "NStudiesFound":1991,
+    "MinRank":1,
+    "MaxRank":1,
+    "NStudiesReturned":1,
+    "FullStudies":[
+      {
+        "Rank":1,
+        "Study":{
+          "ProtocolSection":{
+            "IdentificationModule":{
+              "NCTId":"NCT00929994",
+              "OrgStudyIdInfo":{
+                "OrgStudyId":"Brooks - 001"
+              },
+              "Organization":{
+                "OrgFullName":"Toronto Rehabilitation Institute",
+                "OrgClass":"OTHER"
+              },
+              "BriefTitle":"Effects of Cardiac Rehabilitation for Individuals With Transient Ischemic Attack",
+              "OfficialTitle":"Effects of Cardiac Rehabilitation for Individuals With Transient Ischemic Attack"
+            },
+            "StatusModule":{
+              "StatusVerifiedDate":"April 2019",
+              "OverallStatus":"Completed",
+              "ExpandedAccessInfo":{
+                "HasExpandedAccess":"No"
+              },
+              "StartDateStruct":{
+                "StartDate":"March 2010"
+              },
+              "PrimaryCompletionDateStruct":{
+                "PrimaryCompletionDate":"November 2014",
+                "PrimaryCompletionDateType":"Actual"
+              },
+              "CompletionDateStruct":{
+                "CompletionDate":"November 2014",
+                "CompletionDateType":"Actual"
+              },
+              "StudyFirstSubmitDate":"June 29, 2009",
+              "StudyFirstSubmitQCDate":"June 29, 2009",
+              "StudyFirstPostDateStruct":{
+                "StudyFirstPostDate":"June 30, 2009",
+                "StudyFirstPostDateType":"Estimate"
+              },
+              "ResultsFirstSubmitDate":"April 15, 2017",
+              "ResultsFirstSubmitQCDate":"April 20, 2019",
+              "ResultsFirstPostDateStruct":{
+                "ResultsFirstPostDate":"April 23, 2019",
+                "ResultsFirstPostDateType":"Actual"
+              },
+              "LastUpdateSubmitDate":"April 20, 2019",
+              "LastUpdatePostDateStruct":{
+                "LastUpdatePostDate":"April 23, 2019",
+                "LastUpdatePostDateType":"Actual"
+              }
+            },
+            "SponsorCollaboratorsModule":{
+              "ResponsibleParty":{
+                "ResponsiblePartyType":"Principal Investigator",
+                "ResponsiblePartyInvestigatorFullName":"Dina Brooks",
+                "ResponsiblePartyInvestigatorTitle":"Professor",
+                "ResponsiblePartyInvestigatorAffiliation":"Toronto Rehabilitation Institute"
+              },
+              "LeadSponsor":{
+                "LeadSponsorName":"Toronto Rehabilitation Institute",
+                "LeadSponsorClass":"OTHER"
+              },
+              "CollaboratorList":{
+                "Collaborator":[
+                  {
+                    "CollaboratorName":"Heart and Stroke Foundation of Canada",
+                    "CollaboratorClass":"OTHER"
+                  }
+                ]
+              }
+            },
+            "OversightModule":{
+              "OversightHasDMC":"No"
+            },
+            "DescriptionModule":{
+              "BriefSummary":"It is hypothesized that the addition of formal cardiac rehabilitation to standard care will result in long-term improvements in cardiovascular fitness and functional capacity in individuals who have suffered a transient ischemic attack (TIA) or minor stroke.\n\nFurthermore, it is proposed that the addition of cardiac rehabilitation will influence depressive symptoms and cognition.",
+              "DetailedDescription":"A transient ischemic attack (TIA) is defined as an episode of neurological dysfunction caused by focal brain ischemia lasting less than 24 hours. Once an individual has suffered a TIA, preventative measures can be taken to target modifiable risk factors, one of which is physical inactivity. The current proposal focuses on the use of an established model of care (cardiac rehabilitation (CR)) and applies it to those who have suffered a TIA in order to maximize physical activity and minimize risk of future cardiovascular events. This will be a one-group pre/post design study with a 3 month non-intervention period. Participants will undergo measures at baseline and 3 months (non intervention period) then after 6 months of cardiac rehabilitation (cardiovascular fitness, 6 minute walk test, cognition, and depressive symptoms)."
+            },
+            "ConditionsModule":{
+              "ConditionList":{
+                "Condition":[
+                  "Transient Ischemic Attack"
+                ]
+              },
+              "KeywordList":{
+                "Keyword":[
+                  "cardiac rehab"
+                ]
+              }
+            },
+            "DesignModule":{
+              "StudyType":"Observational",
+              "PatientRegistry":"No",
+              "DesignInfo":{
+                "DesignObservationalModelList":{
+                  "DesignObservationalModel":[
+                    "Cohort"
+                  ]
+                },
+                "DesignTimePerspectiveList":{
+                  "DesignTimePerspective":[
+                    "Prospective"
+                  ]
+                }
+              },
+              "EnrollmentInfo":{
+                "EnrollmentCount":"20",
+                "EnrollmentType":"Actual"
+              }
+            },
+            "ArmsInterventionsModule":{
+              "ArmGroupList":{
+                "ArmGroup":[
+                  {
+                    "ArmGroupLabel":"Exercise",
+                    "ArmGroupDescription":"Following a 3 month non intervention period, participants will participate in Cardiac Rehabilitation, carrying out an exercise program which will last 6 months and combine both resistance and aerobic training.",
+                    "ArmGroupInterventionList":{
+                      "ArmGroupInterventionName":[
+                        "Behavioral: Cardiac Rehabilitation"
+                      ]
+                    }
+                  }
+                ]
+              },
+              "InterventionList":{
+                "Intervention":[
+                  {
+                    "InterventionType":"Behavioral",
+                    "InterventionName":"Cardiac Rehabilitation",
+                    "InterventionDescription":"Individualized cardiac rehabilitation for 6 months, including health education sessions, as well as supervised exercise classes which include aerobic and resistance training.",
+                    "InterventionArmGroupLabelList":{
+                      "InterventionArmGroupLabel":[
+                        "Exercise"
+                      ]
+                    }
+                  }
+                ]
+              }
+            },
+            "OutcomesModule":{
+              "PrimaryOutcomeList":{
+                "PrimaryOutcome":[
+                  {
+                    "PrimaryOutcomeMeasure":"Functional Walk Test",
+                    "PrimaryOutcomeDescription":"6 minute walk test: the longest distance a person can walk for a duration of 6 minutes",
+                    "PrimaryOutcomeTimeFrame":"Baseline, 3 months, 6 months (Six Minute Walk Distance)"
+                  },{
+                    "PrimaryOutcomeMeasure":"Cardiovascular Fitness (VO2peak)",
+                    "PrimaryOutcomeDescription":"To measure cardiovascular fitness, a stress test on either an upright cycle ergometer (Ergoselect 200P, Germany), or a treadmill (same modality pre- and post-training) was performed depending on patient balance and comfort.",
+                    "PrimaryOutcomeTimeFrame":"Baseline (after the 3 month non-intervention period) and after 6 months of participation."
+                  }
+                ]
+              },
+              "SecondaryOutcomeList":{
+                "SecondaryOutcome":[
+                  {
+                    "SecondaryOutcomeMeasure":"Center for Epidemiologic Studies Depression Scale (CES-D).",
+                    "SecondaryOutcomeDescription":"Depressive symptoms using the validated Center for Epidemiologic Studies Depression Scale (CES-D). This is a score from a 20 item questionnaire with minimum value of 0 and maximum value of 60 with higher numbers indicated greater depressive symptoms (worse).",
+                    "SecondaryOutcomeTimeFrame":"Baseline and 3 months (non-intervention period), after 6 months of cardiac rehabilitation participation"
+                  },{
+                    "SecondaryOutcomeMeasure":"Cognition",
+                    "SecondaryOutcomeDescription":"Montreal Cognitive Assessment. The MoCA score ranges from 0 to 30 points with a higher score indicating better cognitive function.",
+                    "SecondaryOutcomeTimeFrame":"Baseline and 3 months (non-intervention period), after 6 months of cardiac rehabilitation participation"
+                  }
+                ]
+              }
+            },
+            "EligibilityModule":{
+              "EligibilityCriteria":"Inclusion Criteria:\n\nDiagnosed with TIA\nThree months post-TIA\nAbility to understand the process and instructions for exercise training and provide informed consent\n\nExclusion Criteria:\n\nResting Blood Pressure greater than 160/100 despite medication\nOther cardiovascular morbidity which would limit exercise tolerance (heart failure, abnormal BP responses or STsegment depression > 2 mm, symptomatic aortic stenosis, complex arrhythmias)\nCurrent and extensive exercise participation\nHypertrophic Cardiomyopathy\nUnstable Angina\nOrthostatic BP decrease of > 20 mm Hg with symptoms\nOther musculoskeletal impairments which would limit the participants ability to walk sufficient durations\nPain or other co-morbidities (e.g., unclipped aneurysms, uncontrolled seizures etc.) which would preclude participation\nCognitive or behavioural issues that would limit participation in exercise testing and training",
+              "HealthyVolunteers":"No",
+              "Gender":"All",
+              "MinimumAge":"18 Years",
+              "MaximumAge":"100 Years",
+              "StdAgeList":{
+                "StdAge":[
+                  "Adult",
+                  "Older Adult"
+                ]
+              },
+              "StudyPopulation":"TIA",
+              "SamplingMethod":"Probability Sample"
+            },
+            "ContactsLocationsModule":{
+              "OverallOfficialList":{
+                "OverallOfficial":[
+                  {
+                    "OverallOfficialName":"Dina Brooks, PhD",
+                    "OverallOfficialAffiliation":"Toronto Rehabilitation Institute",
+                    "OverallOfficialRole":"Principal Investigator"
+                  },{
+                    "OverallOfficialName":"William E McIllroy, PhD",
+                    "OverallOfficialAffiliation":"University of Waterloo",
+                    "OverallOfficialRole":"Principal Investigator"
+                  },{
+                    "OverallOfficialName":"Paul Oh, MD",
+                    "OverallOfficialAffiliation":"Toronto Rehabilitation Institute",
+                    "OverallOfficialRole":"Principal Investigator"
+                  },{
+                    "OverallOfficialName":"Sandra Black, MD",
+                    "OverallOfficialAffiliation":"Sunnybrook and Women's College Health Centre",
+                    "OverallOfficialRole":"Principal Investigator"
+                  }
+                ]
+              },
+              "LocationList":{
+                "Location":[
+                  {
+                    "LocationFacility":"Toronto Rehabilitation Institute - Rumsey Center",
+                    "LocationCity":"Toronto",
+                    "LocationState":"Ontario",
+                    "LocationZip":"M4G 1R7",
+                    "LocationCountry":"Canada"
+                  }
+                ]
+              }
+            }
+          },
+          "ResultsSection":{
+            "ParticipantFlowModule":{
+              "FlowGroupList":{
+                "FlowGroup":[
+                  {
+                    "FlowGroupId":"FG000",
+                    "FlowGroupTitle":"Exercise",
+                    "FlowGroupDescription":"Participants will participate in Cardiac Rehabilitation, carrying out an exercise program which will last 6 months and combine both resistance and aerobic training. There will be a 3 month non-intervention period preceding the exercise program.\n\nCardiac Rehabilitation: Individualized cardiac rehabilitation for 6 months, including health education sessions, as well as supervised exercise classes which include aerobic and resistance training."
+                  }
+                ]
+              },
+              "FlowPeriodList":{
+                "FlowPeriod":[
+                  {
+                    "FlowPeriodTitle":"Overall Study",
+                    "FlowMilestoneList":{
+                      "FlowMilestone":[
+                        {
+                          "FlowMilestoneType":"STARTED",
+                          "FlowAchievementList":{
+                            "FlowAchievement":[
+                              {
+                                "FlowAchievementGroupId":"FG000",
+                                "FlowAchievementNumSubjects":"20"
+                              }
+                            ]
+                          }
+                        },{
+                          "FlowMilestoneType":"COMPLETED",
+                          "FlowAchievementList":{
+                            "FlowAchievement":[
+                              {
+                                "FlowAchievementGroupId":"FG000",
+                                "FlowAchievementNumSubjects":"14"
+                              }
+                            ]
+                          }
+                        },{
+                          "FlowMilestoneType":"NOT COMPLETED",
+                          "FlowAchievementList":{
+                            "FlowAchievement":[
+                              {
+                                "FlowAchievementGroupId":"FG000",
+                                "FlowAchievementNumSubjects":"6"
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    },
+                    "FlowDropWithdrawList":{
+                      "FlowDropWithdraw":[
+                        {
+                          "FlowDropWithdrawType":"Withdrawal by Subject",
+                          "FlowReasonList":{
+                            "FlowReason":[
+                              {
+                                "FlowReasonGroupId":"FG000",
+                                "FlowReasonNumSubjects":"1"
+                              }
+                            ]
+                          }
+                        },{
+                          "FlowDropWithdrawType":"medical issue unrelated to intervention",
+                          "FlowReasonList":{
+                            "FlowReason":[
+                              {
+                                "FlowReasonGroupId":"FG000",
+                                "FlowReasonNumSubjects":"4"
+                              }
+                            ]
+                          }
+                        },{
+                          "FlowDropWithdrawType":"employment",
+                          "FlowReasonList":{
+                            "FlowReason":[
+                              {
+                                "FlowReasonGroupId":"FG000",
+                                "FlowReasonNumSubjects":"1"
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            },
+            "BaselineCharacteristicsModule":{
+              "BaselineGroupList":{
+                "BaselineGroup":[
+                  {
+                    "BaselineGroupId":"BG000",
+                    "BaselineGroupTitle":"Exercise",
+                    "BaselineGroupDescription":"Participants in this group will participate in Cardiac Rehabilitation, carrying out an exercise program which will last 6 months and combine both resistance and aerobic training.\n\nCardiac Rehabilitation: Individualized cardiac rehabilitation for 6 months, including health education sessions, as well as supervised exercise classes which include aerobic and resistance training."
+                  }
+                ]
+              },
+              "BaselineDenomList":{
+                "BaselineDenom":[
+                  {
+                    "BaselineDenomUnits":"Participants",
+                    "BaselineDenomCountList":{
+                      "BaselineDenomCount":[
+                        {
+                          "BaselineDenomCountGroupId":"BG000",
+                          "BaselineDenomCountValue":"20"
+                        }
+                      ]
+                    }
+                  }
+                ]
+              },
+              "BaselineMeasureList":{
+                "BaselineMeasure":[
+                  {
+                    "BaselineMeasureTitle":"Age, Continuous",
+                    "BaselineMeasureParamType":"Mean",
+                    "BaselineMeasureDispersionType":"Standard Deviation",
+                    "BaselineMeasureUnitOfMeasure":"years",
+                    "BaselineClassList":{
+                      "BaselineClass":[
+                        {
+                          "BaselineCategoryList":{
+                            "BaselineCategory":[
+                              {
+                                "BaselineMeasurementList":{
+                                  "BaselineMeasurement":[
+                                    {
+                                      "BaselineMeasurementGroupId":"BG000",
+                                      "BaselineMeasurementValue":"65",
+                                      "BaselineMeasurementSpread":"11.2"
+                                    }
+                                  ]
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  },{
+                    "BaselineMeasureTitle":"Sex: Female, Male",
+                    "BaselineMeasureParamType":"Count of Participants",
+                    "BaselineMeasureUnitOfMeasure":"Participants",
+                    "BaselineClassList":{
+                      "BaselineClass":[
+                        {
+                          "BaselineCategoryList":{
+                            "BaselineCategory":[
+                              {
+                                "BaselineCategoryTitle":"Female",
+                                "BaselineMeasurementList":{
+                                  "BaselineMeasurement":[
+                                    {
+                                      "BaselineMeasurementGroupId":"BG000",
+                                      "BaselineMeasurementValue":"13"
+                                    }
+                                  ]
+                                }
+                              },{
+                                "BaselineCategoryTitle":"Male",
+                                "BaselineMeasurementList":{
+                                  "BaselineMeasurement":[
+                                    {
+                                      "BaselineMeasurementGroupId":"BG000",
+                                      "BaselineMeasurementValue":"7"
+                                    }
+                                  ]
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  },{
+                    "BaselineMeasureTitle":"Region of Enrollment",
+                    "BaselineMeasureParamType":"Number",
+                    "BaselineMeasureUnitOfMeasure":"participants",
+                    "BaselineClassList":{
+                      "BaselineClass":[
+                        {
+                          "BaselineClassTitle":"Canada",
+                          "BaselineCategoryList":{
+                            "BaselineCategory":[
+                              {
+                                "BaselineMeasurementList":{
+                                  "BaselineMeasurement":[
+                                    {
+                                      "BaselineMeasurementGroupId":"BG000",
+                                      "BaselineMeasurementValue":"20"
+                                    }
+                                  ]
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            },
+            "OutcomeMeasuresModule":{
+              "OutcomeMeasureList":{
+                "OutcomeMeasure":[
+                  {
+                    "OutcomeMeasureType":"Primary",
+                    "OutcomeMeasureTitle":"Functional Walk Test",
+                    "OutcomeMeasureDescription":"6 minute walk test: the longest distance a person can walk for a duration of 6 minutes",
+                    "OutcomeMeasurePopulationDescription":"Transient Ischemic Attack participants who completed the 6 month intervention.",
+                    "OutcomeMeasureReportingStatus":"Posted",
+                    "OutcomeMeasureParamType":"Mean",
+                    "OutcomeMeasureDispersionType":"Standard Deviation",
+                    "OutcomeMeasureUnitOfMeasure":"meters",
+                    "OutcomeMeasureTimeFrame":"Baseline, 3 months, 6 months (Six Minute Walk Distance)",
+                    "OutcomeGroupList":{
+                      "OutcomeGroup":[
+                        {
+                          "OutcomeGroupId":"OG000",
+                          "OutcomeGroupTitle":"Exercise",
+                          "OutcomeGroupDescription":"Participants in this group will participate in Cardiac Rehabilitation, carrying out an exercise program which will last 6 months and combine both resistance and aerobic training. A 3 month non-intervention period will precede the 6 month cardiac rehabilitation training program.\n\nCardiac Rehabilitation: Individualized cardiac rehabilitation for 6 months, including health education sessions, as well as supervised exercise classes which include aerobic and resistance training."
+                        }
+                      ]
+                    },
+                    "OutcomeDenomList":{
+                      "OutcomeDenom":[
+                        {
+                          "OutcomeDenomUnits":"Participants",
+                          "OutcomeDenomCountList":{
+                            "OutcomeDenomCount":[
+                              {
+                                "OutcomeDenomCountGroupId":"OG000",
+                                "OutcomeDenomCountValue":"14"
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    },
+                    "OutcomeClassList":{
+                      "OutcomeClass":[
+                        {
+                          "OutcomeClassTitle":"Baseline",
+                          "OutcomeCategoryList":{
+                            "OutcomeCategory":[
+                              {
+                                "OutcomeMeasurementList":{
+                                  "OutcomeMeasurement":[
+                                    {
+                                      "OutcomeMeasurementGroupId":"OG000",
+                                      "OutcomeMeasurementValue":"498.4",
+                                      "OutcomeMeasurementSpread":"95.2"
+                                    }
+                                  ]
+                                }
+                              }
+                            ]
+                          }
+                        },{
+                          "OutcomeClassTitle":"3 months",
+                          "OutcomeCategoryList":{
+                            "OutcomeCategory":[
+                              {
+                                "OutcomeMeasurementList":{
+                                  "OutcomeMeasurement":[
+                                    {
+                                      "OutcomeMeasurementGroupId":"OG000",
+                                      "OutcomeMeasurementValue":"503.2",
+                                      "OutcomeMeasurementSpread":"111.1"
+                                    }
+                                  ]
+                                }
+                              }
+                            ]
+                          }
+                        },{
+                          "OutcomeClassTitle":"6 months",
+                          "OutcomeCategoryList":{
+                            "OutcomeCategory":[
+                              {
+                                "OutcomeMeasurementList":{
+                                  "OutcomeMeasurement":[
+                                    {
+                                      "OutcomeMeasurementGroupId":"OG000",
+                                      "OutcomeMeasurementValue":"564.2",
+                                      "OutcomeMeasurementSpread":"139.6"
+                                    }
+                                  ]
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    },
+                    "OutcomeAnalysisList":{
+                      "OutcomeAnalysis":[
+                        {
+                          "OutcomeAnalysisGroupIdList":{
+                            "OutcomeAnalysisGroupId":[
+                              "OG000"
+                            ]
+                          },
+                          "OutcomeAnalysisGroupDescription":"With 1 group and 3 test times, a repeated measures analysis of variance of 6MWD, was utilized between the 3 test times 0, 3, and 6 months). A Bonferroni correction for multiple testing was used for post hoc contrasts.",
+                          "OutcomeAnalysisNonInferiorityType":"Other",
+                          "OutcomeAnalysisPValue":"=0.06",
+                          "OutcomeAnalysisPValueComment":"A Bonferroni correction for multiple testing was used for post hoc contrasts. Assumption of sphericity was met for all analyses determined by the Mauchley test of sphericity (all >.05).",
+                          "OutcomeAnalysisStatisticalMethod":"ANOVA"
+                        },{
+                          "OutcomeAnalysisGroupIdList":{
+                            "OutcomeAnalysisGroupId":[
+                              "OG000"
+                            ]
+                          },
+                          "OutcomeAnalysisNonInferiorityType":"Superiority",
+                          "OutcomeAnalysisPValue":"0.06",
+                          "OutcomeAnalysisStatisticalMethod":"t-test, 2 sided"
+                        }
+                      ]
+                    }
+                  },{
+                    "OutcomeMeasureType":"Primary",
+                    "OutcomeMeasureTitle":"Cardiovascular Fitness (VO2peak)",
+                    "OutcomeMeasureDescription":"To measure cardiovascular fitness, a stress test on either an upright cycle ergometer (Ergoselect 200P, Germany), or a treadmill (same modality pre- and post-training) was performed depending on patient balance and comfort.",
+                    "OutcomeMeasureReportingStatus":"Posted",
+                    "OutcomeMeasureParamType":"Mean",
+                    "OutcomeMeasureDispersionType":"Standard Deviation",
+                    "OutcomeMeasureUnitOfMeasure":"ml/kg/min",
+                    "OutcomeMeasureTimeFrame":"Baseline (after the 3 month non-intervention period) and after 6 months of participation.",
+                    "OutcomeGroupList":{
+                      "OutcomeGroup":[
+                        {
+                          "OutcomeGroupId":"OG000",
+                          "OutcomeGroupTitle":"Exercise",
+                          "OutcomeGroupDescription":"Participants in this group will participate in Cardiac Rehabilitation, carrying out an exercise program which will last 6 months and combine both resistance and aerobic training.\n\nCardiac Rehabilitation: Individualized cardiac rehabilitation for 6 months, including health education sessions, as well as supervised exercise classes which include aerobic and resistance training."
+                        }
+                      ]
+                    },
+                    "OutcomeDenomList":{
+                      "OutcomeDenom":[
+                        {
+                          "OutcomeDenomUnits":"Participants",
+                          "OutcomeDenomCountList":{
+                            "OutcomeDenomCount":[
+                              {
+                                "OutcomeDenomCountGroupId":"OG000",
+                                "OutcomeDenomCountValue":"14"
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    },
+                    "OutcomeClassList":{
+                      "OutcomeClass":[
+                        {
+                          "OutcomeClassTitle":"Baseline",
+                          "OutcomeCategoryList":{
+                            "OutcomeCategory":[
+                              {
+                                "OutcomeMeasurementList":{
+                                  "OutcomeMeasurement":[
+                                    {
+                                      "OutcomeMeasurementGroupId":"OG000",
+                                      "OutcomeMeasurementValue":"16.7",
+                                      "OutcomeMeasurementSpread":"5"
+                                    }
+                                  ]
+                                }
+                              }
+                            ]
+                          }
+                        },{
+                          "OutcomeClassTitle":"6 months",
+                          "OutcomeCategoryList":{
+                            "OutcomeCategory":[
+                              {
+                                "OutcomeMeasurementList":{
+                                  "OutcomeMeasurement":[
+                                    {
+                                      "OutcomeMeasurementGroupId":"OG000",
+                                      "OutcomeMeasurementValue":"19.1",
+                                      "OutcomeMeasurementSpread":"4.6"
+                                    }
+                                  ]
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    },
+                    "OutcomeAnalysisList":{
+                      "OutcomeAnalysis":[
+                        {
+                          "OutcomeAnalysisGroupIdList":{
+                            "OutcomeAnalysisGroupId":[
+                              "OG000"
+                            ]
+                          },
+                          "OutcomeAnalysisNonInferiorityType":"Superiority",
+                          "OutcomeAnalysisPValue":"0.01",
+                          "OutcomeAnalysisStatisticalMethod":"t-test, 2 sided"
+                        }
+                      ]
+                    }
+                  },{
+                    "OutcomeMeasureType":"Secondary",
+                    "OutcomeMeasureTitle":"Center for Epidemiologic Studies Depression Scale (CES-D).",
+                    "OutcomeMeasureDescription":"Depressive symptoms using the validated Center for Epidemiologic Studies Depression Scale (CES-D). This is a score from a 20 item questionnaire with minimum value of 0 and maximum value of 60 with higher numbers indicated greater depressive symptoms (worse).",
+                    "OutcomeMeasurePopulationDescription":"Transient Ischemic Attack. Two patients did not complete questionnaires.",
+                    "OutcomeMeasureReportingStatus":"Posted",
+                    "OutcomeMeasureParamType":"Mean",
+                    "OutcomeMeasureDispersionType":"Standard Deviation",
+                    "OutcomeMeasureUnitOfMeasure":"score on a scale",
+                    "OutcomeMeasureTimeFrame":"Baseline and 3 months (non-intervention period), after 6 months of cardiac rehabilitation participation",
+                    "OutcomeGroupList":{
+                      "OutcomeGroup":[
+                        {
+                          "OutcomeGroupId":"OG000",
+                          "OutcomeGroupTitle":"Exercise",
+                          "OutcomeGroupDescription":"Participants in this group will participate in Cardiac Rehabilitation, carrying out an exercise program after a 12 week period of non intervention which will last 6 months and combine both resistance and aerobic training.\n\nCardiac Rehabilitation: Individualized cardiac rehabilitation for 6 months, including health education sessions, as well as supervised exercise classes which include aerobic and resistance training."
+                        }
+                      ]
+                    },
+                    "OutcomeDenomList":{
+                      "OutcomeDenom":[
+                        {
+                          "OutcomeDenomUnits":"Participants",
+                          "OutcomeDenomCountList":{
+                            "OutcomeDenomCount":[
+                              {
+                                "OutcomeDenomCountGroupId":"OG000",
+                                "OutcomeDenomCountValue":"12"
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    },
+                    "OutcomeClassList":{
+                      "OutcomeClass":[
+                        {
+                          "OutcomeClassTitle":"Baseline",
+                          "OutcomeCategoryList":{
+                            "OutcomeCategory":[
+                              {
+                                "OutcomeMeasurementList":{
+                                  "OutcomeMeasurement":[
+                                    {
+                                      "OutcomeMeasurementGroupId":"OG000",
+                                      "OutcomeMeasurementValue":"6.5",
+                                      "OutcomeMeasurementSpread":"6"
+                                    }
+                                  ]
+                                }
+                              }
+                            ]
+                          }
+                        },{
+                          "OutcomeClassTitle":"3 months",
+                          "OutcomeCategoryList":{
+                            "OutcomeCategory":[
+                              {
+                                "OutcomeMeasurementList":{
+                                  "OutcomeMeasurement":[
+                                    {
+                                      "OutcomeMeasurementGroupId":"OG000",
+                                      "OutcomeMeasurementValue":"7.6",
+                                      "OutcomeMeasurementSpread":"5"
+                                    }
+                                  ]
+                                }
+                              }
+                            ]
+                          }
+                        },{
+                          "OutcomeClassTitle":"6 months",
+                          "OutcomeCategoryList":{
+                            "OutcomeCategory":[
+                              {
+                                "OutcomeMeasurementList":{
+                                  "OutcomeMeasurement":[
+                                    {
+                                      "OutcomeMeasurementGroupId":"OG000",
+                                      "OutcomeMeasurementValue":"4.3",
+                                      "OutcomeMeasurementSpread":"5.2"
+                                    }
+                                  ]
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    },
+                    "OutcomeAnalysisList":{
+                      "OutcomeAnalysis":[
+                        {
+                          "OutcomeAnalysisGroupIdList":{
+                            "OutcomeAnalysisGroupId":[
+                              "OG000"
+                            ]
+                          },
+                          "OutcomeAnalysisGroupDescription":"With 1 group and 3 test times, a repeated measures analysis of variance with pairwise comparisons of CES-D was utilized between the 3 test times baseline, 3 and 6 months.",
+                          "OutcomeAnalysisNonInferiorityType":"Superiority",
+                          "OutcomeAnalysisPValue":"0.04",
+                          "OutcomeAnalysisPValueComment":"A Bonferroni correction for multiple testing was used for post-hoc contrasts.",
+                          "OutcomeAnalysisStatisticalMethod":"ANOVA"
+                        }
+                      ]
+                    }
+                  },{
+                    "OutcomeMeasureType":"Secondary",
+                    "OutcomeMeasureTitle":"Cognition",
+                    "OutcomeMeasureDescription":"Montreal Cognitive Assessment. The MoCA score ranges from 0 to 30 points with a higher score indicating better cognitive function.",
+                    "OutcomeMeasurePopulationDescription":"TIA. Three subjects did not complete the assessment at each time point.",
+                    "OutcomeMeasureReportingStatus":"Posted",
+                    "OutcomeMeasureParamType":"Mean",
+                    "OutcomeMeasureDispersionType":"Standard Deviation",
+                    "OutcomeMeasureUnitOfMeasure":"units on a scale",
+                    "OutcomeMeasureTimeFrame":"Baseline and 3 months (non-intervention period), after 6 months of cardiac rehabilitation participation",
+                    "OutcomeGroupList":{
+                      "OutcomeGroup":[
+                        {
+                          "OutcomeGroupId":"OG000",
+                          "OutcomeGroupTitle":"Exercise",
+                          "OutcomeGroupDescription":"Following a 3 month non intervention period, participants in this group will participate in Cardiac Rehabilitation, carrying out an exercise program which will last 6 months and combine both resistance and aerobic training.\n\nCardiac Rehabilitation: Individualized cardiac rehabilitation for 6 months, including health education sessions, as well as supervised exercise classes which include aerobic and resistance training."
+                        }
+                      ]
+                    },
+                    "OutcomeDenomList":{
+                      "OutcomeDenom":[
+                        {
+                          "OutcomeDenomUnits":"Participants",
+                          "OutcomeDenomCountList":{
+                            "OutcomeDenomCount":[
+                              {
+                                "OutcomeDenomCountGroupId":"OG000",
+                                "OutcomeDenomCountValue":"11"
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    },
+                    "OutcomeClassList":{
+                      "OutcomeClass":[
+                        {
+                          "OutcomeClassTitle":"Baseline",
+                          "OutcomeCategoryList":{
+                            "OutcomeCategory":[
+                              {
+                                "OutcomeMeasurementList":{
+                                  "OutcomeMeasurement":[
+                                    {
+                                      "OutcomeMeasurementGroupId":"OG000",
+                                      "OutcomeMeasurementValue":"26.5",
+                                      "OutcomeMeasurementSpread":"2.4"
+                                    }
+                                  ]
+                                }
+                              }
+                            ]
+                          }
+                        },{
+                          "OutcomeClassTitle":"3 months",
+                          "OutcomeCategoryList":{
+                            "OutcomeCategory":[
+                              {
+                                "OutcomeMeasurementList":{
+                                  "OutcomeMeasurement":[
+                                    {
+                                      "OutcomeMeasurementGroupId":"OG000",
+                                      "OutcomeMeasurementValue":"26.8",
+                                      "OutcomeMeasurementSpread":"3.4"
+                                    }
+                                  ]
+                                }
+                              }
+                            ]
+                          }
+                        },{
+                          "OutcomeClassTitle":"6 months",
+                          "OutcomeCategoryList":{
+                            "OutcomeCategory":[
+                              {
+                                "OutcomeMeasurementList":{
+                                  "OutcomeMeasurement":[
+                                    {
+                                      "OutcomeMeasurementGroupId":"OG000",
+                                      "OutcomeMeasurementValue":"27.1",
+                                      "OutcomeMeasurementSpread":"2"
+                                    }
+                                  ]
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    },
+                    "OutcomeAnalysisList":{
+                      "OutcomeAnalysis":[
+                        {
+                          "OutcomeAnalysisGroupIdList":{
+                            "OutcomeAnalysisGroupId":[
+                              "OG000"
+                            ]
+                          },
+                          "OutcomeAnalysisGroupDescription":"With 1 group and 3 test times, a repeated measures analysis of variance with pairwise comparisons of MoCA was utilized between the 3 test times (-3, 0 and 6 months). A Bonferroni correction for multiple testing was used for post-hoc contrasts.",
+                          "OutcomeAnalysisNonInferiorityType":"Superiority",
+                          "OutcomeAnalysisPValue":">0.05",
+                          "OutcomeAnalysisPValueComment":"A Bonferroni correction for multiple testing was used for post-hoc contrasts",
+                          "OutcomeAnalysisStatisticalMethod":"ANOVA"
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            },
+            "AdverseEventsModule":{
+              "EventsFrequencyThreshold":"0",
+              "EventGroupList":{
+                "EventGroup":[
+                  {
+                    "EventGroupId":"EG000",
+                    "EventGroupTitle":"Exercise",
+                    "EventGroupDescription":"Participants will participate in Cardiac Rehabilitation, carrying out an exercise program which will last 6 months and combine both resistance and aerobic training. There will be a 3 month non-intervention period preceding cardiac rehabilitation.\n\nCardiac Rehabilitation: Individualized cardiac rehabilitation for 6 months, including health education sessions, as well as supervised exercise classes which include aerobic and resistance training.",
+                    "EventGroupSeriousNumAffected":"0",
+                    "EventGroupSeriousNumAtRisk":"20",
+                    "EventGroupOtherNumAffected":"0",
+                    "EventGroupOtherNumAtRisk":"20"
+                  }
+                ]
+              }
+            },
+            "MoreInfoModule":{
+              "CertainAgreement":{
+                "AgreementPISponsorEmployee":"No",
+                "AgreementRestrictiveAgreement":"No"
+              },
+              "PointOfContact":{
+                "PointOfContactTitle":"Dr.",
+                "PointOfContactOrganization":"Toronto Rehab",
+                "PointOfContactEMail":"dina.brooks@utoronto.ca",
+                "PointOfContactPhone":"4169781739"
+              }
+            }
+          },
+          "DerivedSection":{
+            "MiscInfoModule":{
+              "VersionHolder":"June 05, 2023"
+            },
+            "ConditionBrowseModule":{
+              "ConditionMeshList":{
+                "ConditionMesh":[
+                  {
+                    "ConditionMeshId":"D000002546",
+                    "ConditionMeshTerm":"Ischemic Attack, Transient"
+                  },{
+                    "ConditionMeshId":"D000007511",
+                    "ConditionMeshTerm":"Ischemia"
+                  }
+                ]
+              },
+              "ConditionAncestorList":{
+                "ConditionAncestor":[
+                  {
+                    "ConditionAncestorId":"D000010335",
+                    "ConditionAncestorTerm":"Pathologic Processes"
+                  },{
+                    "ConditionAncestorId":"D000002545",
+                    "ConditionAncestorTerm":"Brain Ischemia"
+                  },{
+                    "ConditionAncestorId":"D000002561",
+                    "ConditionAncestorTerm":"Cerebrovascular Disorders"
+                  },{
+                    "ConditionAncestorId":"D000001927",
+                    "ConditionAncestorTerm":"Brain Diseases"
+                  },{
+                    "ConditionAncestorId":"D000002493",
+                    "ConditionAncestorTerm":"Central Nervous System Diseases"
+                  },{
+                    "ConditionAncestorId":"D000009422",
+                    "ConditionAncestorTerm":"Nervous System Diseases"
+                  },{
+                    "ConditionAncestorId":"D000014652",
+                    "ConditionAncestorTerm":"Vascular Diseases"
+                  },{
+                    "ConditionAncestorId":"D000002318",
+                    "ConditionAncestorTerm":"Cardiovascular Diseases"
+                  }
+                ]
+              },
+              "ConditionBrowseLeafList":{
+                "ConditionBrowseLeaf":[
+                  {
+                    "ConditionBrowseLeafId":"M10233",
+                    "ConditionBrowseLeafName":"Ischemia",
+                    "ConditionBrowseLeafAsFound":"Ischemic",
+                    "ConditionBrowseLeafRelevance":"high"
+                  },{
+                    "ConditionBrowseLeafId":"M5485",
+                    "ConditionBrowseLeafName":"Ischemic Attack, Transient",
+                    "ConditionBrowseLeafAsFound":"Transient Ischemic Attack",
+                    "ConditionBrowseLeafRelevance":"high"
+                  },{
+                    "ConditionBrowseLeafId":"M5484",
+                    "ConditionBrowseLeafName":"Brain Ischemia",
+                    "ConditionBrowseLeafRelevance":"low"
+                  },{
+                    "ConditionBrowseLeafId":"M5500",
+                    "ConditionBrowseLeafName":"Cerebrovascular Disorders",
+                    "ConditionBrowseLeafRelevance":"low"
+                  },{
+                    "ConditionBrowseLeafId":"M4894",
+                    "ConditionBrowseLeafName":"Brain Diseases",
+                    "ConditionBrowseLeafRelevance":"low"
+                  },{
+                    "ConditionBrowseLeafId":"M5432",
+                    "ConditionBrowseLeafName":"Central Nervous System Diseases",
+                    "ConditionBrowseLeafRelevance":"low"
+                  },{
+                    "ConditionBrowseLeafId":"M17090",
+                    "ConditionBrowseLeafName":"Vascular Diseases",
+                    "ConditionBrowseLeafRelevance":"low"
+                  }
+                ]
+              },
+              "ConditionBrowseBranchList":{
+                "ConditionBrowseBranch":[
+                  {
+                    "ConditionBrowseBranchAbbrev":"BC23",
+                    "ConditionBrowseBranchName":"Symptoms and General Pathology"
+                  },{
+                    "ConditionBrowseBranchAbbrev":"All",
+                    "ConditionBrowseBranchName":"All Conditions"
+                  },{
+                    "ConditionBrowseBranchAbbrev":"BC10",
+                    "ConditionBrowseBranchName":"Nervous System Diseases"
+                  },{
+                    "ConditionBrowseBranchAbbrev":"BC14",
+                    "ConditionBrowseBranchName":"Heart and Blood Diseases"
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}
+

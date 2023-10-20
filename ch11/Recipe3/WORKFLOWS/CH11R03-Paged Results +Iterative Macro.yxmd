@@ -1,0 +1,311 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2022.1">
+  <Nodes>
+    <Node ToolID="1">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
+        <Position x="54" y="187" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <NumRows value="1" />
+          <Fields>
+            <Field name="Endpoint" />
+            <Field name="page_size" />
+            <Field name="page" />
+          </Fields>
+          <Data>
+            <r>
+              <c>http://community.alteryx.com/restapi/vc/users/id/xxxx/posts</c>
+              <c>500</c>
+              <c>1</c>
+            </r>
+          </Data>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
+    </Node>
+    <Node ToolID="2">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="162" y="187" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="15">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
+        <Position x="462" y="174" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SortInfo locale="0">
+            <Field field="page" order="Descending" />
+          </SortInfo>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>page - Descending</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
+    </Node>
+    <Node ToolID="16">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Sample.Sample">
+        <Position x="594" y="174" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>Skip</Mode>
+          <N>1</N>
+          <GroupFields orderChanged="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Skip 1st 1</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSample" />
+    </Node>
+    <Node ToolID="17">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
+        <Position x="726" y="175" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SortInfo locale="0">
+            <Field field="page" order="Ascending" />
+          </SortInfo>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>page - Ascending</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
+    </Node>
+    <Node ToolID="19">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.XMLParse.XMLParse">
+        <Position x="858" y="103" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <XMLField>DownloadData</XMLField>
+          <XMLElement>message</XMLElement>
+          <ChildValues value="True" />
+          <OuterXML value="False" />
+          <ParseRoot value="False" />
+          <IgnoreErrors value="False" />
+          <IncludeInOutput value="True" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Endpoint" size="59" source="TextInput: (BatchMacro)" type="String" />
+            <Field name="page_size" source="TextInput: (BatchMacro)" type="Int16" />
+            <Field name="page" source="Formula: [Engine.IterationNumber]+1 (BatchMacro)" type="Byte" />
+            <Field name="URL" size="1073741823" source="Formula: Replace([Endpoint],&quot;xxxx&quot;, [#1]) (BatchMacro)" type="V_WString" />
+            <Field name="DownloadData" size="1073741823" source="Download (BatchMacro)" type="V_WString" />
+            <Field name="DownloadHeaders" size="2147483647" source="Download (BatchMacro)" type="V_String" />
+            <Field name="message" size="159" type="V_String" />
+            <Field name="type" size="7" type="V_String" />
+            <Field name="href" size="20" type="V_String" />
+            <Field name="root" size="1" type="V_String" />
+            <Field name="root_type" size="7" type="V_String" />
+            <Field name="root_href" size="20" type="V_String" />
+            <Field name="canonical_url" size="1" type="V_String" />
+            <Field name="canonical_url_type" size="6" type="V_String" />
+            <Field name="canonical_url_null" size="4" type="V_String" />
+            <Field name="seo_title" size="1" type="V_String" />
+            <Field name="seo_title_type" size="6" type="V_String" />
+            <Field name="seo_title_null" size="4" type="V_String" />
+            <Field name="seo_description" size="1" type="V_String" />
+            <Field name="seo_description_type" size="6" type="V_String" />
+            <Field name="seo_description_null" size="4" type="V_String" />
+            <Field name="post_time" size="25" type="V_String" />
+            <Field name="post_time_type" size="9" type="V_String" />
+            <Field name="kudos" size="16" type="V_String" />
+            <Field name="last_edit_time" size="25" type="V_String" />
+            <Field name="last_edit_time_type" size="9" type="V_String" />
+            <Field name="message_rating" size="3" type="V_String" />
+            <Field name="message_rating_type" size="5" type="V_String" />
+            <Field name="last_edit_author" size="16" type="V_String" />
+            <Field name="last_edit_author_type" size="4" type="V_String" />
+            <Field name="last_edit_author_href" size="16" type="V_String" />
+            <Field name="author" size="16" type="V_String" />
+            <Field name="author_type" size="4" type="V_String" />
+            <Field name="author_href" size="14" type="V_String" />
+            <Field name="deleted" size="5" type="V_String" />
+            <Field name="deleted_type" size="7" type="V_String" />
+            <Field name="board" size="1" type="V_String" />
+            <Field name="board_type" size="5" type="V_String" />
+            <Field name="board_href" size="40" type="V_String" />
+            <Field name="thread" size="1" type="V_String" />
+            <Field name="thread_type" size="6" type="V_String" />
+            <Field name="thread_href" size="19" type="V_String" />
+            <Field name="parent" size="1" type="V_String" />
+            <Field name="parent_type" size="7" type="V_String" />
+            <Field name="parent_href" size="20" type="V_String" />
+            <Field name="teaser" size="791" type="V_WString" />
+            <Field name="teaser_type" size="6" type="V_String" />
+            <Field name="views" size="16" type="V_String" />
+            <Field name="subject" size="90" type="V_WString" />
+            <Field name="subject_type" size="6" type="V_String" />
+            <Field name="message_status" size="25" type="V_String" />
+            <Field name="message_status_type" size="14" type="V_String" />
+            <Field name="message_status_href" size="24" type="V_String" />
+            <Field name="board_id" size="6" type="V_String" />
+            <Field name="board_id_type" size="3" type="V_String" />
+            <Field name="id" size="7" type="V_String" />
+            <Field name="id_type" size="3" type="V_String" />
+            <Field name="read_only" size="5" type="V_String" />
+            <Field name="read_only_type" size="7" type="V_String" />
+            <Field name="labels" size="52" type="V_String" />
+            <Field name="parent_null" size="4" type="V_String" />
+          </RecordInfo>
+          <SortInfo locale="0">
+            <Field field="page" order="Ascending" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxXMLParse" />
+    </Node>
+    <Node ToolID="20">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="954" y="103" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_40240_449993e67c2340e59b2b48d2cc5a1caa_\Engine_24844_c6abec70af1547b591f64d0460198833_.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <View1>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="36">
+      <GuiSettings>
+        <Position x="318" y="187" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Value name="Text Box (22)">1536</Value>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name>GetUserPosts (13)</Name>
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings Macro=".\MACROS\GetUserPosts.yxmc" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="2" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="36" Connection="Input2" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="15" Connection="Output" />
+      <Destination ToolID="16" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="16" Connection="Output" />
+      <Destination ToolID="17" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="17" Connection="Output" />
+      <Destination ToolID="19" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="19" Connection="Output" />
+      <Destination ToolID="20" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="36" Connection="RESULTS" />
+      <Destination ToolID="15" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="False" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>CH11R03-Paged Results +Iterative Macro</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="c735bf99-c435-4aec-b6b0-fe50b1cedb95" />
+      <Telemetry>
+        <PreviousWorkflowId value="fd395d85-3411-4818-bb56-d9278300b79d" />
+        <OriginWorkflowId value="8f0c7f6a-ffb0-4fc7-b586-614df115004d" />
+      </Telemetry>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>

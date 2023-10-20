@@ -1,0 +1,875 @@
+﻿<FullStudiesResponse>
+  <APIVrs>1.01.05</APIVrs>
+  <DataVrs>2023:10:19 00:02:04.311</DataVrs>
+  <Expression>heart+attack</Expression>
+  <NStudiesAvail>470003</NStudiesAvail>
+  <NStudiesFound>2043</NStudiesFound>
+  <MinRank>1</MinRank>
+  <MaxRank>1</MaxRank>
+  <NStudiesReturned>1</NStudiesReturned>
+  <FullStudyList>
+    <FullStudy Rank="1">
+      <Struct Name="Study">
+        <Struct Name="ProtocolSection">
+          <Struct Name="IdentificationModule">
+            <Field Name="NCTId">NCT00929994</Field>
+            <Struct Name="OrgStudyIdInfo">
+              <Field Name="OrgStudyId">Brooks - 001</Field>
+            </Struct>
+            <Struct Name="Organization">
+              <Field Name="OrgFullName">Toronto Rehabilitation Institute</Field>
+              <Field Name="OrgClass">OTHER</Field>
+            </Struct>
+            <Field Name="BriefTitle">Effects of Cardiac Rehabilitation for Individuals With Transient Ischemic Attack</Field>
+            <Field Name="OfficialTitle">Effects of Cardiac Rehabilitation for Individuals With Transient Ischemic Attack</Field>
+          </Struct>
+          <Struct Name="StatusModule">
+            <Field Name="StatusVerifiedDate">April 2019</Field>
+            <Field Name="OverallStatus">Completed</Field>
+            <Struct Name="ExpandedAccessInfo">
+              <Field Name="HasExpandedAccess">No</Field>
+            </Struct>
+            <Struct Name="StartDateStruct">
+              <Field Name="StartDate">March 2010</Field>
+            </Struct>
+            <Struct Name="PrimaryCompletionDateStruct">
+              <Field Name="PrimaryCompletionDate">November 2014</Field>
+              <Field Name="PrimaryCompletionDateType">Actual</Field>
+            </Struct>
+            <Struct Name="CompletionDateStruct">
+              <Field Name="CompletionDate">November 2014</Field>
+              <Field Name="CompletionDateType">Actual</Field>
+            </Struct>
+            <Field Name="StudyFirstSubmitDate">June 29, 2009</Field>
+            <Field Name="StudyFirstSubmitQCDate">June 29, 2009</Field>
+            <Struct Name="StudyFirstPostDateStruct">
+              <Field Name="StudyFirstPostDate">June 30, 2009</Field>
+              <Field Name="StudyFirstPostDateType">Estimate</Field>
+            </Struct>
+            <Field Name="ResultsFirstSubmitDate">April 15, 2017</Field>
+            <Field Name="ResultsFirstSubmitQCDate">April 20, 2019</Field>
+            <Struct Name="ResultsFirstPostDateStruct">
+              <Field Name="ResultsFirstPostDate">April 23, 2019</Field>
+              <Field Name="ResultsFirstPostDateType">Actual</Field>
+            </Struct>
+            <Field Name="LastUpdateSubmitDate">April 20, 2019</Field>
+            <Struct Name="LastUpdatePostDateStruct">
+              <Field Name="LastUpdatePostDate">April 23, 2019</Field>
+              <Field Name="LastUpdatePostDateType">Actual</Field>
+            </Struct>
+          </Struct>
+          <Struct Name="SponsorCollaboratorsModule">
+            <Struct Name="ResponsibleParty">
+              <Field Name="ResponsiblePartyType">Principal Investigator</Field>
+              <Field Name="ResponsiblePartyInvestigatorFullName">Dina Brooks</Field>
+              <Field Name="ResponsiblePartyInvestigatorTitle">Professor</Field>
+              <Field Name="ResponsiblePartyInvestigatorAffiliation">Toronto Rehabilitation Institute</Field>
+            </Struct>
+            <Struct Name="LeadSponsor">
+              <Field Name="LeadSponsorName">Toronto Rehabilitation Institute</Field>
+              <Field Name="LeadSponsorClass">OTHER</Field>
+            </Struct>
+            <List Name="CollaboratorList">
+              <Struct Name="Collaborator">
+                <Field Name="CollaboratorName">Heart and Stroke Foundation of Canada</Field>
+                <Field Name="CollaboratorClass">OTHER</Field>
+              </Struct>
+            </List>
+          </Struct>
+          <Struct Name="OversightModule">
+            <Field Name="OversightHasDMC">No</Field>
+          </Struct>
+          <Struct Name="DescriptionModule">
+            <Field Name="BriefSummary">It is hypothesized that the addition of formal cardiac rehabilitation to standard care will result in long-term improvements in cardiovascular fitness and functional capacity in individuals who have suffered a transient ischemic attack (TIA) or minor stroke.
+
+Furthermore, it is proposed that the addition of cardiac rehabilitation will influence depressive symptoms and cognition.</Field>
+            <Field Name="DetailedDescription">A transient ischemic attack (TIA) is defined as an episode of neurological dysfunction caused by focal brain ischemia lasting less than 24 hours. Once an individual has suffered a TIA, preventative measures can be taken to target modifiable risk factors, one of which is physical inactivity. The current proposal focuses on the use of an established model of care (cardiac rehabilitation (CR)) and applies it to those who have suffered a TIA in order to maximize physical activity and minimize risk of future cardiovascular events. This will be a one-group pre/post design study with a 3 month non-intervention period. Participants will undergo measures at baseline and 3 months (non intervention period) then after 6 months of cardiac rehabilitation (cardiovascular fitness, 6 minute walk test, cognition, and depressive symptoms).</Field>
+          </Struct>
+          <Struct Name="ConditionsModule">
+            <List Name="ConditionList">
+              <Field Name="Condition">Transient Ischemic Attack</Field>
+            </List>
+            <List Name="KeywordList">
+              <Field Name="Keyword">cardiac rehab</Field>
+            </List>
+          </Struct>
+          <Struct Name="DesignModule">
+            <Field Name="StudyType">Observational</Field>
+            <Field Name="PatientRegistry">No</Field>
+            <Struct Name="DesignInfo">
+              <List Name="DesignObservationalModelList">
+                <Field Name="DesignObservationalModel">Cohort</Field>
+              </List>
+              <List Name="DesignTimePerspectiveList">
+                <Field Name="DesignTimePerspective">Prospective</Field>
+              </List>
+            </Struct>
+            <Struct Name="EnrollmentInfo">
+              <Field Name="EnrollmentCount">20</Field>
+              <Field Name="EnrollmentType">Actual</Field>
+            </Struct>
+          </Struct>
+          <Struct Name="ArmsInterventionsModule">
+            <List Name="ArmGroupList">
+              <Struct Name="ArmGroup">
+                <Field Name="ArmGroupLabel">Exercise</Field>
+                <Field Name="ArmGroupDescription">Following a 3 month non intervention period, participants will participate in Cardiac Rehabilitation, carrying out an exercise program which will last 6 months and combine both resistance and aerobic training.</Field>
+                <List Name="ArmGroupInterventionList">
+                  <Field Name="ArmGroupInterventionName">Behavioral: Cardiac Rehabilitation</Field>
+                </List>
+              </Struct>
+            </List>
+            <List Name="InterventionList">
+              <Struct Name="Intervention">
+                <Field Name="InterventionType">Behavioral</Field>
+                <Field Name="InterventionName">Cardiac Rehabilitation</Field>
+                <Field Name="InterventionDescription">Individualized cardiac rehabilitation for 6 months, including health education sessions, as well as supervised exercise classes which include aerobic and resistance training.</Field>
+                <List Name="InterventionArmGroupLabelList">
+                  <Field Name="InterventionArmGroupLabel">Exercise</Field>
+                </List>
+              </Struct>
+            </List>
+          </Struct>
+          <Struct Name="OutcomesModule">
+            <List Name="PrimaryOutcomeList">
+              <Struct Name="PrimaryOutcome">
+                <Field Name="PrimaryOutcomeMeasure">Functional Walk Test</Field>
+                <Field Name="PrimaryOutcomeDescription">6 minute walk test: the longest distance a person can walk for a duration of 6 minutes</Field>
+                <Field Name="PrimaryOutcomeTimeFrame">Baseline, 3 months, 6 months (Six Minute Walk Distance)</Field>
+              </Struct>
+              <Struct Name="PrimaryOutcome">
+                <Field Name="PrimaryOutcomeMeasure">Cardiovascular Fitness (VO2peak)</Field>
+                <Field Name="PrimaryOutcomeDescription">To measure cardiovascular fitness, a stress test on either an upright cycle ergometer (Ergoselect 200P, Germany), or a treadmill (same modality pre- and post-training) was performed depending on patient balance and comfort.</Field>
+                <Field Name="PrimaryOutcomeTimeFrame">Baseline (after the 3 month non-intervention period) and after 6 months of participation.</Field>
+              </Struct>
+            </List>
+            <List Name="SecondaryOutcomeList">
+              <Struct Name="SecondaryOutcome">
+                <Field Name="SecondaryOutcomeMeasure">Center for Epidemiologic Studies Depression Scale (CES-D).</Field>
+                <Field Name="SecondaryOutcomeDescription">Depressive symptoms using the validated Center for Epidemiologic Studies Depression Scale (CES-D). This is a score from a 20 item questionnaire with minimum value of 0 and maximum value of 60 with higher numbers indicated greater depressive symptoms (worse).</Field>
+                <Field Name="SecondaryOutcomeTimeFrame">Baseline and 3 months (non-intervention period), after 6 months of cardiac rehabilitation participation</Field>
+              </Struct>
+              <Struct Name="SecondaryOutcome">
+                <Field Name="SecondaryOutcomeMeasure">Cognition</Field>
+                <Field Name="SecondaryOutcomeDescription">Montreal Cognitive Assessment. The MoCA score ranges from 0 to 30 points with a higher score indicating better cognitive function.</Field>
+                <Field Name="SecondaryOutcomeTimeFrame">Baseline and 3 months (non-intervention period), after 6 months of cardiac rehabilitation participation</Field>
+              </Struct>
+            </List>
+          </Struct>
+          <Struct Name="EligibilityModule">
+            <Field Name="EligibilityCriteria">Inclusion Criteria:
+
+Diagnosed with TIA
+Three months post-TIA
+Ability to understand the process and instructions for exercise training and provide informed consent
+
+Exclusion Criteria:
+
+Resting Blood Pressure greater than 160/100 despite medication
+Other cardiovascular morbidity which would limit exercise tolerance (heart failure, abnormal BP responses or STsegment depression &gt; 2 mm, symptomatic aortic stenosis, complex arrhythmias)
+Current and extensive exercise participation
+Hypertrophic Cardiomyopathy
+Unstable Angina
+Orthostatic BP decrease of &gt; 20 mm Hg with symptoms
+Other musculoskeletal impairments which would limit the participants ability to walk sufficient durations
+Pain or other co-morbidities (e.g., unclipped aneurysms, uncontrolled seizures etc.) which would preclude participation
+Cognitive or behavioural issues that would limit participation in exercise testing and training</Field>
+            <Field Name="HealthyVolunteers">No</Field>
+            <Field Name="Gender">All</Field>
+            <Field Name="MinimumAge">18 Years</Field>
+            <Field Name="MaximumAge">100 Years</Field>
+            <List Name="StdAgeList">
+              <Field Name="StdAge">Adult</Field>
+              <Field Name="StdAge">Older Adult</Field>
+            </List>
+            <Field Name="StudyPopulation">TIA</Field>
+            <Field Name="SamplingMethod">Probability Sample</Field>
+          </Struct>
+          <Struct Name="ContactsLocationsModule">
+            <List Name="OverallOfficialList">
+              <Struct Name="OverallOfficial">
+                <Field Name="OverallOfficialName">Dina Brooks, PhD</Field>
+                <Field Name="OverallOfficialAffiliation">Toronto Rehabilitation Institute</Field>
+                <Field Name="OverallOfficialRole">Principal Investigator</Field>
+              </Struct>
+              <Struct Name="OverallOfficial">
+                <Field Name="OverallOfficialName">William E McIllroy, PhD</Field>
+                <Field Name="OverallOfficialAffiliation">University of Waterloo</Field>
+                <Field Name="OverallOfficialRole">Principal Investigator</Field>
+              </Struct>
+              <Struct Name="OverallOfficial">
+                <Field Name="OverallOfficialName">Paul Oh, MD</Field>
+                <Field Name="OverallOfficialAffiliation">Toronto Rehabilitation Institute</Field>
+                <Field Name="OverallOfficialRole">Principal Investigator</Field>
+              </Struct>
+              <Struct Name="OverallOfficial">
+                <Field Name="OverallOfficialName">Sandra Black, MD</Field>
+                <Field Name="OverallOfficialAffiliation">Sunnybrook and Women's College Health Centre</Field>
+                <Field Name="OverallOfficialRole">Principal Investigator</Field>
+              </Struct>
+            </List>
+            <List Name="LocationList">
+              <Struct Name="Location">
+                <Field Name="LocationFacility">Toronto Rehabilitation Institute - Rumsey Center</Field>
+                <Field Name="LocationCity">Toronto</Field>
+                <Field Name="LocationState">Ontario</Field>
+                <Field Name="LocationZip">M4G 1R7</Field>
+                <Field Name="LocationCountry">Canada</Field>
+              </Struct>
+            </List>
+          </Struct>
+        </Struct>
+        <Struct Name="ResultsSection">
+          <Struct Name="ParticipantFlowModule">
+            <List Name="FlowGroupList">
+              <Struct Name="FlowGroup">
+                <Field Name="FlowGroupId">FG000</Field>
+                <Field Name="FlowGroupTitle">Exercise</Field>
+                <Field Name="FlowGroupDescription">Participants will participate in Cardiac Rehabilitation, carrying out an exercise program which will last 6 months and combine both resistance and aerobic training. There will be a 3 month non-intervention period preceding the exercise program.
+
+Cardiac Rehabilitation: Individualized cardiac rehabilitation for 6 months, including health education sessions, as well as supervised exercise classes which include aerobic and resistance training.</Field>
+              </Struct>
+            </List>
+            <List Name="FlowPeriodList">
+              <Struct Name="FlowPeriod">
+                <Field Name="FlowPeriodTitle">Overall Study</Field>
+                <List Name="FlowMilestoneList">
+                  <Struct Name="FlowMilestone">
+                    <Field Name="FlowMilestoneType">STARTED</Field>
+                    <List Name="FlowAchievementList">
+                      <Struct Name="FlowAchievement">
+                        <Field Name="FlowAchievementGroupId">FG000</Field>
+                        <Field Name="FlowAchievementNumSubjects">20</Field>
+                      </Struct>
+                    </List>
+                  </Struct>
+                  <Struct Name="FlowMilestone">
+                    <Field Name="FlowMilestoneType">COMPLETED</Field>
+                    <List Name="FlowAchievementList">
+                      <Struct Name="FlowAchievement">
+                        <Field Name="FlowAchievementGroupId">FG000</Field>
+                        <Field Name="FlowAchievementNumSubjects">14</Field>
+                      </Struct>
+                    </List>
+                  </Struct>
+                  <Struct Name="FlowMilestone">
+                    <Field Name="FlowMilestoneType">NOT COMPLETED</Field>
+                    <List Name="FlowAchievementList">
+                      <Struct Name="FlowAchievement">
+                        <Field Name="FlowAchievementGroupId">FG000</Field>
+                        <Field Name="FlowAchievementNumSubjects">6</Field>
+                      </Struct>
+                    </List>
+                  </Struct>
+                </List>
+                <List Name="FlowDropWithdrawList">
+                  <Struct Name="FlowDropWithdraw">
+                    <Field Name="FlowDropWithdrawType">Withdrawal by Subject</Field>
+                    <List Name="FlowReasonList">
+                      <Struct Name="FlowReason">
+                        <Field Name="FlowReasonGroupId">FG000</Field>
+                        <Field Name="FlowReasonNumSubjects">1</Field>
+                      </Struct>
+                    </List>
+                  </Struct>
+                  <Struct Name="FlowDropWithdraw">
+                    <Field Name="FlowDropWithdrawType">medical issue unrelated to intervention</Field>
+                    <List Name="FlowReasonList">
+                      <Struct Name="FlowReason">
+                        <Field Name="FlowReasonGroupId">FG000</Field>
+                        <Field Name="FlowReasonNumSubjects">4</Field>
+                      </Struct>
+                    </List>
+                  </Struct>
+                  <Struct Name="FlowDropWithdraw">
+                    <Field Name="FlowDropWithdrawType">employment</Field>
+                    <List Name="FlowReasonList">
+                      <Struct Name="FlowReason">
+                        <Field Name="FlowReasonGroupId">FG000</Field>
+                        <Field Name="FlowReasonNumSubjects">1</Field>
+                      </Struct>
+                    </List>
+                  </Struct>
+                </List>
+              </Struct>
+            </List>
+          </Struct>
+          <Struct Name="BaselineCharacteristicsModule">
+            <List Name="BaselineGroupList">
+              <Struct Name="BaselineGroup">
+                <Field Name="BaselineGroupId">BG000</Field>
+                <Field Name="BaselineGroupTitle">Exercise</Field>
+                <Field Name="BaselineGroupDescription">Participants in this group will participate in Cardiac Rehabilitation, carrying out an exercise program which will last 6 months and combine both resistance and aerobic training.
+
+Cardiac Rehabilitation: Individualized cardiac rehabilitation for 6 months, including health education sessions, as well as supervised exercise classes which include aerobic and resistance training.</Field>
+              </Struct>
+            </List>
+            <List Name="BaselineDenomList">
+              <Struct Name="BaselineDenom">
+                <Field Name="BaselineDenomUnits">Participants</Field>
+                <List Name="BaselineDenomCountList">
+                  <Struct Name="BaselineDenomCount">
+                    <Field Name="BaselineDenomCountGroupId">BG000</Field>
+                    <Field Name="BaselineDenomCountValue">20</Field>
+                  </Struct>
+                </List>
+              </Struct>
+            </List>
+            <List Name="BaselineMeasureList">
+              <Struct Name="BaselineMeasure">
+                <Field Name="BaselineMeasureTitle">Age, Continuous</Field>
+                <Field Name="BaselineMeasureParamType">Mean</Field>
+                <Field Name="BaselineMeasureDispersionType">Standard Deviation</Field>
+                <Field Name="BaselineMeasureUnitOfMeasure">years</Field>
+                <List Name="BaselineClassList">
+                  <Struct Name="BaselineClass">
+                    <List Name="BaselineCategoryList">
+                      <Struct Name="BaselineCategory">
+                        <List Name="BaselineMeasurementList">
+                          <Struct Name="BaselineMeasurement">
+                            <Field Name="BaselineMeasurementGroupId">BG000</Field>
+                            <Field Name="BaselineMeasurementValue">65</Field>
+                            <Field Name="BaselineMeasurementSpread">11.2</Field>
+                          </Struct>
+                        </List>
+                      </Struct>
+                    </List>
+                  </Struct>
+                </List>
+              </Struct>
+              <Struct Name="BaselineMeasure">
+                <Field Name="BaselineMeasureTitle">Sex: Female, Male</Field>
+                <Field Name="BaselineMeasureParamType">Count of Participants</Field>
+                <Field Name="BaselineMeasureUnitOfMeasure">Participants</Field>
+                <List Name="BaselineClassList">
+                  <Struct Name="BaselineClass">
+                    <List Name="BaselineCategoryList">
+                      <Struct Name="BaselineCategory">
+                        <Field Name="BaselineCategoryTitle">Female</Field>
+                        <List Name="BaselineMeasurementList">
+                          <Struct Name="BaselineMeasurement">
+                            <Field Name="BaselineMeasurementGroupId">BG000</Field>
+                            <Field Name="BaselineMeasurementValue">13</Field>
+                          </Struct>
+                        </List>
+                      </Struct>
+                      <Struct Name="BaselineCategory">
+                        <Field Name="BaselineCategoryTitle">Male</Field>
+                        <List Name="BaselineMeasurementList">
+                          <Struct Name="BaselineMeasurement">
+                            <Field Name="BaselineMeasurementGroupId">BG000</Field>
+                            <Field Name="BaselineMeasurementValue">7</Field>
+                          </Struct>
+                        </List>
+                      </Struct>
+                    </List>
+                  </Struct>
+                </List>
+              </Struct>
+              <Struct Name="BaselineMeasure">
+                <Field Name="BaselineMeasureTitle">Region of Enrollment</Field>
+                <Field Name="BaselineMeasureParamType">Number</Field>
+                <Field Name="BaselineMeasureUnitOfMeasure">participants</Field>
+                <List Name="BaselineClassList">
+                  <Struct Name="BaselineClass">
+                    <Field Name="BaselineClassTitle">Canada</Field>
+                    <List Name="BaselineCategoryList">
+                      <Struct Name="BaselineCategory">
+                        <List Name="BaselineMeasurementList">
+                          <Struct Name="BaselineMeasurement">
+                            <Field Name="BaselineMeasurementGroupId">BG000</Field>
+                            <Field Name="BaselineMeasurementValue">20</Field>
+                          </Struct>
+                        </List>
+                      </Struct>
+                    </List>
+                  </Struct>
+                </List>
+              </Struct>
+            </List>
+          </Struct>
+          <Struct Name="OutcomeMeasuresModule">
+            <List Name="OutcomeMeasureList">
+              <Struct Name="OutcomeMeasure">
+                <Field Name="OutcomeMeasureType">Primary</Field>
+                <Field Name="OutcomeMeasureTitle">Functional Walk Test</Field>
+                <Field Name="OutcomeMeasureDescription">6 minute walk test: the longest distance a person can walk for a duration of 6 minutes</Field>
+                <Field Name="OutcomeMeasurePopulationDescription">Transient Ischemic Attack participants who completed the 6 month intervention.</Field>
+                <Field Name="OutcomeMeasureReportingStatus">Posted</Field>
+                <Field Name="OutcomeMeasureParamType">Mean</Field>
+                <Field Name="OutcomeMeasureDispersionType">Standard Deviation</Field>
+                <Field Name="OutcomeMeasureUnitOfMeasure">meters</Field>
+                <Field Name="OutcomeMeasureTimeFrame">Baseline, 3 months, 6 months (Six Minute Walk Distance)</Field>
+                <List Name="OutcomeGroupList">
+                  <Struct Name="OutcomeGroup">
+                    <Field Name="OutcomeGroupId">OG000</Field>
+                    <Field Name="OutcomeGroupTitle">Exercise</Field>
+                    <Field Name="OutcomeGroupDescription">Participants in this group will participate in Cardiac Rehabilitation, carrying out an exercise program which will last 6 months and combine both resistance and aerobic training. A 3 month non-intervention period will precede the 6 month cardiac rehabilitation training program.
+
+Cardiac Rehabilitation: Individualized cardiac rehabilitation for 6 months, including health education sessions, as well as supervised exercise classes which include aerobic and resistance training.</Field>
+                  </Struct>
+                </List>
+                <List Name="OutcomeDenomList">
+                  <Struct Name="OutcomeDenom">
+                    <Field Name="OutcomeDenomUnits">Participants</Field>
+                    <List Name="OutcomeDenomCountList">
+                      <Struct Name="OutcomeDenomCount">
+                        <Field Name="OutcomeDenomCountGroupId">OG000</Field>
+                        <Field Name="OutcomeDenomCountValue">14</Field>
+                      </Struct>
+                    </List>
+                  </Struct>
+                </List>
+                <List Name="OutcomeClassList">
+                  <Struct Name="OutcomeClass">
+                    <Field Name="OutcomeClassTitle">Baseline</Field>
+                    <List Name="OutcomeCategoryList">
+                      <Struct Name="OutcomeCategory">
+                        <List Name="OutcomeMeasurementList">
+                          <Struct Name="OutcomeMeasurement">
+                            <Field Name="OutcomeMeasurementGroupId">OG000</Field>
+                            <Field Name="OutcomeMeasurementValue">498.4</Field>
+                            <Field Name="OutcomeMeasurementSpread">95.2</Field>
+                          </Struct>
+                        </List>
+                      </Struct>
+                    </List>
+                  </Struct>
+                  <Struct Name="OutcomeClass">
+                    <Field Name="OutcomeClassTitle">3 months</Field>
+                    <List Name="OutcomeCategoryList">
+                      <Struct Name="OutcomeCategory">
+                        <List Name="OutcomeMeasurementList">
+                          <Struct Name="OutcomeMeasurement">
+                            <Field Name="OutcomeMeasurementGroupId">OG000</Field>
+                            <Field Name="OutcomeMeasurementValue">503.2</Field>
+                            <Field Name="OutcomeMeasurementSpread">111.1</Field>
+                          </Struct>
+                        </List>
+                      </Struct>
+                    </List>
+                  </Struct>
+                  <Struct Name="OutcomeClass">
+                    <Field Name="OutcomeClassTitle">6 months</Field>
+                    <List Name="OutcomeCategoryList">
+                      <Struct Name="OutcomeCategory">
+                        <List Name="OutcomeMeasurementList">
+                          <Struct Name="OutcomeMeasurement">
+                            <Field Name="OutcomeMeasurementGroupId">OG000</Field>
+                            <Field Name="OutcomeMeasurementValue">564.2</Field>
+                            <Field Name="OutcomeMeasurementSpread">139.6</Field>
+                          </Struct>
+                        </List>
+                      </Struct>
+                    </List>
+                  </Struct>
+                </List>
+                <List Name="OutcomeAnalysisList">
+                  <Struct Name="OutcomeAnalysis">
+                    <List Name="OutcomeAnalysisGroupIdList">
+                      <Field Name="OutcomeAnalysisGroupId">OG000</Field>
+                    </List>
+                    <Field Name="OutcomeAnalysisGroupDescription">With 1 group and 3 test times, a repeated measures analysis of variance of 6MWD, was utilized between the 3 test times 0, 3, and 6 months). A Bonferroni correction for multiple testing was used for post hoc contrasts.</Field>
+                    <Field Name="OutcomeAnalysisNonInferiorityType">Other</Field>
+                    <Field Name="OutcomeAnalysisPValue">=0.06</Field>
+                    <Field Name="OutcomeAnalysisPValueComment">A Bonferroni correction for multiple testing was used for post hoc contrasts. Assumption of sphericity was met for all analyses determined by the Mauchley test of sphericity (all &gt;.05).</Field>
+                    <Field Name="OutcomeAnalysisStatisticalMethod">ANOVA</Field>
+                  </Struct>
+                  <Struct Name="OutcomeAnalysis">
+                    <List Name="OutcomeAnalysisGroupIdList">
+                      <Field Name="OutcomeAnalysisGroupId">OG000</Field>
+                    </List>
+                    <Field Name="OutcomeAnalysisNonInferiorityType">Superiority</Field>
+                    <Field Name="OutcomeAnalysisPValue">0.06</Field>
+                    <Field Name="OutcomeAnalysisStatisticalMethod">t-test, 2 sided</Field>
+                  </Struct>
+                </List>
+              </Struct>
+              <Struct Name="OutcomeMeasure">
+                <Field Name="OutcomeMeasureType">Primary</Field>
+                <Field Name="OutcomeMeasureTitle">Cardiovascular Fitness (VO2peak)</Field>
+                <Field Name="OutcomeMeasureDescription">To measure cardiovascular fitness, a stress test on either an upright cycle ergometer (Ergoselect 200P, Germany), or a treadmill (same modality pre- and post-training) was performed depending on patient balance and comfort.</Field>
+                <Field Name="OutcomeMeasureReportingStatus">Posted</Field>
+                <Field Name="OutcomeMeasureParamType">Mean</Field>
+                <Field Name="OutcomeMeasureDispersionType">Standard Deviation</Field>
+                <Field Name="OutcomeMeasureUnitOfMeasure">ml/kg/min</Field>
+                <Field Name="OutcomeMeasureTimeFrame">Baseline (after the 3 month non-intervention period) and after 6 months of participation.</Field>
+                <List Name="OutcomeGroupList">
+                  <Struct Name="OutcomeGroup">
+                    <Field Name="OutcomeGroupId">OG000</Field>
+                    <Field Name="OutcomeGroupTitle">Exercise</Field>
+                    <Field Name="OutcomeGroupDescription">Participants in this group will participate in Cardiac Rehabilitation, carrying out an exercise program which will last 6 months and combine both resistance and aerobic training.
+
+Cardiac Rehabilitation: Individualized cardiac rehabilitation for 6 months, including health education sessions, as well as supervised exercise classes which include aerobic and resistance training.</Field>
+                  </Struct>
+                </List>
+                <List Name="OutcomeDenomList">
+                  <Struct Name="OutcomeDenom">
+                    <Field Name="OutcomeDenomUnits">Participants</Field>
+                    <List Name="OutcomeDenomCountList">
+                      <Struct Name="OutcomeDenomCount">
+                        <Field Name="OutcomeDenomCountGroupId">OG000</Field>
+                        <Field Name="OutcomeDenomCountValue">14</Field>
+                      </Struct>
+                    </List>
+                  </Struct>
+                </List>
+                <List Name="OutcomeClassList">
+                  <Struct Name="OutcomeClass">
+                    <Field Name="OutcomeClassTitle">Baseline</Field>
+                    <List Name="OutcomeCategoryList">
+                      <Struct Name="OutcomeCategory">
+                        <List Name="OutcomeMeasurementList">
+                          <Struct Name="OutcomeMeasurement">
+                            <Field Name="OutcomeMeasurementGroupId">OG000</Field>
+                            <Field Name="OutcomeMeasurementValue">16.7</Field>
+                            <Field Name="OutcomeMeasurementSpread">5</Field>
+                          </Struct>
+                        </List>
+                      </Struct>
+                    </List>
+                  </Struct>
+                  <Struct Name="OutcomeClass">
+                    <Field Name="OutcomeClassTitle">6 months</Field>
+                    <List Name="OutcomeCategoryList">
+                      <Struct Name="OutcomeCategory">
+                        <List Name="OutcomeMeasurementList">
+                          <Struct Name="OutcomeMeasurement">
+                            <Field Name="OutcomeMeasurementGroupId">OG000</Field>
+                            <Field Name="OutcomeMeasurementValue">19.1</Field>
+                            <Field Name="OutcomeMeasurementSpread">4.6</Field>
+                          </Struct>
+                        </List>
+                      </Struct>
+                    </List>
+                  </Struct>
+                </List>
+                <List Name="OutcomeAnalysisList">
+                  <Struct Name="OutcomeAnalysis">
+                    <List Name="OutcomeAnalysisGroupIdList">
+                      <Field Name="OutcomeAnalysisGroupId">OG000</Field>
+                    </List>
+                    <Field Name="OutcomeAnalysisNonInferiorityType">Superiority</Field>
+                    <Field Name="OutcomeAnalysisPValue">0.01</Field>
+                    <Field Name="OutcomeAnalysisStatisticalMethod">t-test, 2 sided</Field>
+                  </Struct>
+                </List>
+              </Struct>
+              <Struct Name="OutcomeMeasure">
+                <Field Name="OutcomeMeasureType">Secondary</Field>
+                <Field Name="OutcomeMeasureTitle">Center for Epidemiologic Studies Depression Scale (CES-D).</Field>
+                <Field Name="OutcomeMeasureDescription">Depressive symptoms using the validated Center for Epidemiologic Studies Depression Scale (CES-D). This is a score from a 20 item questionnaire with minimum value of 0 and maximum value of 60 with higher numbers indicated greater depressive symptoms (worse).</Field>
+                <Field Name="OutcomeMeasurePopulationDescription">Transient Ischemic Attack. Two patients did not complete questionnaires.</Field>
+                <Field Name="OutcomeMeasureReportingStatus">Posted</Field>
+                <Field Name="OutcomeMeasureParamType">Mean</Field>
+                <Field Name="OutcomeMeasureDispersionType">Standard Deviation</Field>
+                <Field Name="OutcomeMeasureUnitOfMeasure">score on a scale</Field>
+                <Field Name="OutcomeMeasureTimeFrame">Baseline and 3 months (non-intervention period), after 6 months of cardiac rehabilitation participation</Field>
+                <List Name="OutcomeGroupList">
+                  <Struct Name="OutcomeGroup">
+                    <Field Name="OutcomeGroupId">OG000</Field>
+                    <Field Name="OutcomeGroupTitle">Exercise</Field>
+                    <Field Name="OutcomeGroupDescription">Participants in this group will participate in Cardiac Rehabilitation, carrying out an exercise program after a 12 week period of non intervention which will last 6 months and combine both resistance and aerobic training.
+
+Cardiac Rehabilitation: Individualized cardiac rehabilitation for 6 months, including health education sessions, as well as supervised exercise classes which include aerobic and resistance training.</Field>
+                  </Struct>
+                </List>
+                <List Name="OutcomeDenomList">
+                  <Struct Name="OutcomeDenom">
+                    <Field Name="OutcomeDenomUnits">Participants</Field>
+                    <List Name="OutcomeDenomCountList">
+                      <Struct Name="OutcomeDenomCount">
+                        <Field Name="OutcomeDenomCountGroupId">OG000</Field>
+                        <Field Name="OutcomeDenomCountValue">12</Field>
+                      </Struct>
+                    </List>
+                  </Struct>
+                </List>
+                <List Name="OutcomeClassList">
+                  <Struct Name="OutcomeClass">
+                    <Field Name="OutcomeClassTitle">Baseline</Field>
+                    <List Name="OutcomeCategoryList">
+                      <Struct Name="OutcomeCategory">
+                        <List Name="OutcomeMeasurementList">
+                          <Struct Name="OutcomeMeasurement">
+                            <Field Name="OutcomeMeasurementGroupId">OG000</Field>
+                            <Field Name="OutcomeMeasurementValue">6.5</Field>
+                            <Field Name="OutcomeMeasurementSpread">6</Field>
+                          </Struct>
+                        </List>
+                      </Struct>
+                    </List>
+                  </Struct>
+                  <Struct Name="OutcomeClass">
+                    <Field Name="OutcomeClassTitle">3 months</Field>
+                    <List Name="OutcomeCategoryList">
+                      <Struct Name="OutcomeCategory">
+                        <List Name="OutcomeMeasurementList">
+                          <Struct Name="OutcomeMeasurement">
+                            <Field Name="OutcomeMeasurementGroupId">OG000</Field>
+                            <Field Name="OutcomeMeasurementValue">7.6</Field>
+                            <Field Name="OutcomeMeasurementSpread">5</Field>
+                          </Struct>
+                        </List>
+                      </Struct>
+                    </List>
+                  </Struct>
+                  <Struct Name="OutcomeClass">
+                    <Field Name="OutcomeClassTitle">6 months</Field>
+                    <List Name="OutcomeCategoryList">
+                      <Struct Name="OutcomeCategory">
+                        <List Name="OutcomeMeasurementList">
+                          <Struct Name="OutcomeMeasurement">
+                            <Field Name="OutcomeMeasurementGroupId">OG000</Field>
+                            <Field Name="OutcomeMeasurementValue">4.3</Field>
+                            <Field Name="OutcomeMeasurementSpread">5.2</Field>
+                          </Struct>
+                        </List>
+                      </Struct>
+                    </List>
+                  </Struct>
+                </List>
+                <List Name="OutcomeAnalysisList">
+                  <Struct Name="OutcomeAnalysis">
+                    <List Name="OutcomeAnalysisGroupIdList">
+                      <Field Name="OutcomeAnalysisGroupId">OG000</Field>
+                    </List>
+                    <Field Name="OutcomeAnalysisGroupDescription">With 1 group and 3 test times, a repeated measures analysis of variance with pairwise comparisons of CES-D was utilized between the 3 test times baseline, 3 and 6 months.</Field>
+                    <Field Name="OutcomeAnalysisNonInferiorityType">Superiority</Field>
+                    <Field Name="OutcomeAnalysisPValue">0.04</Field>
+                    <Field Name="OutcomeAnalysisPValueComment">A Bonferroni correction for multiple testing was used for post-hoc contrasts.</Field>
+                    <Field Name="OutcomeAnalysisStatisticalMethod">ANOVA</Field>
+                  </Struct>
+                </List>
+              </Struct>
+              <Struct Name="OutcomeMeasure">
+                <Field Name="OutcomeMeasureType">Secondary</Field>
+                <Field Name="OutcomeMeasureTitle">Cognition</Field>
+                <Field Name="OutcomeMeasureDescription">Montreal Cognitive Assessment. The MoCA score ranges from 0 to 30 points with a higher score indicating better cognitive function.</Field>
+                <Field Name="OutcomeMeasurePopulationDescription">TIA. Three subjects did not complete the assessment at each time point.</Field>
+                <Field Name="OutcomeMeasureReportingStatus">Posted</Field>
+                <Field Name="OutcomeMeasureParamType">Mean</Field>
+                <Field Name="OutcomeMeasureDispersionType">Standard Deviation</Field>
+                <Field Name="OutcomeMeasureUnitOfMeasure">units on a scale</Field>
+                <Field Name="OutcomeMeasureTimeFrame">Baseline and 3 months (non-intervention period), after 6 months of cardiac rehabilitation participation</Field>
+                <List Name="OutcomeGroupList">
+                  <Struct Name="OutcomeGroup">
+                    <Field Name="OutcomeGroupId">OG000</Field>
+                    <Field Name="OutcomeGroupTitle">Exercise</Field>
+                    <Field Name="OutcomeGroupDescription">Following a 3 month non intervention period, participants in this group will participate in Cardiac Rehabilitation, carrying out an exercise program which will last 6 months and combine both resistance and aerobic training.
+
+Cardiac Rehabilitation: Individualized cardiac rehabilitation for 6 months, including health education sessions, as well as supervised exercise classes which include aerobic and resistance training.</Field>
+                  </Struct>
+                </List>
+                <List Name="OutcomeDenomList">
+                  <Struct Name="OutcomeDenom">
+                    <Field Name="OutcomeDenomUnits">Participants</Field>
+                    <List Name="OutcomeDenomCountList">
+                      <Struct Name="OutcomeDenomCount">
+                        <Field Name="OutcomeDenomCountGroupId">OG000</Field>
+                        <Field Name="OutcomeDenomCountValue">11</Field>
+                      </Struct>
+                    </List>
+                  </Struct>
+                </List>
+                <List Name="OutcomeClassList">
+                  <Struct Name="OutcomeClass">
+                    <Field Name="OutcomeClassTitle">Baseline</Field>
+                    <List Name="OutcomeCategoryList">
+                      <Struct Name="OutcomeCategory">
+                        <List Name="OutcomeMeasurementList">
+                          <Struct Name="OutcomeMeasurement">
+                            <Field Name="OutcomeMeasurementGroupId">OG000</Field>
+                            <Field Name="OutcomeMeasurementValue">26.5</Field>
+                            <Field Name="OutcomeMeasurementSpread">2.4</Field>
+                          </Struct>
+                        </List>
+                      </Struct>
+                    </List>
+                  </Struct>
+                  <Struct Name="OutcomeClass">
+                    <Field Name="OutcomeClassTitle">3 months</Field>
+                    <List Name="OutcomeCategoryList">
+                      <Struct Name="OutcomeCategory">
+                        <List Name="OutcomeMeasurementList">
+                          <Struct Name="OutcomeMeasurement">
+                            <Field Name="OutcomeMeasurementGroupId">OG000</Field>
+                            <Field Name="OutcomeMeasurementValue">26.8</Field>
+                            <Field Name="OutcomeMeasurementSpread">3.4</Field>
+                          </Struct>
+                        </List>
+                      </Struct>
+                    </List>
+                  </Struct>
+                  <Struct Name="OutcomeClass">
+                    <Field Name="OutcomeClassTitle">6 months</Field>
+                    <List Name="OutcomeCategoryList">
+                      <Struct Name="OutcomeCategory">
+                        <List Name="OutcomeMeasurementList">
+                          <Struct Name="OutcomeMeasurement">
+                            <Field Name="OutcomeMeasurementGroupId">OG000</Field>
+                            <Field Name="OutcomeMeasurementValue">27.1</Field>
+                            <Field Name="OutcomeMeasurementSpread">2</Field>
+                          </Struct>
+                        </List>
+                      </Struct>
+                    </List>
+                  </Struct>
+                </List>
+                <List Name="OutcomeAnalysisList">
+                  <Struct Name="OutcomeAnalysis">
+                    <List Name="OutcomeAnalysisGroupIdList">
+                      <Field Name="OutcomeAnalysisGroupId">OG000</Field>
+                    </List>
+                    <Field Name="OutcomeAnalysisGroupDescription">With 1 group and 3 test times, a repeated measures analysis of variance with pairwise comparisons of MoCA was utilized between the 3 test times (-3, 0 and 6 months). A Bonferroni correction for multiple testing was used for post-hoc contrasts.</Field>
+                    <Field Name="OutcomeAnalysisNonInferiorityType">Superiority</Field>
+                    <Field Name="OutcomeAnalysisPValue">&gt;0.05</Field>
+                    <Field Name="OutcomeAnalysisPValueComment">A Bonferroni correction for multiple testing was used for post-hoc contrasts</Field>
+                    <Field Name="OutcomeAnalysisStatisticalMethod">ANOVA</Field>
+                  </Struct>
+                </List>
+              </Struct>
+            </List>
+          </Struct>
+          <Struct Name="AdverseEventsModule">
+            <Field Name="EventsFrequencyThreshold">0</Field>
+            <List Name="EventGroupList">
+              <Struct Name="EventGroup">
+                <Field Name="EventGroupId">EG000</Field>
+                <Field Name="EventGroupTitle">Exercise</Field>
+                <Field Name="EventGroupDescription">Participants will participate in Cardiac Rehabilitation, carrying out an exercise program which will last 6 months and combine both resistance and aerobic training. There will be a 3 month non-intervention period preceding cardiac rehabilitation.
+
+Cardiac Rehabilitation: Individualized cardiac rehabilitation for 6 months, including health education sessions, as well as supervised exercise classes which include aerobic and resistance training.</Field>
+                <Field Name="EventGroupSeriousNumAffected">0</Field>
+                <Field Name="EventGroupSeriousNumAtRisk">20</Field>
+                <Field Name="EventGroupOtherNumAffected">0</Field>
+                <Field Name="EventGroupOtherNumAtRisk">20</Field>
+              </Struct>
+            </List>
+          </Struct>
+          <Struct Name="MoreInfoModule">
+            <Struct Name="CertainAgreement">
+              <Field Name="AgreementPISponsorEmployee">No</Field>
+              <Field Name="AgreementRestrictiveAgreement">No</Field>
+            </Struct>
+            <Struct Name="PointOfContact">
+              <Field Name="PointOfContactTitle">Dr.</Field>
+              <Field Name="PointOfContactOrganization">Toronto Rehab</Field>
+              <Field Name="PointOfContactEMail">dina.brooks@utoronto.ca</Field>
+              <Field Name="PointOfContactPhone">4169781739</Field>
+            </Struct>
+          </Struct>
+        </Struct>
+        <Struct Name="DerivedSection">
+          <Struct Name="MiscInfoModule">
+            <Field Name="VersionHolder">October 19, 2023</Field>
+          </Struct>
+          <Struct Name="ConditionBrowseModule">
+            <List Name="ConditionMeshList">
+              <Struct Name="ConditionMesh">
+                <Field Name="ConditionMeshId">D000002546</Field>
+                <Field Name="ConditionMeshTerm">Ischemic Attack, Transient</Field>
+              </Struct>
+              <Struct Name="ConditionMesh">
+                <Field Name="ConditionMeshId">D000007511</Field>
+                <Field Name="ConditionMeshTerm">Ischemia</Field>
+              </Struct>
+            </List>
+            <List Name="ConditionAncestorList">
+              <Struct Name="ConditionAncestor">
+                <Field Name="ConditionAncestorId">D000010335</Field>
+                <Field Name="ConditionAncestorTerm">Pathologic Processes</Field>
+              </Struct>
+              <Struct Name="ConditionAncestor">
+                <Field Name="ConditionAncestorId">D000002545</Field>
+                <Field Name="ConditionAncestorTerm">Brain Ischemia</Field>
+              </Struct>
+              <Struct Name="ConditionAncestor">
+                <Field Name="ConditionAncestorId">D000002561</Field>
+                <Field Name="ConditionAncestorTerm">Cerebrovascular Disorders</Field>
+              </Struct>
+              <Struct Name="ConditionAncestor">
+                <Field Name="ConditionAncestorId">D000001927</Field>
+                <Field Name="ConditionAncestorTerm">Brain Diseases</Field>
+              </Struct>
+              <Struct Name="ConditionAncestor">
+                <Field Name="ConditionAncestorId">D000002493</Field>
+                <Field Name="ConditionAncestorTerm">Central Nervous System Diseases</Field>
+              </Struct>
+              <Struct Name="ConditionAncestor">
+                <Field Name="ConditionAncestorId">D000009422</Field>
+                <Field Name="ConditionAncestorTerm">Nervous System Diseases</Field>
+              </Struct>
+              <Struct Name="ConditionAncestor">
+                <Field Name="ConditionAncestorId">D000014652</Field>
+                <Field Name="ConditionAncestorTerm">Vascular Diseases</Field>
+              </Struct>
+              <Struct Name="ConditionAncestor">
+                <Field Name="ConditionAncestorId">D000002318</Field>
+                <Field Name="ConditionAncestorTerm">Cardiovascular Diseases</Field>
+              </Struct>
+            </List>
+            <List Name="ConditionBrowseLeafList">
+              <Struct Name="ConditionBrowseLeaf">
+                <Field Name="ConditionBrowseLeafId">M5485</Field>
+                <Field Name="ConditionBrowseLeafName">Ischemic Attack, Transient</Field>
+                <Field Name="ConditionBrowseLeafAsFound">Transient Ischemic Attack</Field>
+                <Field Name="ConditionBrowseLeafRelevance">high</Field>
+              </Struct>
+              <Struct Name="ConditionBrowseLeaf">
+                <Field Name="ConditionBrowseLeafId">M10233</Field>
+                <Field Name="ConditionBrowseLeafName">Ischemia</Field>
+                <Field Name="ConditionBrowseLeafAsFound">Ischemic</Field>
+                <Field Name="ConditionBrowseLeafRelevance">high</Field>
+              </Struct>
+              <Struct Name="ConditionBrowseLeaf">
+                <Field Name="ConditionBrowseLeafId">M5484</Field>
+                <Field Name="ConditionBrowseLeafName">Brain Ischemia</Field>
+                <Field Name="ConditionBrowseLeafRelevance">low</Field>
+              </Struct>
+              <Struct Name="ConditionBrowseLeaf">
+                <Field Name="ConditionBrowseLeafId">M5500</Field>
+                <Field Name="ConditionBrowseLeafName">Cerebrovascular Disorders</Field>
+                <Field Name="ConditionBrowseLeafRelevance">low</Field>
+              </Struct>
+              <Struct Name="ConditionBrowseLeaf">
+                <Field Name="ConditionBrowseLeafId">M4894</Field>
+                <Field Name="ConditionBrowseLeafName">Brain Diseases</Field>
+                <Field Name="ConditionBrowseLeafRelevance">low</Field>
+              </Struct>
+              <Struct Name="ConditionBrowseLeaf">
+                <Field Name="ConditionBrowseLeafId">M5432</Field>
+                <Field Name="ConditionBrowseLeafName">Central Nervous System Diseases</Field>
+                <Field Name="ConditionBrowseLeafRelevance">low</Field>
+              </Struct>
+              <Struct Name="ConditionBrowseLeaf">
+                <Field Name="ConditionBrowseLeafId">M17090</Field>
+                <Field Name="ConditionBrowseLeafName">Vascular Diseases</Field>
+                <Field Name="ConditionBrowseLeafRelevance">low</Field>
+              </Struct>
+            </List>
+            <List Name="ConditionBrowseBranchList">
+              <Struct Name="ConditionBrowseBranch">
+                <Field Name="ConditionBrowseBranchAbbrev">BC10</Field>
+                <Field Name="ConditionBrowseBranchName">Nervous System Diseases</Field>
+              </Struct>
+              <Struct Name="ConditionBrowseBranch">
+                <Field Name="ConditionBrowseBranchAbbrev">BC14</Field>
+                <Field Name="ConditionBrowseBranchName">Heart and Blood Diseases</Field>
+              </Struct>
+              <Struct Name="ConditionBrowseBranch">
+                <Field Name="ConditionBrowseBranchAbbrev">All</Field>
+                <Field Name="ConditionBrowseBranchName">All Conditions</Field>
+              </Struct>
+              <Struct Name="ConditionBrowseBranch">
+                <Field Name="ConditionBrowseBranchAbbrev">BC23</Field>
+                <Field Name="ConditionBrowseBranchName">Symptoms and General Pathology</Field>
+              </Struct>
+            </List>
+          </Struct>
+        </Struct>
+      </Struct>
+    </FullStudy>
+  </FullStudyList>
+</FullStudiesResponse>
+
