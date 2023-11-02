@@ -1,0 +1,1272 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2022.1">
+  <Nodes>
+    <Node ToolID="3">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="54" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" FileFormat="19" SearchSubDirs="False" RecordLimit="">..\DATA\restaurant_transactions.yxdb</File>
+          <FormatSpecificOptions />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>restaurant_transactions.yxdb</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Order" source="Formula: Replace([Order],&quot;M_&quot;,'')" type="Int32" />
+            <Field name="Restaurant_Id" size="20" source="File: aka:SYS_STAGING|||select * &#xA;from ORDER_HISTORY2" type="V_WString" />
+            <Field name="Restaurant" size="25" source="File: aka:SYS_STAGING|||select * &#xA;from ORDER_HISTORY2" type="V_WString" />
+            <Field name="Total" source="Formula: [total] +&#xA;IIF(!IsNull([manual_adjustment]),[manual_adjustment],0)" type="Double" />
+            <Field name="User" source="File: aka:SYS_STAGING|||select * &#xA;from ORDER_HISTORY2" type="Int32" />
+            <Field name="Date" source="DateTime: To yyyy-MM-dd hh:mm:ss" type="DateTime" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="4">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="198" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="ToString(DateTimeYear([Date])) + &quot;-&quot; + DateTimeFormat([Date],&quot;%B&quot;)" field="PERIOD" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[PERIOD = ToString(DateTimeYear([Date])) + "-" + DateTimeFormat([Date],"%B")
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="5">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="342" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="Restaurant_Id" action="GroupBy" rename="Restaurant_Id" />
+            <SummarizeField field="Restaurant" action="GroupBy" rename="Restaurant" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="6">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="486" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="[User.logo_path]+[Restaurant]+&quot;.jpg&quot;" field="image" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[image = [User.logo_path]+[Restaurant]+".jpg"
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="7">
+      <GuiSettings Plugin="PortfolioPluginsGui.ComposerImage.PortfolioComposerImage">
+        <Position x="606" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <ImageMode>File</ImageMode>
+          <Filename />
+          <ModifyFilename value="True" />
+          <ModifyMode>ReplacePath</ModifyMode>
+          <ModifyField>image</ModifyField>
+          <StopIfNotFound value="True" />
+          <ImageStyle FixedWidth="true" ImageWidth="200" ShowBorder="false" BorderWidth="1" BorderColor="#000000" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="PortfolioPluginsEngine.dll" EngineDllEntryPoint="AlteryxPortfolioComposerImagePlugin" />
+    </Node>
+    <Node ToolID="8">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="702" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_46728_5649e25f896d4650802f7e3ebca1d9ad_\Engine_35236_d67775989023487480ab8180f6f7ce04_.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Report</DefaultTab>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="9">
+      <GuiSettings Plugin="PortfolioPluginsGui.ComposerText.PortfolioComposerText">
+        <Position x="438" y="174" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Images />
+          <Output>Title</Output>
+          <HeaderMode value="False" />
+          <RawMode value="False" />
+          <ValidatePCXML value="True" />
+          <Message />
+          <RichTextMode value="True" />
+          <RichTextString><![CDATA[{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fnil\fcharset0 Arial;}}
+\viewkind4\uc1\pard\b\fs32 [Restaurant:A]\b0\fs24  \fs28 ([Restaurant_Id:A])\fs24\par
+}
+]]></RichTextString>
+          <Styles>
+            <Style Name="TextStyle" />
+          </Styles>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[Restaurant:A] ([Restaurant_Id...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="PortfolioPluginsEngine.dll" EngineDllEntryPoint="AlteryxPortfolioComposerTextPlugin" />
+    </Node>
+    <Node ToolID="10">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="534" y="174" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_46728_5649e25f896d4650802f7e3ebca1d9ad_\Engine_35236_818308a9ebef4d92a432e4cfbdf8773e_.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Report</DefaultTab>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="11">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="750" y="126" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="Restaurant_Id" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="Restaurant_Id" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Right_Restaurant_Id" selected="False" rename="Right_Restaurant_Id" input="Right_" />
+                <SelectField field="Right_Restaurant" selected="False" rename="Right_Restaurant" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="12">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="846" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_46728_5649e25f896d4650802f7e3ebca1d9ad_\Engine_35236_fb0018dfa6c24379b5472847081f7926_.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Report</DefaultTab>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="13">
+      <GuiSettings Plugin="PortfolioPluginsGui.ComposerLayout.PortfolioComposerLayout">
+        <Position x="870" y="126" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <GroupingMode>PerRecord</GroupingMode>
+          <PreserveSourceFields value="False" />
+          <Orientation>H</Orientation>
+          <Separator>Continuous</Separator>
+          <Width>100%</Width>
+          <Height />
+          <BorderStyle Enabled="false" Color="#000000" Width="2" />
+          <SeparatorStyle Enabled="false" Color="#000000" Width="1" />
+          <Padding>0</Padding>
+          <LayoutFields orderChanged="False">
+            <Field name="Image2" selected="True" Alignment="Center" Width="" />
+            <Field name="Title" selected="True" Alignment="Center" />
+          </LayoutFields>
+          <MergeIntoTable value="False" />
+          <SectionNameForGroup />
+          <SectionNameForAllRecords />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Horizontal Layout
+Each Individual Record</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="PortfolioPluginsEngine.dll" EngineDllEntryPoint="AlteryxPortfolioComposerLayoutPlugin" />
+    </Node>
+    <Node ToolID="14">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="1062" y="126" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_46728_5649e25f896d4650802f7e3ebca1d9ad_\Engine_35236_48ebb81479324e8f9cea5716c095f4fb_.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Report</DefaultTab>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="15">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="966" y="126" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Layout" selected="True" rename="Header" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="16">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="1086" y="270" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="Restaurant_Id" />
+            <Field field="Restaurant" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="Restaurant_Id" />
+            <Field field="Restaurant" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Right_Restaurant_Id" selected="False" rename="Right_Restaurant_Id" input="Right_" />
+                <SelectField field="Right_Restaurant" selected="False" rename="Right_Restaurant" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="17">
+      <GuiSettings Plugin="PortfolioPluginsGui.ComposerLayout.PortfolioComposerLayout">
+        <Position x="1170" y="270" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <GroupingMode>PerRecord</GroupingMode>
+          <PreserveSourceFields value="False" />
+          <Orientation>V</Orientation>
+          <Separator>Continuous</Separator>
+          <Width>100%</Width>
+          <Height />
+          <BorderStyle Enabled="false" Color="#000000" Width="2" />
+          <SeparatorStyle Enabled="false" Color="#000000" Width="1" />
+          <Padding>0</Padding>
+          <LayoutFields orderChanged="False">
+            <Field name="Header" selected="True" Width="" Alignment="Center" />
+            <Field name="Orders Table" selected="True" Alignment="Center" Width="" />
+          </LayoutFields>
+          <MergeIntoTable value="False" />
+          <SectionNameForGroup />
+          <SectionNameForAllRecords />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Vertical Layout
+Each Individual Record</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="PortfolioPluginsEngine.dll" EngineDllEntryPoint="AlteryxPortfolioComposerLayoutPlugin" />
+    </Node>
+    <Node ToolID="18">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="1278" y="354" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_46728_5649e25f896d4650802f7e3ebca1d9ad_\Engine_35236_5f53288eb0ee4cff9672125a28347478_.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Report</DefaultTab>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="56">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
+        <Position x="954" y="510" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <NumRows value="3" />
+          <Fields>
+            <Field name="Find" />
+            <Field name="Replace" />
+          </Fields>
+          <Data>
+            <r>
+              <c>[</c>
+              <c>&lt;htmlpassthrough&gt;&lt;![CDATA[&lt;</c>
+            </r>
+            <r>
+              <c>]</c>
+              <c>&gt;]]&gt;&lt;/htmlpassthrough&gt;</c>
+            </r>
+            <r>
+              <c>&amp;quot;</c>
+              <c>"</c>
+            </r>
+          </Data>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
+    </Node>
+    <Node ToolID="57">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.FindReplace.FindReplace">
+        <Position x="1014" y="390" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FieldFind>Orders Table</FieldFind>
+          <FieldSearch>Find</FieldSearch>
+          <ReplaceFoundField>Replace</ReplaceFoundField>
+          <FindMode>FindAny</FindMode>
+          <NoCase value="False" />
+          <MatchWholeWord value="False" />
+          <ReplaceMode>Replace</ReplaceMode>
+          <ReplaceMultipleFound value="True" />
+          <ReplaceAppendFields>
+            <Field field="Find" />
+            <Field field="Replace" />
+          </ReplaceAppendFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFindReplace" />
+    </Node>
+    <Node ToolID="58">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="1110" y="390" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_46728_5649e25f896d4650802f7e3ebca1d9ad_\Engine_35236_e7fa9b484f1e4ce2ad8ea245878497e6_.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Report</DefaultTab>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="59">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="318" y="582" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="[Restaurant_Id]+&quot;_&quot;+[PERIOD]" field="filename" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[filename = [Restaurant_Id]+"_"+[PERIOD]
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="61">
+      <GuiSettings Plugin="PortfolioPluginsGui.ComposerTable.PortfolioComposerTable">
+        <Position x="438" y="582" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TableMode>Basic</TableMode>
+          <GroupingFields orderChanged="False">
+            <Field name="Restaurant_Id" />
+            <Field name="Restaurant" />
+            <Field name="filename" />
+          </GroupingFields>
+          <Width>100%</Width>
+          <ShowHeader value="True" />
+          <ShowBarGraph value="False" />
+          <TableFields orderChanged="True">
+            <Field name="PERIOD" selected="True" Alignment="Left" Width="" />
+            <Field name="Order" selected="True" Alignment="Right" Width="" Places="0" />
+            <Field name="Total" selected="True" Alignment="Right" />
+            <Field name="User" selected="True" Alignment="Right" />
+            <Field name="Date" selected="True" Alignment="Left" />
+            <Field name="*Unknown" selected="True" Alignment="Right" />
+            <Field name="Restaurant_Id" selected="False" />
+            <Field name="Restaurant" selected="False" />
+            <Field name="filename" selected="False" />
+          </TableFields>
+          <TableStyles>
+            <Style Name="Data" Font="Arial" Size="8" TextColor="#000000" BackColor="#ffffff" AltColor="#f0f0f0" RowGroup="1" />
+            <Style Name="Header" Font="Arial" Size="10" TextColor="#000000" BackColor="#dbdbdb" />
+            <Style Name="Borders" Width="1" DataColor="#000000" HeaderColor="#000000" RowBorder="None" BasicColBorder="Default (Use Per Column Setting)" />
+            <Style Name="Table" CellPadding="0" ColumnPadding="0" TableBorder="true" Width="1" BorderColor="#000000" />
+          </TableStyles>
+          <StyleRules />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Basic Table</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="PortfolioPluginsEngine.dll" EngineDllEntryPoint="AlteryxPortfolioComposerTablePlugin" />
+    </Node>
+    <Node ToolID="62">
+      <GuiSettings Plugin="PortfolioPluginsGui.ComposerText.PortfolioComposerText">
+        <Position x="534" y="582" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <HeaderMode value="False" />
+          <RawMode value="True" />
+          <ValidatePCXML value="True" />
+          <Message>&lt;htmlpassthrough&gt;
+&lt;![CDATA[
+&lt;link rel="stylesheet" href="..\..\CSS\Report.css"&gt;
+&lt;div class="same_line"&gt;
+&lt;button onclick="history.back()"&gt;Go Back&lt;/button&gt;
+&lt;h1&gt;[Restaurant:A] Orders&lt;/h1&gt;
+&lt;/div&gt;
+]]&gt;
+&lt;/htmlpassthrough&gt;</Message>
+          <RichTextMode value="False" />
+          <RichTextString><![CDATA[{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fnil\fcharset0 Arial;}}
+\viewkind4\uc1\pard\fs24\par
+}
+]]></RichTextString>
+          <Styles>
+            <Style Name="TextStyle" />
+          </Styles>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Raw PCXML
+No Text Styling</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="PortfolioPluginsEngine.dll" EngineDllEntryPoint="AlteryxPortfolioComposerTextPlugin" />
+    </Node>
+    <Node ToolID="63">
+      <GuiSettings Plugin="PortfolioPluginsGui.ComposerLayout.PortfolioComposerLayout">
+        <Position x="654" y="582" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <GroupingMode>PerRecord</GroupingMode>
+          <PreserveSourceFields value="False" />
+          <Orientation>V</Orientation>
+          <Separator>Continuous</Separator>
+          <Width>100%</Width>
+          <Height />
+          <BorderStyle Enabled="false" Color="#000000" Width="2" />
+          <SeparatorStyle Enabled="false" Color="#000000" Width="1" />
+          <Padding>0</Padding>
+          <LayoutFields orderChanged="True">
+            <Field name="Text" selected="True" Alignment="Center" />
+            <Field name="Table" selected="True" Alignment="Center" Width="" />
+          </LayoutFields>
+          <MergeIntoTable value="False" />
+          <SectionNameForGroup />
+          <SectionNameForAllRecords />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Vertical Layout
+Each Individual Record</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="PortfolioPluginsEngine.dll" EngineDllEntryPoint="AlteryxPortfolioComposerLayoutPlugin" />
+    </Node>
+    <Node ToolID="65">
+      <GuiSettings Plugin="PortfolioPluginsGui.ComposerRender.PortfolioComposerRender">
+        <Position x="750" y="582" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFileType />
+          <OutputFile>..\REPORT\DETAILS\Details.html</OutputFile>
+          <BatchMode value="True" />
+          <GroupField>filename</GroupField>
+          <FilenameModifier>ReplaceFile</FilenameModifier>
+          <DataField>Layout</DataField>
+          <Separator>Continuous</Separator>
+          <EmbedDependencies value="False" />
+          <ShowHeader value="False" />
+          <ShowFooter value="False" />
+          <PortraitMode value="True" />
+          <PaperType Width="612" Height="792" Left="36" Right="36" Top="36" Bottom="36" />
+          <DefaultStyles>
+            <Style Name="TextStyle" FontName="Arial" FontSize="14" Justify="Left" ForeColor="#000000" Locale="1033" />
+          </DefaultStyles>
+          <PNGResolution>1</PNGResolution>
+          <PNGLargerAction>squeeze</PNGLargerAction>
+          <PNGLargerThanPageChoice>warning</PNGLargerThanPageChoice>
+          <PNGTransparentBG value="False" />
+          <PNGBackColor value="#ffffff" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="PortfolioPluginsEngine.dll" EngineDllEntryPoint="AlteryxPortfolioComposerRenderPlugin" />
+    </Node>
+    <Node ToolID="66">
+      <GuiSettings Plugin="PortfolioPluginsGui.ComposerText.PortfolioComposerText">
+        <Position x="1314" y="438" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <HeaderMode value="False" />
+          <RawMode value="True" />
+          <ValidatePCXML value="True" />
+          <Message>&lt;htmlpassthrough&gt;
+&lt;![CDATA[
+&lt;link rel="stylesheet" href="..\CSS\Report.css"&gt;
+]]&gt;
+
+&lt;/htmlpassthrough&gt;</Message>
+          <RichTextMode value="False" />
+          <RichTextString><![CDATA[{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fnil\fcharset0 Arial;}}
+\viewkind4\uc1\pard\fs24\par
+}
+]]></RichTextString>
+          <Styles>
+            <Style Name="TextStyle" />
+          </Styles>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Raw PCXML
+No Text Styling</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="PortfolioPluginsEngine.dll" EngineDllEntryPoint="AlteryxPortfolioComposerTextPlugin" />
+    </Node>
+    <Node ToolID="68">
+      <GuiSettings Plugin="PortfolioPluginsGui.ComposerLayout.PortfolioComposerLayout">
+        <Position x="1422" y="438" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <GroupingMode>PerRecord</GroupingMode>
+          <PreserveSourceFields value="False" />
+          <Orientation>V</Orientation>
+          <Separator>Continuous</Separator>
+          <Width>100%</Width>
+          <Height />
+          <BorderStyle Enabled="false" Color="#000000" Width="2" />
+          <SeparatorStyle Enabled="false" Color="#000000" Width="1" />
+          <Padding>0</Padding>
+          <LayoutFields orderChanged="True">
+            <Field name="Text" selected="True" Alignment="Center" Width="" />
+            <Field name="Header" selected="True" Alignment="Center" />
+            <Field name="Orders Table" selected="True" Alignment="Center" />
+          </LayoutFields>
+          <MergeIntoTable value="False" />
+          <SectionNameForGroup />
+          <SectionNameForAllRecords />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Vertical Layout
+Each Individual Record</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="PortfolioPluginsEngine.dll" EngineDllEntryPoint="AlteryxPortfolioComposerLayoutPlugin" />
+    </Node>
+    <Node ToolID="69">
+      <GuiSettings Plugin="PortfolioPluginsGui.ComposerRender.PortfolioComposerRender">
+        <Position x="1518" y="438" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFileType />
+          <OutputFile>..\REPORT\_Summary.html</OutputFile>
+          <BatchMode value="True" />
+          <GroupField>Restaurant</GroupField>
+          <FilenameModifier>Prepend</FilenameModifier>
+          <DataField>Layout</DataField>
+          <Separator>Continuous</Separator>
+          <EmbedDependencies value="False" />
+          <ShowHeader value="False" />
+          <ShowFooter value="False" />
+          <PortraitMode value="True" />
+          <PaperType Width="612" Height="792" Left="36" Right="36" Top="36" Bottom="36" />
+          <DefaultStyles>
+            <Style Name="TextStyle" FontName="Arial" FontSize="14" Justify="Left" ForeColor="#000000" Locale="1033" />
+          </DefaultStyles>
+          <PNGResolution>1</PNGResolution>
+          <PNGLargerAction>squeeze</PNGLargerAction>
+          <PNGLargerThanPageChoice>warning</PNGLargerThanPageChoice>
+          <PNGTransparentBG value="False" />
+          <PNGBackColor value="#ffffff" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="PortfolioPluginsEngine.dll" EngineDllEntryPoint="AlteryxPortfolioComposerRenderPlugin" />
+    </Node>
+    <Node ToolID="50">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="305" y="304" width="613" height="226" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Standard Reporting</Caption>
+          <Style TextColor="#314c4a" FillColor="#ffffff" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="27">
+          <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+            <Position x="330" y="353" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <SummarizeFields>
+                <SummarizeField field="Restaurant_Id" action="GroupBy" rename="Restaurant_Id" />
+                <SummarizeField field="Restaurant" action="GroupBy" rename="Restaurant" />
+                <SummarizeField field="PERIOD" action="GroupBy" rename="PERIOD" />
+                <SummarizeField field="Order" action="CountDistinct" rename="Total_Orders" />
+                <SummarizeField field="Total" action="Sum" rename="Total_Spend" />
+                <SummarizeField field="User" action="CountDistinct" rename="Total_Users" />
+                <SummarizeField field="Date" action="Max" rename="Max_Date" />
+              </SummarizeFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+        </Node>
+        <Node ToolID="28">
+          <GuiSettings Plugin="PortfolioPluginsGui.ComposerTable.PortfolioComposerTable">
+            <Position x="738" y="354" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TableMode>Basic</TableMode>
+              <GroupingFields orderChanged="False">
+                <Field name="Restaurant_Id" />
+                <Field name="Restaurant" />
+              </GroupingFields>
+              <Width>100%</Width>
+              <ShowHeader value="True" />
+              <ShowBarGraph value="False" />
+              <TableFields orderChanged="True">
+                <Field name="PERIOD" selected="True" Alignment="Left" />
+                <Field name="Total_Orders" selected="True" Alignment="Right" Width="" Places="0" Alias="Total Orders" />
+                <Field name="Total_Users" selected="True" Alignment="Right" Alias="Total Users" />
+                <Field name="Total_Spend" selected="True" Alignment="Right" Alias="Total Spend" Places="2" Prefix="$" Width="" />
+                <Field name="Avg.Ticket" selected="True" Alignment="Right" Width="" Places="2" Prefix="$" Alias="Average Ticket" />
+                <Field name="Restaurant_Id" selected="False" />
+                <Field name="Restaurant" selected="False" />
+                <Field name="Max_Date" selected="False" />
+                <Field name="*Unknown" selected="False" />
+              </TableFields>
+              <TableStyles>
+                <Style Name="Data" Font="Arial" Size="8" TextColor="#000000" BackColor="#ffffff" AltColor="#f0f0f0" RowGroup="1" />
+                <Style Name="Header" Font="Arial" Size="10" TextColor="#000000" BackColor="#dbdbdb" />
+                <Style Name="Borders" Width="1" DataColor="#000000" HeaderColor="#000000" RowBorder="None" BasicColBorder="Default (Use Per Column Setting)" />
+                <Style Name="Table" CellPadding="0" ColumnPadding="0" TableBorder="true" Width="1" BorderColor="#000000" />
+              </TableStyles>
+              <StyleRules />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Basic Table</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="PortfolioPluginsEngine.dll" EngineDllEntryPoint="AlteryxPortfolioComposerTablePlugin" />
+        </Node>
+        <Node ToolID="29">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="834" y="426" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\ProgramData\Alteryx\Engine\Engine_46728_5649e25f896d4650802f7e3ebca1d9ad_\Engine_35236_e6fc7764410440b2af2ff7b0f9dd44ca_.yxdb</TempFile>
+              <TempFileDataProfiling />
+              <Layout>
+                <ViewMode>Single</ViewMode>
+                <ViewSize value="100" />
+                <View1>
+                  <DefaultTab>Report</DefaultTab>
+                  <Hints>
+                    <Table />
+                  </Hints>
+                </View1>
+                <View2 />
+              </Layout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+        <Node ToolID="30">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="834" y="354" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Table" selected="True" rename="Orders Table" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="31">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="546" y="354" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="[Total_Spend]/[Total_Orders]" field="Avg.Ticket" size="8" type="Double" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText><![CDATA[Avg.Ticket = [Total_Spend]/[Total_Orders]
+]]></DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="32">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
+            <Position x="450" y="354" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <SortInfo locale="1033">
+                <Field field="Restaurant_Id" order="Ascending" />
+                <Field field="Max_Date" order="Ascending" />
+              </SortInfo>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Restaurant_Id - Ascending
+Max_Date - Ascending</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
+        </Node>
+        <Node ToolID="55">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="642" y="354" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="&quot;[a href=DETAILS\&quot;+[Restaurant_Id]+&quot;_&quot;+[PERIOD]+&quot;.html]&quot; + [PERIOD] + &quot;[/a]&quot;" field="PERIOD" size="1073741823" type="V_WString" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>PERIOD = "[a href=DETAILS\"+[Restaurant_Id]+"_"+[PERIOD]+".html]" + [PERIOD] + "...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="51">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="1313" y="149" width="176" height="205" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Previous Renders</Caption>
+          <Style TextColor="#314c4a" FillColor="#ffffff" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="True" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="34">
+          <GuiSettings Plugin="PortfolioPluginsGui.ComposerRender.PortfolioComposerRender">
+            <Position x="1338" y="270" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFileType />
+              <OutputFile>..\REPORT\_Report.pdf</OutputFile>
+              <BatchMode value="True" />
+              <GroupField>Restaurant</GroupField>
+              <FilenameModifier>Prepend</FilenameModifier>
+              <DataField>Layout</DataField>
+              <Separator>Continuous</Separator>
+              <EmbedDependencies value="False" />
+              <ShowHeader value="False" />
+              <ShowFooter value="False" />
+              <PortraitMode value="True" />
+              <PaperType Width="612" Height="792" Left="36" Right="36" Top="36" Bottom="36" />
+              <DefaultStyles>
+                <Style Name="TextStyle" FontName="Arial" FontSize="14" Justify="Left" ForeColor="#000000" Locale="1033" />
+              </DefaultStyles>
+              <PNGResolution>1</PNGResolution>
+              <PNGLargerAction>squeeze</PNGLargerAction>
+              <PNGLargerThanPageChoice>warning</PNGLargerThanPageChoice>
+              <PNGTransparentBG value="False" />
+              <PNGBackColor value="#ffffff" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="PortfolioPluginsEngine.dll" EngineDllEntryPoint="AlteryxPortfolioComposerRenderPlugin" />
+        </Node>
+        <Node ToolID="1">
+          <GuiSettings Plugin="PortfolioPluginsGui.ComposerRender.PortfolioComposerRender">
+            <Position x="1338" y="198" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFileType />
+              <OutputFile>..\REPORT\Report_.pdf</OutputFile>
+              <BatchMode value="True" />
+              <GroupField>Restaurant</GroupField>
+              <FilenameModifier>Append</FilenameModifier>
+              <DataField>Orders Table</DataField>
+              <Separator>Continuous</Separator>
+              <EmbedDependencies value="False" />
+              <ShowHeader value="True" />
+              <HeaderField>Header</HeaderField>
+              <ShowFooter value="False" />
+              <OnFirstPage value="True" />
+              <HeaderFooterEdge Distance="0" />
+              <PortraitMode value="True" />
+              <PaperType Width="612" Height="792" Left="36" Right="36" Top="36" Bottom="36" />
+              <DefaultStyles>
+                <Style Name="TextStyle" FontName="Arial" FontSize="14" Justify="Left" ForeColor="#000000" Locale="1033" />
+              </DefaultStyles>
+              <PNGResolution>1</PNGResolution>
+              <PNGLargerAction>squeeze</PNGLargerAction>
+              <PNGLargerThanPageChoice>warning</PNGLargerThanPageChoice>
+              <PNGTransparentBG value="False" />
+              <PNGBackColor value="#ffffff" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="PortfolioPluginsEngine.dll" EngineDllEntryPoint="AlteryxPortfolioComposerRenderPlugin" />
+        </Node>
+      </ChildNodes>
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="3" Connection="Output" />
+      <Destination ToolID="4" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="5" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="27" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="59" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="Output" />
+      <Destination ToolID="6" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="Output" />
+      <Destination ToolID="9" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="6" Connection="Output" />
+      <Destination ToolID="7" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="7" Connection="Output" />
+      <Destination ToolID="8" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="7" Connection="Output" />
+      <Destination ToolID="11" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="9" Connection="Output" />
+      <Destination ToolID="11" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="9" Connection="Output" />
+      <Destination ToolID="10" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="11" Connection="Join" />
+      <Destination ToolID="12" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="11" Connection="Join" />
+      <Destination ToolID="13" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="13" Connection="Output" />
+      <Destination ToolID="15" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="15" Connection="Output" />
+      <Destination ToolID="14" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="15" Connection="Output" />
+      <Destination ToolID="16" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="57" Connection="Output" />
+      <Destination ToolID="16" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="16" Connection="Join" />
+      <Destination ToolID="17" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="16" Connection="Join" />
+      <Destination ToolID="1" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="16" Connection="Join" />
+      <Destination ToolID="66" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="17" Connection="Output" />
+      <Destination ToolID="18" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="17" Connection="Output" />
+      <Destination ToolID="34" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="56" Connection="Output" />
+      <Destination ToolID="57" Connection="Source" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="30" Connection="Output" />
+      <Destination ToolID="57" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="57" Connection="Output" />
+      <Destination ToolID="58" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="59" Connection="Output" />
+      <Destination ToolID="61" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="61" Connection="Output" />
+      <Destination ToolID="62" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="62" Connection="Output" />
+      <Destination ToolID="63" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="63" Connection="Output" />
+      <Destination ToolID="65" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="66" Connection="Output" />
+      <Destination ToolID="68" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="68" Connection="Output" />
+      <Destination ToolID="69" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="27" Connection="Output" />
+      <Destination ToolID="32" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="28" Connection="Output" />
+      <Destination ToolID="29" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="28" Connection="Output" />
+      <Destination ToolID="30" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="31" Connection="Output" />
+      <Destination ToolID="55" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="32" Connection="Output" />
+      <Destination ToolID="31" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="55" Connection="Output" />
+      <Destination ToolID="28" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="True" />
+    <EnablePerformanceProfiling value="False" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="False" />
+    <ShowConnectionStatusOnlyWhenRunning value="False" />
+    <ZoomLevel value="-1" />
+    <LayoutType>Horizontal</LayoutType>
+    <Constants>
+      <Constant>
+        <Namespace>User</Namespace>
+        <Name>logo_path</Name>
+        <Value>..\images\</Value>
+        <IsNumeric value="False" />
+      </Constant>
+    </Constants>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>CH13R04 - Using HTML and JS in your reports</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="ad1f4cd5-04ad-4926-8e6e-222cc2298dd4" />
+      <Telemetry>
+        <PreviousWorkflowId value="3b8f4bd4-cbb1-4edf-8b2c-bf41df63a4f7" />
+        <OriginWorkflowId value="18a97fd9-e083-4297-a174-2fdc25f30120" />
+      </Telemetry>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>

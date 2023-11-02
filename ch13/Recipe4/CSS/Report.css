@@ -1,0 +1,15 @@
+h1 {
+	color: #FF0000;
+}
+thead tr td {
+	background-color: #336699;
+	font-family: "arial black" !important;
+	color: #FFFFFF;
+}
+.same_line {
+  display: flex;
+}
+button {
+	background-color: #336699;
+	color: #FFFFFF;
+}
