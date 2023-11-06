@@ -54,8 +54,7 @@ System requirements are mentioned in the following table:
 
 | Software/Hardware                              | Operating System requirements      |
 | ------------------------------------           | -----------------------------------|
-| Alteryx Designer                               | Windows, Mac OS X, (can be used with the help of Parallels
-|                                                  or similar mechanisms to run Windows application within Mac OS) |
+| Alteryx Designer                               | Windows, Mac OS X, (can be used with the help of Parallels or similar mechanisms to run Windows applications within Mac OS) |
 
 If you don’t have an Alteryx License, you can get a free trial from here: https://bit.ly/ayx_trial_Cookbook
 
