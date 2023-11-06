@@ -4,7 +4,7 @@
 
 This is the code repository for [Alteryx Designer Cookbook](https://www.packtpub.com/product/alteryx-designer-cookbook/9781804615089?utm_source=github&utm_medium=repository&utm_id=9781804615089), published by Packt.
 
-**Over 75 recipes to transform your data into insights and take your productivity to a new level**
+**Over 60 recipes to transform your data into insights and take your productivity to a new level**
 
 ## What is this book about?
 Alteryx allows you to create data manipulation and analytic workflows with a simple, easy-to-use, code-free UI, and perform fast-executing workflows, offering multiple ways to achieve the same results. The Alteryx Designer Cookbook is a comprehensive guide to maximizing your Alteryx skills and determining the best ways to perform data operations.
