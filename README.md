@@ -27,6 +27,8 @@ alt="https://www.packtpub.com/" border="5" /></a>
 ## Instructions and Navigations
 All of the code is organized into folders.
 
+**Please use git clone in Git Bash to download the files in the repository, as the zipped files get corrupted if you try to download it directly from here.** You can install Git from the following URL: https://github.com/git-guides/install-git
+
 The code will look like the following:
 ```
 IF CONTAINS([Name],[TY])
