@@ -1,3 +1,5 @@
+<p align='center'><a href='https://www.eventbrite.com/e/algorithmic-trading-with-python-cohort-2-tickets-1833367644979?aff=oddtdtcreator'><img src='https://static.packt-cdn.com/assets/images/packt+events/Python_for_Algorithmic Trading_v1.png'/></a></p>
+
 # Alteryx Designer Cookbook
 
 <a href="https://www.packtpub.com/product/alteryx-designer-cookbook/9781804615089?utm_source=github&utm_medium=repository&utm_id=9781804615089"><img src="https://content.packt.com/B19144/cover_image_small.jpg" alt="Alteryx Designer Cookbook" height="256px" align="right"></a>
